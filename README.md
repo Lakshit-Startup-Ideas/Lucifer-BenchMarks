@@ -27,7 +27,7 @@ Times in a **simulated** run are made up (the badge says so); with a real model 
 ## Try it
 ```bash
 uv venv --python 3.13 && uv pip install -e ".[dev]"
-.venv/bin/pytest                                        #  tests, about a minute
+.venv/bin/pytest                                        # 60 tests, about a minute
 .venv/bin/lucifer run --backend sim-learner --seeds 3   # simulated agent that learns (checks the machinery only)
 .venv/bin/lucifer run --backend sim-null --seeds 3      # simulated agent that cannot learn: gate 1 should fail
 .venv/bin/lucifer report results/sim-learner-sim
