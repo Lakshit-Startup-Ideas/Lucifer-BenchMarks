@@ -8,11 +8,11 @@ from statistics import fmean
 PRIMARY_PHASES = ("similar", "transfer")
 
 
-def task_means(rows: list[dict], condition: str, phases: tuple[str, ...] = PRIMARY_PHASES, metric: str = "pass_at_1") -> dict[str, float]:
+def task_means(rows: list[dict], condition: str, phases: tuple[str, ...] = PRIMARY_PHASES, metric: str = "pass_at_1", seeds: set[int] | None = None) -> dict[str, float]:
     """The metric averaged over seeds, per task. The task (not the seed) is the unit we bootstrap over."""
     by_task: dict[str, list[float]] = defaultdict(list)
     for r in rows:
-        if r["condition"] == condition and r["phase"] in phases:
+        if r["condition"] == condition and r["phase"] in phases and (seeds is None or r["seed"] in seeds):
             by_task[r["task_id"]].append(1.0 if r[metric] else 0.0)
     return {t: fmean(v) for t, v in by_task.items()}
 

@@ -84,3 +84,16 @@ def test_retention_gate_says_inconclusive_when_nothing_is_mastered():
 
 def test_auditability_gate_passes_for_normal_runs():
     assert experiment("learner", 0)["gate3_auditability"]["passed"]
+
+
+def test_retention_gate_does_not_mistake_regression_to_the_mean_for_forgetting():
+    """Regression test. When 'mastered' tasks were chosen and measured on the same runs, tasks the baseline merely got lucky on made even a
+    learning agent look like it forgot. Tasks are now chosen on half of the seeds and measured on the other half."""
+    runs, false_alarms, assessed = 30, 0, 0
+    for i in range(runs):
+        gate = experiment("learner", i, base=0.65, effect=0.25)["gate2_retention"]
+        if not gate["inconclusive"]:
+            assessed += 1
+            false_alarms += not gate["passed"]
+    assert assessed >= 15, "the test needs some experiments where the baseline masters tasks"
+    assert false_alarms / assessed <= 0.15, f"{false_alarms}/{assessed} false retention failures"

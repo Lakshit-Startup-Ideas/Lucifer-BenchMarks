@@ -9,6 +9,7 @@ from statistics import fmean
 
 from .gates import evaluate
 from .stats import task_means
+from .tasks import BY_ID
 
 CONDITIONS = ("baseline", "lucifer", "irrelevant")
 OPERATIONS = ("retrieve_memory", "build_prompt", "llm.generate", "sandbox.run_tests", "memory.write")
@@ -126,10 +127,37 @@ def summary(run: Run) -> dict:
     hardest = sorted(({"task_id": t, "family": v[0]["family"], "first_try_fail": 1 - fmean(1.0 if r["pass_at_1"] else 0.0 for r in v), "avg_attempts": fmean(r["attempts"] for r in v), "solves": len(v)} for t, v in per_task.items()),
                      key=lambda d: (-d["first_try_fail"], -d["avg_attempts"]))[:8]
 
+    phases = ("experience", "similar", "transfer", "replay")
+    tasks = {ph: len({r["task_id"] for r in rows if r["phase"] == ph}) for ph in phases}
+    tasks["primary"] = len({r["task_id"] for r in rows if r["phase"] in primary})
+    radar_n = {f: len({r["task_id"] for r in rows if r["family"] == f}) for f in families}
+
+    # retrieval quality: of the lessons shown on evaluation tasks, how many came from the same task family?
+    meta_of = {r["trace_id"]: (r["condition"], r["phase"], r["family"]) for r in rows if "trace_id" in r}
+    shown_total: dict[str, int] = defaultdict(int)
+    shown_match: dict[str, int] = defaultdict(int)
+    solves: dict[str, int] = defaultdict(int)
+    covered: dict[str, int] = defaultdict(int)
+    for sp in spans:
+        if sp["kind"] != "retrieval":
+            continue
+        cond, phase, family = meta_of.get(sp["trace_id"], (None, None, None))
+        if cond not in ("lucifer", "irrelevant") or phase not in EVAL_PHASES or family == "mixed":
+            continue
+        got = sp["attrs"].get("lessons_shown", [])
+        match = sum(1 for l in got if (BY_ID.get(str(l.get("task_id", "")).split("#")[0]) and BY_ID[str(l["task_id"]).split("#")[0]].family == family))
+        solves[cond] += 1
+        shown_total[cond] += len(got)
+        shown_match[cond] += match
+        covered[cond] += 1 if match else 0
+    retrieval = {c: {"precision": (shown_match[c] / shown_total[c]) if shown_total[c] else None, "coverage": covered[c] / solves[c] if solves[c] else None,
+                     "avg_shown": shown_total[c] / solves[c] if solves[c] else 0.0, "solves": solves[c]} for c in ("lucifer", "irrelevant") if solves[c]}
+
     gates = evaluate(rows, run.audits, resamples=3000) if {"baseline", "lucifer"} <= set(conds) else None
     simulated = any(s["attrs"].get("simulated") for s in spans if s["kind"] == "llm")
     return {"id": run.id, "meta": run.meta, "conditions": conds, "simulated": simulated or str(run.meta.get("backend", "")).startswith("sim-"), "kpis": kpis, "phase_bars": phase_bars,
             "radar": radar, "curve": curve, "outcomes": outcomes, "operations": ops, "latency_stack": latency_stack, "hardest": hardest, "gates": gates,
+            "tasks": tasks, "radar_n": radar_n, "retrieval": retrieval,
             "totals": {"traces": len(rows), "spans": len(spans), "attempts": sum(r["attempts"] for r in rows), "seeds": len(run.meta.get("seeds", [])),
                        "lessons": sum(len(m["lessons"]) for m in run.memories)}}
 

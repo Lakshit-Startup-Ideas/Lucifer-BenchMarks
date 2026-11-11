@@ -13,14 +13,17 @@
       <button data-tab="overview" class="active">Overview</button>
       <button data-tab="traces">Traces</button>
       <button data-tab="memory">Memory</button>
+      <button data-tab="guide">Guide</button>
     </nav>
     <div class="spacer"></div>
-    <span class="badge sim" id="simBadge" hidden title="This run used a simulated agent: it checks the measuring machinery and says nothing about real models.">simulated agent</span>
+    <button type="button" class="badge sim" id="simBadge" hidden data-term="simulated">Simulated agent</button>
     <label class="select"><span>Run</span><select id="runSelect" aria-label="Run"></select></label>
     <button class="ghost" id="themeBtn" aria-label="Switch light or dark theme">◐ Theme</button>
   </header>
   <main id="view"></main>
   <div id="tip" class="tip" hidden></div>
+  <div id="scrim" class="scrim" hidden></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Explanation" hidden></aside>
   <script type="module" src="app.js"></script>
 </body>
 </html>

@@ -76,6 +76,8 @@ def test_summary_is_complete_and_consistent(results_root):
         assert o["first_try"] + o["fixed_on_retry"] + o["failed"] == s["kpis"][c]["solves"]
     assert {o["operation"] for o in s["operations"]} >= {"retrieve_memory", "llm.generate", "sandbox.run_tests", "memory.write"}
     assert s["gates"]["gate3_auditability"]["passed"]
+    assert s["tasks"]["primary"] == len(by_split("sim")) + len(by_split("xfer")) and s["tasks"]["experience"] == EXPERIENCE
+    assert set(s["retrieval"]) == {"lucifer", "irrelevant"} and s["retrieval"]["lucifer"]["precision"] > s["retrieval"]["irrelevant"]["precision"]
     assert len(s["curve"]["lucifer"]) == EXPERIENCE and s["curve"]["lucifer"][-1]["pass"] <= 1
 
 
@@ -130,3 +132,34 @@ def test_static_files_are_served_and_nothing_outside_the_web_folder_is(base_url)
         assert status in (404, 400) or b"[project]" not in body, bad
         assert b"class SimBackend" not in body and b"[project]" not in body and b"root:" not in body
     assert get(f"{base_url}/api/runs/does-not-exist/summary")[0] == 404
+
+
+def test_every_literal_glossary_key_used_by_the_page_is_defined():
+    """The page refers to glossary entries by key; a typo would give a dead tooltip. Checks the literal keys (dynamic ones are built from data)."""
+    import re
+    from pathlib import Path
+
+    web = Path(__file__).resolve().parents[1] / "src" / "lucifer" / "web"
+    glossary = (web / "glossary.js").read_text()
+    defined = set(re.findall(r"^  (\w+): \{ name:", glossary, flags=re.M))
+    assert len(defined) >= 45
+    code = glossary + (web / "app.js").read_text()
+    used = set(re.findall(r'(?:term|infoBtn)\("(\w+)"', code))
+    for body in re.findall(r"related: \[([^\]]*)\]", code):
+        if all(re.fullmatch(r'\s*"\w+"\s*', part) for part in body.split(",") if part.strip()):  # a list of plain literals
+            used |= set(re.findall(r'"(\w+)"', body))
+    missing = sorted(k for k in used if k not in defined)
+    assert not missing, f"glossary keys used but not defined: {missing}"
+
+
+def test_the_front_end_scripts_are_valid_javascript():
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if not node:
+        pytest.skip("node is not installed")
+    for name in ("app.js", "charts.js", "info.js", "glossary.js"):
+        done = subprocess.run([node, "--check", str(Path(__file__).resolve().parents[1] / "src" / "lucifer" / "web" / name)], capture_output=True, text=True)
+        assert done.returncode == 0, f"{name}: {done.stderr}"

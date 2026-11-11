@@ -29,7 +29,7 @@ Within a task every condition gets one retry after seeing the failing test's out
 
 ## Gates (they mirror the promises already made in outreach, so they must be real)
 1. **Improvement.** The 95% paired-bootstrap interval for `B − A` on the primary metric is above zero, **and** so is `B − C`.
-2. **Retention.** On tasks the baseline solves reliably (≥ 80% over seeds), B's pass@1 is no more than 5 points below A's.
+2. **Retention.** On tasks the baseline solves reliably (≥ 80%, chosen on half of the seeds), B's pass@1 on the *other* half of the seeds is no more than 5 points below A's. (Choosing and measuring on the same runs would select tasks the baseline got lucky on, and regression to the mean would look like forgetting; the dashboard exposed this.) With one seed, or no mastered task, the gate is inconclusive.
 3. **Auditability.** Every memory write has provenance (task, run, seed, version) and sits in a hash chain; `verify_chain()` passes; rolling back to version *n* reproduces version *n* exactly.
 
 ## Statistics

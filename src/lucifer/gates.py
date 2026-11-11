@@ -24,13 +24,19 @@ def evaluate(rows: list[dict], audits: list[dict], resamples: int = 10_000) -> d
              "lucifer_minus_baseline": d_ab, "lucifer_minus_irrelevant": d_cb,
              "detail": "interval = 95% paired bootstrap over tasks; both intervals must sit above zero"}
 
+    # Retention. The "mastered" tasks are chosen on half of the seeds and the drop is measured on the other half. Choosing and measuring on the
+    # same runs would pick tasks the baseline happened to get lucky on, and regression to the mean would then look like forgetting.
     all_phases = ("similar", "transfer", "replay")
-    base_all, luc_all = task_means(rows, "baseline", all_phases), task_means(rows, "lucifer", all_phases)
-    mastered = [t for t, v in base_all.items() if v >= MASTERED]
-    drop = (sum(base_all[t] - luc_all.get(t, 0.0) for t in mastered) / len(mastered)) if mastered else 0.0
-    # With no task the baseline masters there is nothing to lose, so the gate cannot say anything: that is "inconclusive", not a pass.
+    seeds = sorted({r["seed"] for r in rows})
+    select, measure = set(seeds[0::2]), set(seeds[1::2])
+    base_sel = task_means(rows, "baseline", all_phases, seeds=select)
+    mastered = [t for t, v in base_sel.items() if v >= MASTERED] if measure else []
+    base_m, luc_m = task_means(rows, "baseline", all_phases, seeds=measure), task_means(rows, "lucifer", all_phases, seeds=measure)
+    mastered = [t for t in mastered if t in base_m]
+    drop = (sum(base_m[t] - luc_m.get(t, 0.0) for t in mastered) / len(mastered)) if mastered else 0.0
+    # With no task the baseline masters (or too few seeds to split) there is nothing to lose: "inconclusive", not a pass.
     gate2 = {"passed": bool(mastered) and drop <= RETENTION_MARGIN, "inconclusive": not mastered, "mastered_tasks": len(mastered), "mean_drop": drop,
-             "detail": f"tasks the baseline solves at least {MASTERED:.0%} of the time; lucifer may lose at most {RETENTION_MARGIN:.0%}"}
+             "detail": f"tasks the baseline solves at least {MASTERED:.0%} of the time on half the seeds; lucifer may lose at most {RETENTION_MARGIN:.0%} of that on the other half"}
 
     audited = [a for a in audits if a["condition"] in ("lucifer", "irrelevant")]
     gate3 = {"passed": bool(audited) and all(a["ok"] for a in audited), "runs_audited": len(audited),
