@@ -43,9 +43,18 @@ def main(argv: list[str] | None = None) -> int:
     cal.add_argument("--min-interval", type=float, default=2.2)
     cal.add_argument("--reasoning-effort", choices=["low", "medium", "high"])
     cal.add_argument("--out", type=Path)
+    dash = sub.add_parser("dashboard", help="open the web dashboard over the saved runs")
+    dash.add_argument("--results", type=Path, default=Path("results"))
+    dash.add_argument("--port", type=int, default=8765)
+    dash.add_argument("--no-open", action="store_true")
     rep = sub.add_parser("report", help="print the results table and the three gates")
     rep.add_argument("folder", type=Path)
     a = p.parse_args(argv)
+
+    if a.cmd == "dashboard":
+        from .server import serve
+        serve(a.results, a.port, open_browser=not a.no_open)
+        return 0
 
     if a.cmd == "report":
         print(render(*load(a.folder)))

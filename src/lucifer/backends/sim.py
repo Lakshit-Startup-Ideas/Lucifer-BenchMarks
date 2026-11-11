@@ -50,4 +50,6 @@ class SimBackend:
                 p -= self.effect
         p = min(0.98, max(0.02, p))
         code = task.reference if self._uniform(prompt, seed, task) < p else task.naive
-        return Generation(f"```python\n{code}\n```", len(prompt) // 4, len(code) // 4, 0.0)
+        # A made-up but deterministic latency (about 0.4 to 1.4 s, longer for longer prompts); spans mark it as simulated.
+        latency = 400 + 1000 * self._uniform("latency|" + prompt, seed, task) * min(1.0, len(prompt) / 1500 + 0.3)
+        return Generation(f"```python\n{code}\n```", len(prompt) // 4, len(code) // 4, round(latency, 1))

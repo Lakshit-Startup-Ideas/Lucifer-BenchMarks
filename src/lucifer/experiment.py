@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import json
 import random
-import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -13,6 +12,7 @@ from .memory import Memory
 from .retrieval import least_relevant, relevant
 from .sandbox import Executor, extract_code
 from .tasks import Task, by_split
+from .tracing import Tracer
 
 CONDITIONS = ("baseline", "lucifer", "irrelevant")
 PHASES = ("experience", "similar", "transfer", "replay")
@@ -35,24 +35,44 @@ class Result:
     rows: list[dict] = field(default_factory=list)  # one per task attempt-sequence
     attempts: list[dict] = field(default_factory=list)  # one per model call
     audits: list[dict] = field(default_factory=list)  # one per memory-using run
+    spans: list[dict] = field(default_factory=list)  # every step of every solve (see tracing.py)
+    memories: list[dict] = field(default_factory=list)  # the lessons each memory store held after the experience phase
 
 
 def _solve(cfg: Config, task: Task, phase: str, seed: int, condition: str, memory: Memory | None, out: Result) -> tuple[bool, list[str]]:
     """Returns (passed on the first attempt, ids of lessons shown). One retry with the test output, the same for every condition."""
+    trace_id = f"{cfg.run_id}/s{seed}/{condition}/{phase}/{task.id}"
+    tr = Tracer(trace_id, f"solve {task.id}", task_id=task.id, family=task.family, phase=phase, seed=seed, condition=condition, backend=cfg.backend.name)
+    simulated = cfg.backend.name.startswith("sim-")
+
     shown = []
-    if condition == "lucifer" and memory is not None:
-        shown = relevant(task.spec + " " + task.entry, memory.lessons(), cfg.k)
-    elif condition == "irrelevant" and memory is not None:
-        shown = least_relevant(task.spec + " " + task.entry, memory.lessons(), cfg.k)
+    with tr.span("retrieve_memory", "retrieval", mode=condition, k=cfg.k, memory_lessons=len(memory) if memory is not None else 0) as sp:
+        if condition == "lucifer" and memory is not None:
+            shown = relevant(task.spec + " " + task.entry, memory.lessons(), cfg.k)
+        elif condition == "irrelevant" and memory is not None:
+            shown = least_relevant(task.spec + " " + task.entry, memory.lessons(), cfg.k)
+        sp.set(lessons_shown=[{"id": l.id, "version": l.version, "task_id": l.task_id, "kind": l.kind, "text": l.text[:300]} for l in shown])
     base_prompt = build_prompt(task, [l.text for l in shown])
-    prompt, code, feedback, passed_first, passed_any = base_prompt, "", "", False, False
-    t0 = time.perf_counter()
-    prompt_tokens = completion_tokens = 0
-    attempts_used = 0
+    with tr.span("build_prompt", "prompt", prompt_chars=len(base_prompt), notes=len(shown)):
+        pass
+
+    prompt, code, feedback, first_failure = base_prompt, "", "", ""
+    passed_first = passed_any = False
+    prompt_tokens = completion_tokens = attempts_used = 0
     for attempt in range(1, cfg.retries + 2):
-        gen = cfg.backend.generate(prompt, seed=seed * 1000 + attempt, task=task)
-        code = extract_code(gen.text)
-        result = cfg.executor.run(task, code)
+        with tr.span(f"attempt {attempt}", "attempt", attempt=attempt, retry=attempt > 1) as at:
+            with tr.span("llm.generate", "llm", model=cfg.backend.name, seed=seed * 1000 + attempt, simulated=simulated, prompt=prompt[:6000]) as g:
+                gen = cfg.backend.generate(prompt, seed=seed * 1000 + attempt, task=task)
+                g.duration_ms = gen.ms
+                g.set(prompt_tokens=gen.prompt_tokens, completion_tokens=gen.completion_tokens, reply=gen.text[:4000])
+            code = extract_code(gen.text)
+            with tr.span("sandbox.run_tests", "execution", tests=len(task.tests), code=code[:3000]) as ex:
+                result = cfg.executor.run(task, code)
+                ex.duration_ms = result.ms
+                ex.status = "ok" if result.passed else "error"
+                ex.set(passed=result.passed, feedback=result.feedback)
+            at.status = "ok" if result.passed else "error"
+            at.set(passed=result.passed)
         attempts_used = attempt
         prompt_tokens += gen.prompt_tokens
         completion_tokens += gen.completion_tokens
@@ -66,14 +86,20 @@ def _solve(cfg: Config, task: Task, phase: str, seed: int, condition: str, memor
         prompt = retry_prompt(base_prompt, code, feedback)
         if attempt == 1:
             first_failure = feedback
+
     if phase == "experience" and memory is not None:  # learning happens only here; evaluation is frozen
-        if not passed_first:
-            memory.add(task.id, "failure", failure_lesson(task, first_failure), cfg.run_id, seed)
-        if passed_any and not passed_first:
-            memory.add(task.id, "fix", fix_lesson(task, code), cfg.run_id, seed)
-    out.rows.append({"run_id": cfg.run_id, "seed": seed, "condition": condition, "phase": phase, "task_id": task.id, "family": task.family,
+        with tr.span("memory.write", "memory", store_version_before=memory.version) as mw:
+            written = []
+            if not passed_first:
+                written.append(memory.add(task.id, "failure", failure_lesson(task, first_failure), cfg.run_id, seed))
+            if passed_any and not passed_first:
+                written.append(memory.add(task.id, "fix", fix_lesson(task, code), cfg.run_id, seed))
+            mw.set(lessons_written=[{"id": l.id, "version": l.version, "kind": l.kind, "hash": l.hash[:12], "text": l.text[:300]} for l in written], store_version_after=memory.version)
+    spans = tr.finish("ok" if passed_any else "error", pass_at_1=passed_first, pass_at_2=passed_any, attempts=attempts_used)
+    out.spans.extend(spans)
+    out.rows.append({"run_id": cfg.run_id, "trace_id": trace_id, "seed": seed, "condition": condition, "phase": phase, "task_id": task.id, "family": task.family,
                      "pass_at_1": passed_first, "pass_at_2": passed_any, "attempts": attempts_used, "lessons_shown": [l.id for l in shown],
-                     "prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens, "wall_ms": (time.perf_counter() - t0) * 1000,
+                     "prompt_tokens": prompt_tokens, "completion_tokens": completion_tokens, "wall_ms": round(tr.root.duration_ms, 3),
                      "memory_version": memory.version if memory is not None else 0})
     return passed_first, [str(l.id) for l in shown]
 
@@ -93,6 +119,7 @@ def run_experiment(cfg: Config, progress=None) -> Result:
                 _solve(cfg, task, "experience", seed, condition, memory, out)
             if memory is not None:
                 out.audits.append({"seed": seed, "condition": condition, **memory.audit()})
+                out.memories.append({"seed": seed, "condition": condition, "lessons": [{"id": l.id, "version": l.version, "task_id": l.task_id, "kind": l.kind, "text": l.text, "run_id": l.run_id, "seed": l.seed, "hash": l.hash} for l in memory.lessons()]})
             for task, phase in eval_items:
                 _solve(cfg, task, phase, seed, condition, memory, out)
             if progress:
@@ -102,5 +129,7 @@ def run_experiment(cfg: Config, progress=None) -> Result:
         (cfg.out_dir / "rows.json").write_text(json.dumps(out.rows))
         (cfg.out_dir / "audits.json").write_text(json.dumps(out.audits))
         (cfg.out_dir / "attempts.jsonl").write_text("\n".join(json.dumps(a) for a in out.attempts) + "\n")
+        (cfg.out_dir / "spans.jsonl").write_text("\n".join(json.dumps(sp) for sp in out.spans) + "\n")
+        (cfg.out_dir / "memories.json").write_text(json.dumps(out.memories))
         (cfg.out_dir / "meta.json").write_text(json.dumps({"backend": cfg.backend.name, "seeds": list(cfg.seeds), "k": cfg.k, "retries": cfg.retries, "run_id": cfg.run_id}))
     return out

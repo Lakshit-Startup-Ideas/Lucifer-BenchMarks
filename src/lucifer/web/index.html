@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucifer Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">L</span><div><strong>Lucifer Lab</strong><small>adaptive intelligence experiments</small></div></div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="overview" class="active">Overview</button>
+      <button data-tab="traces">Traces</button>
+      <button data-tab="memory">Memory</button>
+    </nav>
+    <div class="spacer"></div>
+    <span class="badge sim" id="simBadge" hidden title="This run used a simulated agent: it checks the measuring machinery and says nothing about real models.">simulated agent</span>
+    <label class="select"><span>Run</span><select id="runSelect" aria-label="Run"></select></label>
+    <button class="ghost" id="themeBtn" aria-label="Switch light or dark theme">◐ Theme</button>
+  </header>
+  <main id="view"></main>
+  <div id="tip" class="tip" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
