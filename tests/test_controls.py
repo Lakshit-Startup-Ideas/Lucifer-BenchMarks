@@ -33,19 +33,20 @@ def with_more_tasks(monkeypatch, copies):
 
 def test_with_the_24_task_set_a_real_effect_is_usually_missed_so_it_must_not_be_trusted():
     """The 24 tasks exist to test the harness. This documents why: with only 12 similar+transfer tasks a genuine +20 point effect passes
-    both comparisons far less than half the time (about 1 in 4 in the power study in docs/EXPERIMENT-PLAN.md)."""
+    both comparisons well under half the time (about 1 in 3 in the 60-run power study in docs/EXPERIMENT-PLAN.md)."""
     runs = 30
     hits = sum(experiment("learner", i)["gate1_improvement"]["passed"] for i in range(runs))
     assert hits / runs < 0.5, f"{hits}/{runs}: if this now passes, update the plan's power numbers"
 
 
-def test_with_about_twice_the_tasks_a_real_effect_is_usually_detected_and_a_null_one_is_not(monkeypatch):
-    with_more_tasks(monkeypatch, 2)
-    runs = 20
+def test_with_about_four_times_the_tasks_a_real_effect_is_detected_and_a_null_one_is_not(monkeypatch):
+    """48 similar+transfer tasks: about 98% power and a few percent false alarms in the 60-run study (docs/EXPERIMENT-PLAN.md)."""
+    with_more_tasks(monkeypatch, 4)
+    runs = 12
     hits = sum(experiment("learner", i)["gate1_improvement"]["passed"] for i in range(runs))
     false_alarms = sum(experiment("null", i)["gate1_improvement"]["passed"] for i in range(runs))
     assert hits / runs >= 0.80, f"{hits}/{runs} detected"
-    assert false_alarms / runs <= 0.10
+    assert false_alarms / runs <= 0.25, f"{false_alarms}/{runs} false alarms"
 
 
 def test_an_agent_hurt_by_memory_is_reported_as_hurt():

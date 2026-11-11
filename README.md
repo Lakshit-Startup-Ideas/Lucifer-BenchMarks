@@ -10,7 +10,7 @@ This is Lucifer V1: not a new model and not AGI, only the experiment that decide
 - **Done and tested (50 tests):** 24 coding tasks with hidden tests, a sandboxed runner, hash-chained versioned memory with rollback, relevance retrieval, three conditions (baseline, lucifer, irrelevant-notes control), a task-level bootstrap, the three promotion gates, a report, and an Ollama backend (tested against a stand-in server).
 - **Proven by simulation:** the harness gives the right answer about agents whose behaviour is known: one that cannot learn is reported as improving 0 times in 20 to 40 runs; one that learns is detected; one hurt by memory is reported as hurt; forgetting is caught.
 - **Calibrated on real models (baseline only):** see [`docs/CALIBRATION.md`](docs/CALIBRATION.md). The 24 tasks are too easy for strong models (96–100% pass@1), so the experiment itself has not been run.
-- **Not done:** the Lucifer-vs-baseline experiment on a real model. The 24-task set is too small to trust a "no effect" result (the power table in the plan shows why); the real run needs 100+ tasks, calibrated so the baseline passes 20–80% of them.
+- **Not done:** the Lucifer-vs-baseline experiment on a real model. The 24-task set is too small to trust a "no effect" result (the power table in the plan shows why: 12 primary tasks detect a real effect 32% of the time, 48 tasks 98%); the real run needs at least 48 similar+transfer tasks, calibrated so the baseline passes 20–80% of them.
 
 ## Try it
 ```bash

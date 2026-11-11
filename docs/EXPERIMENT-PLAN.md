@@ -38,16 +38,18 @@ Within a task every condition gets one retry after seeing the failing test's out
 - With 24 tasks the interval will be wide. That is expected; the 24 tasks exist to test the harness. The real run needs 100+ tasks (see "Before the real run").
 
 ## Power: how many tasks are enough (measured on simulated agents)
-Simulated learner (a real +20 point average effect on similar and transfer tasks), 5 seeds, 20 simulated experiments per row; a "hit" means gate 1 passed (both intervals above zero). A simulated agent that cannot learn gives the false-positive column.
+Simulated learner (a real +20 point average effect on similar and transfer tasks), 5 seeds, **60 simulated experiments per row**; "passed" means gate 1 passed (both intervals above zero). A simulated agent that cannot learn gives the false-alarm column.
 
 | similar + transfer tasks | gate 1 passed (real effect) | gate 1 passed (no effect) |
 |---|---|---|
-| 12 (the 24-task set) | 5 of 20 | 0 of 20 |
-| 24 | 18 of 20 | 0 of 20 |
-| 48 | 19 of 20 | 0 of 20 |
-| 96 | 20 of 20 | 0 of 20 |
+| 12 (the 24-task set) | 19 of 60 (32%) | 0 of 60 |
+| 24 | 43 of 60 (72%) | 1 of 60 |
+| 48 | 59 of 60 (98%) | 3 of 60 |
+| 72 | 60 of 60 | 1 of 60 |
 
-So the current 24 tasks can show that the *machinery* works, but a "no effect" from them proves nothing. The real run needs at least about 25 similar + transfer tasks per condition, and more is better. Smaller true effects need more (not measured yet). These rows repeat the same tasks under new ids, so real, varied tasks will behave a little worse.
+(An earlier 20-run table said 90% at 24 tasks. That was a lucky draw; 60 runs corrected it. Even 60 runs leave about ±6 points of noise.)
+
+So the current 24 tasks can show that the *machinery* works, but a "no effect" from them proves nothing. The real run needs **at least about 48 similar + transfer tasks**; smaller true effects need more (not measured yet). These rows repeat the same tasks under new ids, so real, varied tasks will behave a little worse.
 
 ## Before the real run (do not skip)
 1. **Harness controls (done in tests).** A simulated agent that cannot learn must fail gate 1 almost always; one that learns must pass; one that is hurt by memory must fail. If the harness cannot tell these apart, no result from it means anything.
