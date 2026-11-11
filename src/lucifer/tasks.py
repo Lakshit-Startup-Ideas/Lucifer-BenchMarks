@@ -62,7 +62,7 @@ TASKS: tuple[Task, ...] = (
        ["assert count_multiples(1, 10, 3) == 3", "assert count_multiples(3, 9, 3) == 3", "assert count_multiples(4, 4, 2) == 1"],
        "def count_multiples(a, b, k):\n    return sum(1 for n in range(a, b + 1) if n % k == 0)",
        "def count_multiples(a, b, k):\n    return sum(1 for n in range(a, b) if n % k == 0)"),
-    _t("range-3", "range", "exp", "days_between", "`days_between(start, end)` returns how many days there are from start to end counting both the first and the last day, and 0 if end is before start.",
+    _t("range-3", "range", "exp", "days_between", "`days_between(start, end)` takes two integer day numbers and returns how many days there are from start to end counting both the first and the last day, and 0 if end is before start.",
        ["assert days_between(1, 1) == 1", "assert days_between(1, 7) == 7", "assert days_between(5, 1) == 0"],
        "def days_between(start, end):\n    return end - start + 1 if end >= start else 0",
        "def days_between(start, end):\n    return end - start"),

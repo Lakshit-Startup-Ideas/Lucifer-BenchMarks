@@ -1,0 +1,12 @@
+Baseline calibration · groq:allam-2-7b · 24 tasks
+
+mean pass@1 42%
+usable (between 20% and 80%): 2   too easy (above 80%): 9   too hard (below 20%): 13
+
+empty    1:100%  2:100%  3:100%  4:100%  5:100%
+range    1:0%  2:100%  3:0%  4:100%  5:100%
+order    1:100%  2:0%  3:0%  4:0%  5:0%
+text     1:33%  2:0%  3:0%  4:0%  5:0%
+mixed    1:67%  2:0%  3:0%  4:0%
+
+Most tasks are outside the 20-80% band, so this model cannot show much learning on them: the task set must be made harder (or easier) before a real run.
