@@ -12,7 +12,11 @@ from lucifer.experiment import Config, run_experiment
 from lucifer.report import load, render
 from lucifer.sandbox import SandboxExecutor
 from lucifer.stats import paired_bootstrap
-from lucifer.tasks import TASKS
+from lucifer.tasks import TASKS, by_split
+
+EXPERIENCE = len(by_split('exp'))
+EVALUATION = len(by_split('sim')) + len(by_split('xfer')) + EXPERIENCE  # similar + transfer + replay
+SOLVES_PER_RUN = EXPERIENCE + EVALUATION
 
 
 @pytest.fixture(scope="module")
@@ -24,7 +28,7 @@ def run_dir(tmp_path_factory):
 
 def test_counts_and_files(run_dir):
     rows, audits, meta = load(run_dir)
-    assert len(rows) == 2 * 3 * 36  # seeds x conditions x (12 experience + 24 evaluation tasks)
+    assert len(rows) == 2 * 3 * SOLVES_PER_RUN  # seeds x conditions x (experience + evaluation tasks)
     assert {r["phase"] for r in rows} == {"experience", "similar", "transfer", "replay"}
     assert len(audits) == 2 * 2 and all(a["ok"] for a in audits)
     assert (run_dir / "attempts.jsonl").read_text().count("\n") >= len(rows)
@@ -99,7 +103,7 @@ def test_ollama_backend_over_http_end_to_end():
         gen = backend.generate("Write a Python function `mean`.", seed=1)
         assert "<think>" not in gen.text and gen.prompt_tokens == 11 and gen.completion_tokens == 7
         out = run_experiment(Config(backend, SandboxExecutor(), seeds=(0,), conditions=("baseline",)))
-        assert len(out.rows) == 36 and all(r["pass_at_1"] for r in out.rows)
+        assert len(out.rows) == SOLVES_PER_RUN and all(r["pass_at_1"] for r in out.rows)
         assert all(r["prompt_tokens"] == 11 for r in out.rows)
     finally:
         server.shutdown()

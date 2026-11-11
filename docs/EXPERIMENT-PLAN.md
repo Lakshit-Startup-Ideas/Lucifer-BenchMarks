@@ -42,14 +42,16 @@ Simulated learner (a real +20 point average effect on similar and transfer tasks
 
 | similar + transfer tasks | gate 1 passed (real effect) | gate 1 passed (no effect) |
 |---|---|---|
-| 12 (the 24-task set) | 19 of 60 (32%) | 0 of 60 |
+| 12 (first 24-task set) | 19 of 60 (32%) | 0 of 60 |
 | 24 | 43 of 60 (72%) | 1 of 60 |
+| **26 (current 50-task set)** | 32 of 60 (53%) | 1 of 60 |
 | 48 | 59 of 60 (98%) | 3 of 60 |
+| **52 (current set, repeated twice)** | 59 of 60 (98%) | 0 of 60 |
 | 72 | 60 of 60 | 1 of 60 |
 
 (An earlier 20-run table said 90% at 24 tasks. That was a lucky draw; 60 runs corrected it. Even 60 runs leave about ±6 points of noise.)
 
-So the current 24 tasks can show that the *machinery* works, but a "no effect" from them proves nothing. The real run needs **at least about 48 similar + transfer tasks**; smaller true effects need more (not measured yet). These rows repeat the same tasks under new ids, so real, varied tasks will behave a little worse.
+The current 50-task set has 26 similar + transfer tasks, which detects a real +20 point effect about half the time. A "no effect" from it is therefore still weak evidence. The real run needs **at least about 48 similar + transfer tasks** (the current set doubled, or a second batch of new families); smaller true effects need more (not measured yet). These rows repeat the same tasks under new ids, so real, varied tasks will behave a little worse.
 
 ## Before the real run (do not skip)
 1. **Harness controls (done in tests).** A simulated agent that cannot learn must fail gate 1 almost always; one that learns must pass; one that is hurt by memory must fail. If the harness cannot tell these apart, no result from it means anything.

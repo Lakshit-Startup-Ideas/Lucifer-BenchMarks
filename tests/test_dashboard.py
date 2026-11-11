@@ -11,7 +11,12 @@ from lucifer.experiment import Config, run_experiment
 from lucifer.insights import list_runs, load_run, summary
 from lucifer.sandbox import FastExecutor
 from lucifer.server import Store, make_handler
+from lucifer.tasks import by_split
 from lucifer.tracing import Tracer
+
+EXPERIENCE = len(by_split('exp'))
+SOLVES_PER_RUN = EXPERIENCE * 2 + len(by_split('sim')) + len(by_split('xfer'))
+TRACES = 2 * 3 * SOLVES_PER_RUN  # two seeds, three conditions
 
 
 # ---- tracing -------------------------------------------------------------------------------------------------------------------
@@ -49,7 +54,7 @@ def results_root(tmp_path_factory):
 
 def test_every_solve_has_a_trace_with_the_expected_steps(results_root):
     run = load_run(results_root / "small")
-    assert len(run.rows) == 2 * 3 * 36
+    assert len(run.rows) == TRACES
     for row in run.rows[:50] + run.rows[-50:]:
         spans = run.trace(row["trace_id"])
         names = [s["name"] for s in spans]
@@ -64,14 +69,14 @@ def test_every_solve_has_a_trace_with_the_expected_steps(results_root):
 def test_summary_is_complete_and_consistent(results_root):
     s = summary(load_run(results_root / "small"))
     assert s["conditions"] == ["baseline", "lucifer", "irrelevant"] and s["simulated"] is True
-    assert s["totals"]["traces"] == 216 and s["totals"]["spans"] > 216 * 5
+    assert s["totals"]["traces"] == TRACES and s["totals"]["spans"] > TRACES * 5
     assert [p["phase"] for p in s["phase_bars"]] == ["experience", "similar", "transfer", "replay"]
     assert all(0 <= p[c] <= 1 for p in s["phase_bars"] for c in s["conditions"])
     for c, o in s["outcomes"].items():
         assert o["first_try"] + o["fixed_on_retry"] + o["failed"] == s["kpis"][c]["solves"]
     assert {o["operation"] for o in s["operations"]} >= {"retrieve_memory", "llm.generate", "sandbox.run_tests", "memory.write"}
     assert s["gates"]["gate3_auditability"]["passed"]
-    assert len(s["curve"]["lucifer"]) == 12 and s["curve"]["lucifer"][-1]["pass"] <= 1
+    assert len(s["curve"]["lucifer"]) == EXPERIENCE and s["curve"]["lucifer"][-1]["pass"] <= 1
 
 
 # ---- the web API ---------------------------------------------------------------------------------------------------------------
@@ -95,10 +100,10 @@ def test_api_lists_runs_summary_traces_and_memory(base_url):
     status, _, body = get(f"{base_url}/api/runs")
     runs = {r["id"]: r for r in json.loads(body)}
     assert status == 200 and runs["small"]["has_traces"] and not runs["old-format"]["has_traces"]
-    assert json.loads(get(f"{base_url}/api/runs/small/summary")[2])["totals"]["traces"] == 216
+    assert json.loads(get(f"{base_url}/api/runs/small/summary")[2])["totals"]["traces"] == TRACES
 
     listing = json.loads(get(f"{base_url}/api/runs/small/traces?condition=lucifer&phase=similar&seed=1&limit=5")[2])
-    assert listing["total"] == 8 and len(listing["items"]) == 5 and all(i["condition"] == "lucifer" and i["seed"] == 1 for i in listing["items"])
+    assert listing["total"] == len(by_split("sim")) and len(listing["items"]) == 5 and all(i["condition"] == "lucifer" and i["seed"] == 1 for i in listing["items"])
     failed = json.loads(get(f"{base_url}/api/runs/small/traces?failed=1&limit=1000")[2])
     assert failed["items"] and all(not i["pass_at_1"] for i in failed["items"])
 

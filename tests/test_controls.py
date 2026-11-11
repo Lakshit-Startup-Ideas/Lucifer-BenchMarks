@@ -31,9 +31,22 @@ def with_more_tasks(monkeypatch, copies):
     monkeypatch.setattr(sim, "TASKS", many)
 
 
-def test_with_the_24_task_set_a_real_effect_is_usually_missed_so_it_must_not_be_trusted():
-    """The 24 tasks exist to test the harness. This documents why: with only 12 similar+transfer tasks a genuine +20 point effect passes
-    both comparisons well under half the time (about 1 in 3 in the 60-run power study in docs/EXPERIMENT-PLAN.md)."""
+def only_original_families(monkeypatch):
+    """The first version of the task set (four families, 12 similar+transfer tasks), to document how little power that had."""
+    import lucifer.backends.sim as sim
+    import lucifer.tasks as tasks
+
+    keep = tuple(t for t in tasks.TASKS if t.family in ("empty", "range", "order", "text", "mixed") and int(t.id.split("-")[1]) <= (4 if t.family == "mixed" else 5))
+    monkeypatch.setattr(tasks, "TASKS", keep)
+    monkeypatch.setattr(sim, "TASKS", keep)
+    return keep
+
+
+def test_a_set_with_only_12_primary_tasks_misses_a_real_effect_so_it_must_not_be_trusted(monkeypatch):
+    """With only 12 similar+transfer tasks a genuine +20 point effect passes both comparisons well under half the time (about 1 in 3 in the
+    60-run power study in docs/EXPERIMENT-PLAN.md). This is why the task set was enlarged."""
+    keep = only_original_families(monkeypatch)
+    assert sum(t.split in ("sim", "xfer") for t in keep) == 12
     runs = 30
     hits = sum(experiment("learner", i)["gate1_improvement"]["passed"] for i in range(runs))
     assert hits / runs < 0.5, f"{hits}/{runs}: if this now passes, update the plan's power numbers"

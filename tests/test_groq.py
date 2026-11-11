@@ -67,5 +67,5 @@ def test_calibration_over_http(server, tmp_path):
     per_task = calibrate(GroqBackend("m", base_url=server, min_interval_s=0), SandboxExecutor(), (0,), tmp_path)
     assert len(per_task) == len(TASKS) and all(v == 1.0 for v in per_task.values())
     text = render_calibration(per_task, "groq:m")
-    assert "too easy (above 80%): 24" in text and "must be made harder" in text
+    assert f"too easy (above 80%): {len(TASKS)}" in text and "must be made harder" in text
     assert (tmp_path / "per_task.json").exists()

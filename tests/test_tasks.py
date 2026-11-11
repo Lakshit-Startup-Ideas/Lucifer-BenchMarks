@@ -19,8 +19,9 @@ def test_task_set_shape():
     for family in FAMILIES:
         assert sum(1 for t in TASKS if t.family == family and t.split == "exp") == 3
         assert sum(1 for t in TASKS if t.family == family and t.split == "sim") == 2
-    assert len(by_split("xfer")) == 4 and all(t.family == "mixed" for t in by_split("xfer"))
+    assert len(by_split("xfer")) == 10 and all(t.family == "mixed" for t in by_split("xfer"))
     assert all(len(t.tests) >= 3 for t in TASKS)
+    assert len(TASKS) == 50 and len(by_split("sim")) + len(by_split("xfer")) == 26
 
 
 def test_sandbox_reports_errors_timeouts_and_missing_function():

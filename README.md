@@ -7,10 +7,10 @@ A small laboratory that tests **one claim**:
 This is Lucifer V1: not a new model and not AGI, only the experiment that decides whether the central idea is worth building on. The plan, controls, gates and statistics are in [`docs/EXPERIMENT-PLAN.md`](docs/EXPERIMENT-PLAN.md).
 
 ## Status (honest)
-- **Done and tested (60 tests):** 24 coding tasks with hidden tests, a sandboxed runner, hash-chained versioned memory with rollback, relevance retrieval, three conditions (baseline, lucifer, irrelevant-notes control), a task-level bootstrap, the three promotion gates, a report, and an Ollama backend (tested against a stand-in server).
+- **Done and tested (60 tests):** 50 coding tasks (8 pitfall families plus a transfer set) with hidden tests, a sandboxed runner, hash-chained versioned memory with rollback, relevance retrieval, three conditions (baseline, lucifer, irrelevant-notes control), a task-level bootstrap, the three promotion gates, a report, and an Ollama backend (tested against a stand-in server).
 - **Proven by simulation:** the harness gives the right answer about agents whose behaviour is known: one that cannot learn is reported as improving 0 times in 20 to 40 runs; one that learns is detected; one hurt by memory is reported as hurt; forgetting is caught.
-- **Calibrated on real models (baseline only):** see [`docs/CALIBRATION.md`](docs/CALIBRATION.md). The 24 tasks are too easy for strong models (96–100% pass@1), so the experiment itself has not been run.
-- **Not done:** the Lucifer-vs-baseline experiment on a real model. The 24-task set is too small to trust a "no effect" result (the power table in the plan shows why: 12 primary tasks detect a real effect 32% of the time, 48 tasks 98%); the real run needs at least 48 similar+transfer tasks, calibrated so the baseline passes 20–80% of them.
+- **Calibrated on real models (baseline only):** see [`docs/CALIBRATION.md`](docs/CALIBRATION.md). Those runs used the first 24 tasks, which were too easy for strong models (96–100% pass@1). The set has since been extended with four harder families (interval merging, exact money arithmetic, quoted-text parsing, search boundaries); their difficulty is **not yet calibrated** on any model.
+- **Not done:** the Lucifer-vs-baseline experiment on a real model. The current set has 26 similar+transfer tasks, which detects a real effect only about half the time (the power table in the plan: 12 tasks 32%, 26 tasks 53%, 52 tasks 98%); the real run needs at least 48 similar+transfer tasks, calibrated so the baseline passes 20–80% of them.
 
 ## Dashboard: see every step of the processing
 ```bash
