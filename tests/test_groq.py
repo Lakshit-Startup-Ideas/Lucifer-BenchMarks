@@ -69,3 +69,36 @@ def test_calibration_over_http(server, tmp_path):
     text = render_calibration(per_task, "groq:m")
     assert f"too easy (above 80%): {len(TASKS)}" in text and "must be made harder" in text
     assert (tmp_path / "per_task.json").exists()
+
+
+def test_a_dropped_connection_is_retried(monkeypatch):
+    """The server closes the connection without answering once (as happened on a real run), then answers normally."""
+    import socket
+
+    monkeypatch.setenv("GROQ_API_KEY", KEY)
+    good = {"count": 0, "always": False}
+
+    class Flaky(BaseHTTPRequestHandler):
+        def do_POST(self):
+            self.rfile.read(int(self.headers["content-length"]))
+            good["count"] += 1
+            if good["always"] or good["count"] == 1:
+                self.connection.shutdown(socket.SHUT_RDWR)  # drop it with no response
+                return
+            data = json.dumps({"choices": [{"message": {"content": "```python\ndef f():\n    pass\n```"}}], "usage": {"prompt_tokens": 3, "completion_tokens": 4}}).encode()
+            self.send_response(200); self.send_header("content-length", str(len(data))); self.end_headers(); self.wfile.write(data)
+
+        def log_message(self, *a):
+            pass
+
+    s = HTTPServer(("127.0.0.1", 0), Flaky)
+    Thread(target=s.serve_forever, daemon=True).start()
+    try:
+        monkeypatch.setattr("time.sleep", lambda _s: None)
+        g = GroqBackend("m", base_url=f"http://127.0.0.1:{s.server_port}/x", min_interval_s=0).generate("hi", seed=1)
+        assert g.prompt_tokens == 3 and good["count"] == 2
+        with pytest.raises(RuntimeError, match="connection failed"):
+            good["always"] = True  # keep dropping
+            GroqBackend("m", base_url=f"http://127.0.0.1:{s.server_port}/x", min_interval_s=0, max_retries=1).generate("hi", seed=1)
+    finally:
+        s.shutdown()

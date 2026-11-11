@@ -11,7 +11,7 @@ from .backends.base import Backend
 from .memory import Memory
 from .retrieval import least_relevant, relevant
 from .sandbox import Executor, extract_code
-from .tasks import Task, by_split
+from .tasks import TASKS, Task, by_split
 from .tracing import Tracer
 
 CONDITIONS = ("baseline", "lucifer", "irrelevant")
@@ -28,6 +28,7 @@ class Config:
     retries: int = 1
     run_id: str = "run"
     out_dir: Path | None = None
+    tasks: tuple[Task, ...] | None = None  # the task set to run; default is every task
 
 
 @dataclass
@@ -106,7 +107,8 @@ def _solve(cfg: Config, task: Task, phase: str, seed: int, condition: str, memor
 
 def run_experiment(cfg: Config, progress=None) -> Result:
     out = Result()
-    experience, similar, transfer = by_split("exp"), by_split("sim"), by_split("xfer")
+    pool = cfg.tasks if cfg.tasks is not None else TASKS
+    experience, similar, transfer = by_split("exp", pool), by_split("sim", pool), by_split("xfer", pool)
     for seed in cfg.seeds:
         order_rng = random.Random(f"order-{seed}")
         exp_order = experience[:]
@@ -131,5 +133,5 @@ def run_experiment(cfg: Config, progress=None) -> Result:
         (cfg.out_dir / "attempts.jsonl").write_text("\n".join(json.dumps(a) for a in out.attempts) + "\n")
         (cfg.out_dir / "spans.jsonl").write_text("\n".join(json.dumps(sp) for sp in out.spans) + "\n")
         (cfg.out_dir / "memories.json").write_text(json.dumps(out.memories))
-        (cfg.out_dir / "meta.json").write_text(json.dumps({"backend": cfg.backend.name, "seeds": list(cfg.seeds), "k": cfg.k, "retries": cfg.retries, "run_id": cfg.run_id}))
+        (cfg.out_dir / "meta.json").write_text(json.dumps({"backend": cfg.backend.name, "seeds": list(cfg.seeds), "k": cfg.k, "tasks": len(pool), "retries": cfg.retries, "run_id": cfg.run_id}))
     return out

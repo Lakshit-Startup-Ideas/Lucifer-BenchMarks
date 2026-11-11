@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 from .experiment import Config, run_experiment
+from .tasks import TASK_SETS, task_set
 from .report import load, render
 from .sandbox import FastExecutor, SandboxExecutor
 
@@ -12,11 +13,11 @@ from .sandbox import FastExecutor, SandboxExecutor
 def _make_backend(a, parser):
     if a.backend == "ollama":
         from .backends.ollama import OllamaBackend
-        return OllamaBackend(a.model, a.host)
+        return OllamaBackend(a.model, a.host, temperature=a.temperature)
     if a.backend == "groq":
         from .backends.groq import GroqBackend
         try:
-            return GroqBackend(a.model, min_interval_s=a.min_interval, reasoning_effort=a.reasoning_effort)
+            return GroqBackend(a.model, temperature=a.temperature, min_interval_s=a.min_interval, reasoning_effort=a.reasoning_effort)
         except RuntimeError as e:
             parser.error(str(e))
     parser.error(f"unknown backend {a.backend}")
@@ -31,10 +32,12 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--host", default="http://127.0.0.1:11434")
     run.add_argument("--seeds", type=int, default=5)
     run.add_argument("--k", type=int, default=3, help="lessons shown per task")
+    run.add_argument("--taskset", choices=TASK_SETS, default="all", help="pitfall (fully specified tasks), convention (hidden conventions) or all")
     run.add_argument("--out", type=Path, help="results folder (default results/<run id>)")
     run.add_argument("--run-id", default=None)
     run.add_argument("--min-interval", type=float, default=2.2, help="seconds between Groq calls (free-tier rate limit)")
     run.add_argument("--reasoning-effort", choices=["low", "medium", "high"], help="for Groq reasoning models such as gpt-oss")
+    run.add_argument("--temperature", type=float, default=0.3, help="sampling temperature (higher gives more variety between seeds)")
     cal = sub.add_parser("calibrate", help="run the baseline only and show which tasks are too easy or too hard")
     cal.add_argument("--backend", default="groq", help="ollama | groq")
     cal.add_argument("--model", required=True)
@@ -42,6 +45,8 @@ def main(argv: list[str] | None = None) -> int:
     cal.add_argument("--seeds", type=int, default=3)
     cal.add_argument("--min-interval", type=float, default=2.2)
     cal.add_argument("--reasoning-effort", choices=["low", "medium", "high"])
+    cal.add_argument("--temperature", type=float, default=0.3)
+    cal.add_argument("--taskset", choices=TASK_SETS, default="all")
     cal.add_argument("--out", type=Path)
     dash = sub.add_parser("dashboard", help="open the web dashboard over the saved runs")
     dash.add_argument("--results", type=Path, default=Path("results"))
@@ -64,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
         from .calibrate import calibrate, render_calibration
         backend = _make_backend(a, p)
         out = a.out or Path("results") / f"calibrate-{a.backend}-{a.model}".replace(":", "_").replace("/", "_")
-        per_task = calibrate(backend, SandboxExecutor(), tuple(range(a.seeds)), out, progress=lambda s: print(f"seed {s} done", file=sys.stderr))
+        per_task = calibrate(backend, SandboxExecutor(), tuple(range(a.seeds)), out, progress=lambda s: print(f"seed {s} done", file=sys.stderr), tasks=task_set(a.taskset))
         print(render_calibration(per_task, backend.name))
         return 0
 
@@ -80,7 +85,7 @@ def main(argv: list[str] | None = None) -> int:
         p.error(f"unknown backend {a.backend}")
     run_id = a.run_id or f"{a.backend}-{a.model or 'sim'}".replace(":", "_").replace("/", "_")
     out = a.out or Path("results") / run_id
-    cfg = Config(backend, executor, seeds=tuple(range(a.seeds)), k=a.k, run_id=run_id, out_dir=out)
+    cfg = Config(backend, executor, seeds=tuple(range(a.seeds)), k=a.k, run_id=run_id, out_dir=out, tasks=task_set(a.taskset))
     run_experiment(cfg, progress=lambda s, c: print(f"seed {s} · {c} done", file=sys.stderr))
     print(render(*load(out)))
     print(f"\nSaved to {out}/")

@@ -6,6 +6,7 @@ the run are written into the results; for the final claim, prefer a model you ru
 """
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import re
@@ -60,6 +61,12 @@ class GroqBackend:
                     continue
                 detail = e.read().decode(errors="replace")[:200].replace(self._key, "***")
                 raise RuntimeError(f"Groq HTTP {e.code}: {detail}") from None
+            except (urllib.error.URLError, http.client.HTTPException, ConnectionError, TimeoutError) as e:
+                # the connection dropped or timed out: wait and try again, like a rate limit
+                if attempt < self.max_retries:
+                    time.sleep(min(30.0, 2.0 ** attempt))
+                    continue
+                raise RuntimeError(f"Groq connection failed after {self.max_retries + 1} tries: {type(e).__name__}") from None
         message = (data.get("choices") or [{}])[0].get("message") or {}
         text = re.sub(r"<think>.*?</think>", "", message.get("content") or "", flags=re.DOTALL | re.IGNORECASE)
         usage = data.get("usage") or {}

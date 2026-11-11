@@ -1,7 +1,7 @@
 import pytest
 
 from lucifer.sandbox import SandboxExecutor, extract_code
-from lucifer.tasks import FAMILIES, TASKS, by_split
+from lucifer.tasks import FAMILIES, TASKS, by_split, task_set
 
 executor = SandboxExecutor()
 
@@ -15,13 +15,32 @@ def test_reference_passes_and_naive_fails(task):
 
 
 def test_task_set_shape():
-    assert len({t.id for t in TASKS}) == len(TASKS)
+    assert len({t.id for t in TASKS}) == len(TASKS) == 80
+    for name, size in (("pitfall", 50), ("convention", 30), ("all", 80)):
+        assert len(task_set(name)) == size
     for family in FAMILIES:
-        assert sum(1 for t in TASKS if t.family == family and t.split == "exp") == 3
-        assert sum(1 for t in TASKS if t.family == family and t.split == "sim") == 2
-    assert len(by_split("xfer")) == 10 and all(t.family == "mixed" for t in by_split("xfer"))
+        for split, expected in (("exp", 3), ("sim", 2 if family in ("empty", "range", "order", "text", "interval", "money", "parse", "boundary") else 3)):
+            assert sum(1 for t in TASKS if t.family == family and t.split == split) == expected, (family, split)
+    assert len(by_split("xfer")) == 16 and all(t.family == "mixed" for t in by_split("xfer"))
     assert all(len(t.tests) >= 3 for t in TASKS)
-    assert len(TASKS) == 50 and len(by_split("sim")) + len(by_split("xfer")) == 26
+    assert len(by_split("sim", task_set("pitfall"))) + len(by_split("xfer", task_set("pitfall"))) == 26
+    assert len(by_split("sim", task_set("convention"))) + len(by_split("xfer", task_set("convention"))) == 12 + 6
+    with pytest.raises(ValueError):
+        task_set("nope")
+
+
+def test_convention_tasks_hide_their_convention_from_the_spec():
+    """The point of the convention set: nothing in the task text says how identifiers, prices, dates or error messages must look."""
+    for t in task_set("convention"):
+        words = t.spec.replace(f"`{t.entry}", "").lower()  # the function name itself may say format_*
+        if t.family == "ident":
+            assert "00" not in words and "pad" not in words and "prefix" not in words
+        if t.family == "price":
+            assert "₹" not in words and "comma" not in words and "decimal" not in words and "separator" not in words
+        if t.family == "date":
+            assert "mar" not in words.split() and "dd" not in words and "month name" not in words
+        if t.family == "errors":
+            assert "invalid" not in words and "message" not in words
 
 
 def test_sandbox_reports_errors_timeouts_and_missing_function():
