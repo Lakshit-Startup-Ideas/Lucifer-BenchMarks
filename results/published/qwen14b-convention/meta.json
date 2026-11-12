@@ -1,0 +1,1 @@
+{"backend": "ollama:qwen2.5-coder:14b", "seeds": [0, 1, 2, 3, 4], "k": 3, "tasks": 30, "retries": 1, "run_id": "qwen14b-convention", "merged_from": ["qwen14b-convention-s0", "qwen14b-convention-s1", "qwen14b-convention-s2", "qwen14b-convention-s3", "qwen14b-convention-s4"]}

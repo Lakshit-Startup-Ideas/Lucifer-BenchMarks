@@ -1,0 +1,14 @@
+Run qwen14b-convention · backend ollama:qwen2.5-coder:14b · seeds 5 · lessons shown per task 3
+
+condition    similar  transfer   replay   pass@2 (sim+xfer)  avg tokens/task
+baseline          0%        0%       0%                 52%              395
+lucifer          67%       17%      98%                 82%              432
+irrelevant        0%        0%       2%                 53%              754
+
+Gate 1 · improvement: PASS  [improves]
+    lucifer − baseline: +0.50 (95% interval +0.30 to +0.70)
+    lucifer − irrelevant: +0.50 (95% interval +0.30 to +0.70)
+Gate 2 · retention:   INCONCLUSIVE (the baseline masters no task, so there is nothing to lose)  mean drop +0.00 over 0 mastered tasks
+Gate 3 · auditability: PASS  10 memory stores audited
+
+All three gates: NOT passed
