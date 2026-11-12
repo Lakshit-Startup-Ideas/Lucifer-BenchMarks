@@ -31,6 +31,7 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--model", help="Ollama model tag (for --backend ollama)")
     run.add_argument("--host", default="http://127.0.0.1:11434")
     run.add_argument("--seeds", type=int, default=5)
+    run.add_argument("--first-seed", type=int, default=0, help="first seed number (lets one experiment be split across several runs and merged)")
     run.add_argument("--k", type=int, default=3, help="lessons shown per task")
     run.add_argument("--taskset", choices=TASK_SETS, default="all", help="pitfall (fully specified tasks), convention (hidden conventions) or all")
     run.add_argument("--out", type=Path, help="results folder (default results/<run id>)")
@@ -52,6 +53,10 @@ def main(argv: list[str] | None = None) -> int:
     dash.add_argument("--results", type=Path, default=Path("results"))
     dash.add_argument("--port", type=int, default=8765)
     dash.add_argument("--no-open", action="store_true")
+    mrg = sub.add_parser("merge", help="join runs of one experiment that covered different seeds")
+    mrg.add_argument("folders", type=Path, nargs="+")
+    mrg.add_argument("--out", type=Path, required=True)
+    mrg.add_argument("--run-id", required=True)
     rep = sub.add_parser("report", help="print the results table and the three gates")
     rep.add_argument("folder", type=Path)
     a = p.parse_args(argv)
@@ -59,6 +64,15 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "dashboard":
         from .server import serve
         serve(a.results, a.port, open_browser=not a.no_open)
+        return 0
+
+    if a.cmd == "merge":
+        from .merge import merge_runs
+        try:
+            meta = merge_runs(a.folders, a.out, a.run_id)
+        except ValueError as e:
+            p.error(str(e))
+        print(f"Merged {len(a.folders)} runs ({len(meta['seeds'])} seeds) into {a.out}/")
         return 0
 
     if a.cmd == "report":
@@ -85,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
         p.error(f"unknown backend {a.backend}")
     run_id = a.run_id or f"{a.backend}-{a.model or 'sim'}".replace(":", "_").replace("/", "_")
     out = a.out or Path("results") / run_id
-    cfg = Config(backend, executor, seeds=tuple(range(a.seeds)), k=a.k, run_id=run_id, out_dir=out, tasks=task_set(a.taskset))
+    cfg = Config(backend, executor, seeds=tuple(range(a.first_seed, a.first_seed + a.seeds)), k=a.k, run_id=run_id, out_dir=out, tasks=task_set(a.taskset))
     run_experiment(cfg, progress=lambda s, c: print(f"seed {s} · {c} done", file=sys.stderr))
     print(render(*load(out)))
     print(f"\nSaved to {out}/")

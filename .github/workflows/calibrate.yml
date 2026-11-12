@@ -1,0 +1,65 @@
+name: Calibrate
+
+# Baseline only (no memory): shows which tasks are too easy or too hard for a model, so the real run uses a model with room to improve.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        default: qwen2.5-coder:3b
+      taskset:
+        description: pitfall | convention | all
+        default: convention
+      seeds:
+        default: "2"
+      temperature:
+        default: "0.7"
+
+permissions:
+  contents: read
+
+env:
+  OLLAMA_VERSION: v0.40.16
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+      - name: Install Ollama (pinned release)
+        run: |
+          curl -fsSL "https://github.com/ollama/ollama/releases/download/${OLLAMA_VERSION}/ollama-linux-amd64.tar.zst" | sudo tar x --zstd -C /usr
+          ollama --version
+      - uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ inputs.model }}
+      - name: Start Ollama and pull the model
+        env:
+          MODEL: ${{ inputs.model }}
+        run: |
+          nohup ollama serve > ollama.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs http://127.0.0.1:11434/api/tags >/dev/null && break; sleep 2; done
+          ollama pull "$MODEL"
+      - name: Calibrate
+        env:
+          MODEL: ${{ inputs.model }}
+          TASKSET: ${{ inputs.taskset }}
+          SEEDS: ${{ inputs.seeds }}
+          TEMP: ${{ inputs.temperature }}
+        run: |
+          lucifer calibrate --backend ollama --model "$MODEL" --taskset "$TASKSET" --seeds "$SEEDS" --temperature "$TEMP" --out out | tee calibration.txt
+          { echo '## Calibration'; echo; echo '```'; cat calibration.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: calibration
+          path: |
+            out/
+            calibration.txt
+            ollama.log

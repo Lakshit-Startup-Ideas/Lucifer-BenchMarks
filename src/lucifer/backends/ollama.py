@@ -17,7 +17,7 @@ class OllamaBackend:
 
     def generate(self, prompt: str, *, seed: int, task: Task | None = None) -> Generation:
         body = json.dumps({"model": self.model, "stream": False, "messages": [{"role": "user", "content": prompt}],
-                           "options": {"temperature": self.temperature, "seed": seed}}).encode()
+                           "keep_alive": "30m", "options": {"temperature": self.temperature, "seed": seed, "num_predict": 700}}).encode()
         req = urllib.request.Request(f"{self.host}/api/chat", data=body, headers={"content-type": "application/json"})
         t0 = time.perf_counter()
         with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:

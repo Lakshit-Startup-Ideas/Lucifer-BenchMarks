@@ -1,0 +1,147 @@
+name: Experiment
+
+# Runs the three-condition experiment with a local Ollama model on GitHub's runners, one job per seed, then joins the seeds,
+# applies the three gates and writes the result into the job summary. Nothing runs on anyone's laptop. No secrets are needed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Ollama model tag (pinned in the results)
+        default: qwen2.5-coder:3b
+      taskset:
+        description: pitfall | convention | all
+        default: convention
+      seeds:
+        description: Number of seeds (one parallel job each)
+        default: "3"
+      temperature:
+        description: Sampling temperature
+        default: "0.7"
+      name:
+        description: Run name (letters, digits, dashes)
+        default: ollama-convention
+      publish:
+        description: Commit the finished result to results/published/ (true | false)
+        default: "false"
+
+permissions:
+  contents: read
+
+env:
+  OLLAMA_VERSION: v0.40.16
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      seeds: ${{ steps.m.outputs.seeds }}
+    steps:
+      - id: m
+        env:
+          N: ${{ inputs.seeds }}
+        run: |
+          case "$N" in ''|*[!0-9]*) echo "seeds must be a number"; exit 1;; esac
+          [ "$N" -ge 1 ] && [ "$N" -le 10 ] || { echo "seeds must be 1 to 10"; exit 1; }
+          echo "seeds=$(python3 -c "import json,sys;print(json.dumps(list(range(int(sys.argv[1])))))" "$N")" >> "$GITHUB_OUTPUT"
+
+  run:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    strategy:
+      fail-fast: false
+      matrix:
+        seed: ${{ fromJson(needs.plan.outputs.seeds) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+
+      - name: Install Ollama (pinned release)
+        run: |
+          curl -fsSL "https://github.com/ollama/ollama/releases/download/${OLLAMA_VERSION}/ollama-linux-amd64.tar.zst" | sudo tar x --zstd -C /usr
+          ollama --version
+
+      - name: Cache models
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama/models
+          key: ollama-${{ inputs.model }}
+
+      - name: Start Ollama and pull the model
+        env:
+          MODEL: ${{ inputs.model }}
+        run: |
+          nohup ollama serve > ollama.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs http://127.0.0.1:11434/api/tags >/dev/null && break; sleep 2; done
+          ollama pull "$MODEL"
+
+      - name: Run seed ${{ matrix.seed }}
+        env:
+          MODEL: ${{ inputs.model }}
+          TASKSET: ${{ inputs.taskset }}
+          TEMP: ${{ inputs.temperature }}
+          NAME: ${{ inputs.name }}
+        run: |
+          lucifer run --backend ollama --model "$MODEL" --taskset "$TASKSET" --temperature "$TEMP" \
+            --seeds 1 --first-seed ${{ matrix.seed }} --run-id "$NAME-s${{ matrix.seed }}" --out "out/$NAME-s${{ matrix.seed }}"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: seed-${{ matrix.seed }}
+          path: |
+            out/
+            ollama.log
+          retention-days: 30
+
+  aggregate:
+    needs: run
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: seed-*
+          path: parts
+      - name: Join the seeds, apply the gates
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          folders=$(ls -d parts/seed-*/out/* 2>/dev/null | tr '\n' ' ')
+          [ -n "$folders" ] || { echo "no seed finished"; exit 1; }
+          lucifer merge $folders --out "merged/$NAME" --run-id "$NAME"
+          lucifer report "merged/$NAME" | tee report.txt
+          { echo '## Lucifer result'; echo; echo '```'; cat report.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: merged-run
+          path: |
+            merged/
+            report.txt
+          retention-days: 90
+      - name: Publish the result to the repository
+        if: ${{ inputs.publish == 'true' }}
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          git config user.name lllakshit
+          git config user.email llakshitmathur239@gmail.com
+          dest="results/published/$NAME"
+          mkdir -p "$dest"
+          cp merged/$NAME/{rows.json,audits.json,meta.json} report.txt "$dest/"
+          git add -f "$dest"
+          git commit -m "Publish result: $NAME"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
