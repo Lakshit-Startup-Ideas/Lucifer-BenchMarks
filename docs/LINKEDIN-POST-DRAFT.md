@@ -29,25 +29,25 @@ Code and method are open: github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks
 
 ---
 
-## Version B: results post (fill after the run; delete lines that don't apply)
+## Version B: results post (numbers filled from the real run, 12 Nov 2026; not posted)
 
-**Result: an open-weight model with memory vs without, on tasks with hidden conventions.**
+**First real result: an open-weight model with memory vs without, on tasks with hidden conventions.**
 
-Model: `openai/gpt-oss-20b` · 30 tasks · 3 seeds · same retries for everyone
+Model: `qwen2.5-coder:14b` · 30 tasks (18 scored) · 5 seeds · same retries for everyone · run entirely on GitHub Actions
 
 | | first-try success (similar + transfer) |
 |---|---|
-| No memory | [ ]% |
-| Relevant memory (Lucifer) | [ ]% |
-| Wrong memory (control) | [ ]% |
+| No memory | 0% |
+| Relevant memory (Lucifer) | 50% (similar 67%, transfer 17%) |
+| Wrong memory (control) | 0% |
 
-Lucifer − no memory: [ ] points (95% interval [ ] to [ ])
-Lucifer − wrong memory: [ ] points (95% interval [ ] to [ ])
-Gates: improvement [pass/fail] · retention [pass/fail/inconclusive] · auditability [pass/fail]
+Lucifer − no memory: +50 points (95% interval +30 to +70)
+Lucifer − wrong memory: +50 points (95% interval +30 to +70)
+Gates: improvement pass · retention inconclusive · auditability pass
 
-What it means: [one honest sentence].
-What it doesn't: only [ ] tasks, [ ] seeds, one model. This is a first look, not proof. Next: more tasks, a second model, a local model.
+What it means: memory built from earlier test feedback lets the model get a hidden house convention right on the first try, on similar tasks.
+What it doesn't: the 0% baseline is by design (the conventions are hidden), so the gain is mostly "skips the failed first try". After one retry, no memory already reaches 52%. Transfer to less similar tasks is weak (17%). Only 18 scored tasks, one model, tasks I wrote. A first look, not proof. Next: more tasks, a second model, a held-out task family.
 
-Full method and raw numbers: github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks
+Full method, raw numbers and every workflow: github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks
 
 #AI #LLM #Benchmarks #BuildInPublic

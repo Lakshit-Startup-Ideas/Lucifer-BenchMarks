@@ -12,7 +12,7 @@ Everything else (dashboard, other mechanisms, training, wearables, factories) wa
 |---|---|---|
 | **A. baseline** | no | no |
 | **B. lucifer** | yes | the most *relevant* lessons (lexical retrieval, top 3) |
-| **C. shuffled** | yes | *random* lessons, same count and length |
+| **C. irrelevant** | yes | the *least* relevant lessons, same count (the code's control; random picks were often relevant by luck) |
 
 C is the control that matters most. If B beats A but not C, the gain came from a longer prompt, not from learning.
 

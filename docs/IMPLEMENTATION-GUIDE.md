@@ -55,7 +55,7 @@ Lucifer V1 is an experiment harness (not a new model, not AGI) for one hypothesi
 
 The repo contains: a task bank with hidden tests, a sandboxed code runner, a hash-chained versioned memory store with rollback, TF-IDF retrieval, three experimental conditions, a task-level paired bootstrap, three pass/fail "promotion gates", OpenTelemetry-style tracing, a local web dashboard, a difficulty-calibration tool, simulated agents with known behaviour to test the harness itself, and backends for Groq, Ollama and the simulators. A "no effect" result is a valid, reportable outcome.
 
-**Where we are in one line:** the harness is built and tested (121 tests pass); the first real Lucifer-vs-baseline run on a real model (`openai/gpt-oss-20b` via Groq, 30 "hidden convention" tasks, 3 seeds) is **running now**, and no results are in yet.
+**Where we are in one line:** the harness is built and tested (125 tests pass) and the first real run is in (section 7): on `qwen2.5-coder:14b`, 30 hidden-convention tasks, 5 seeds, run on GitHub's runners, lucifer beat both baseline and the wrong-notes control by +0.50 first-try (interval +0.30 to +0.70), with retention inconclusive. One model and 18 primary tasks, so a first look, not proof.
 
 ---
 
@@ -434,10 +434,40 @@ Flags for `run`: `--backend {sim-null,sim-learner,sim-harmful,ollama,groq}` · `
 
 ---
 
-## 7. Where the real experiment stands right now
+## 7. The first real result (12 Nov 2026)
 
 | Item | Value |
 |---|---|
+| Where it ran | GitHub Actions runners (no GPU), workflow `experiment.yml`, run 43163827087, one job per seed |
+| Model | `qwen2.5-coder:14b` via Ollama on the runner, temperature 0.7 |
+| Size | 30 convention tasks (18 primary: 12 similar + 6 transfer) × 3 conditions × 5 seeds, 630 recorded attempts |
+| Where the numbers live | `results/published/qwen14b-convention/` (`report.txt`, `rows.json`, `audits.json`, `meta.json`), committed by the workflow as `lllakshit` |
+
+**Result (pass@1 = right on the first try, no retry):**
+
+| Condition | similar | transfer | replay | pass@2 (sim+xfer) |
+|---|---|---|---|---|
+| baseline (no memory) | 0% | 0% | 0% | 52% |
+| lucifer (relevant memory) | 67% | 17% | 98% | 82% |
+| irrelevant (wrong notes) | 0% | 0% | 2% | 53% |
+
+- lucifer − baseline: **+0.50** (95% interval +0.30 to +0.70)
+- lucifer − irrelevant: **+0.50** (95% interval +0.30 to +0.70)
+- Gate 1 (improvement): **PASS** · Gate 2 (retention): **INCONCLUSIVE** (baseline masters no task, so nothing to lose) · Gate 3 (auditability): **PASS** (10 memory stores audited)
+- Per seed, lucifer solved 8, 10, 8, 8, 11 of 18 primary tasks first try; baseline and irrelevant solved 0 of 18 in every seed.
+
+**How to read it honestly:**
+
+- The conventions are hidden by design, so baseline **cannot** pass first try. A 0% baseline is expected, not a surprise. What the result shows: lessons learned from test feedback in the experience phase do get retrieved and used on similar tasks (67%).
+- Transfer is weak (17%). Lucifer helps mostly where the new task is close to the old one.
+- Replay at 98% is memorisation: the notes contain the answers. It is not evidence of understanding.
+- After one retry, baseline already reaches 52%, so the model can fix a convention once told. Memory's gain is skipping that failed first try.
+- Limits: one model, 18 primary tasks, 5 seeds, a task set I designed. This is a first look, not proof. Wrong notes did not hurt first-try accuracy (still 0%), but cost more tokens (754 vs 432 per task), so they add noise.
+- Earlier side result (Groq `openai/gpt-oss-20b`, seed 0 only, run locally): lucifer +0.44 over baseline, interval +0.22 to +0.67. Seeds 1–2 were not completed because of Groq's daily token cap, so this is not included in the 5-seed result.
+
+---
+
+---|
 | Command | `lucifer run --backend groq --model openai/gpt-oss-20b --reasoning-effort low --taskset convention --seeds 3 --temperature 0.7 --run-id real-conv-gpt-oss-20b` |
 | Size | 30 tasks × 3 conditions × 3 seeds; roughly 580 model calls expected (sized with a simulated run) |
 | Throttle | at least 2.2 s between calls; wall time ≈ 25–40 min (Groq free tier rate limits can add waiting) |
@@ -472,7 +502,6 @@ How to read it when it lands: Gate 1 passing with an interval above zero would b
 - No mid-strength model yet. By decision we do **not** run local models (Ollama would make the Mac heavy); the next candidates are other hosted models (for example a larger or smaller Groq model) or a cloud runner.
 - Semantic (embedding) retrieval not built.
 - Container sandbox not built.
-- Doc drift to fix: `README.md` still says "89 tests" and the plan still calls the control "shuffled"; the real numbers are 121 tests and `irrelevant`.
 
 **Threats to validity** (things that could make a result misleading)
 - **Memorisation:** the base model may have seen similar tasks. Mitigation: the replay phase and fresh task families.
@@ -486,7 +515,7 @@ How to read it when it lands: Gate 1 passing with an interval above zero would b
 
 ## 10. What happens next
 
-1. **Read the real run** in the dashboard; report Lucifer vs baseline vs control with intervals and gate verdicts.
+1. **Done:** the first real run is read and recorded in section 7.
 2. **If promising:** grow the convention set to ≥ 48 primary tasks (new conventions, not renamed copies), run 5+ seeds, re-check the gates; try a second model.
 3. **If not:** report "no measurable effect at this size", inspect traces for *why* (retrieval misses? lessons ignored by the model?), and change one thing at a time.
 4. **Strengthen the evidence:** a mid-strength hosted model (no local models, by decision); semantic retrieval; a container sandbox; a held-out task family never seen during design.

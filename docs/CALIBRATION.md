@@ -21,3 +21,15 @@ Question: does the 24-task set leave room to show learning? The plan keeps tasks
 
 ## Limits
 Three seeds per task is thin; hosted models can change under the same name; the free tier returns whatever it serves that day.
+
+## Calibration on GitHub runners (12 Nov 2026)
+Run on CPU runners with Ollama, 1 seed, convention set unless stated. The first model that can fix a convention once told is the 14b, so it was chosen for the real run.
+
+| Model | pass@1 | pass@2 | Note |
+|---|---|---|---|
+| `qwen2.5-coder:3b` | 0% | 17% | about 10.5 s per call |
+| `qwen2.5-coder:7b` | 0% | 26% | about 11 s per call |
+| `qwen2.5-coder:14b` | 0% | 60% | about 27 s per call |
+| `qwen2.5-coder:3b` (pitfall set) | 73% | 74% | tasks split into always-pass and never-pass |
+
+Small models cannot apply a hidden convention even after feedback, so memory has nothing to add there. The first real result is in `results/published/qwen14b-convention/`.
