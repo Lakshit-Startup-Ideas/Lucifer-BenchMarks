@@ -1,6 +1,6 @@
 # Lucifer V1: experiment plan
 
-Status: draft v0.1. Nothing here has been run on a real model yet.
+Status: v0.1, the plan as written **before** any real run (kept unchanged below). The first real run is now done: convention task set, `qwen2.5-coder:14b`, 5 seeds, 12 Nov 2026. See section 7 of `docs/IMPLEMENTATION-GUIDE.md` and `results/published/qwen14b-convention/`. That run used 18 similar + transfer tasks, fewer than the roughly 48 this plan recommends (see "Power" below), so it is a first look, not a final verdict.
 
 ## The one claim
 > **H1.** An ordinary open-weight language model, given persistent memory of its own earlier attempts and a feedback signal, solves *later, related* tasks at a higher rate than the same model without them.

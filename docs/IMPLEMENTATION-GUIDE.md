@@ -467,23 +467,6 @@ Flags for `run`: `--backend {sim-null,sim-learner,sim-harmful,ollama,groq}` · `
 
 ---
 
----|
-| Command | `lucifer run --backend groq --model openai/gpt-oss-20b --reasoning-effort low --taskset convention --seeds 3 --temperature 0.7 --run-id real-conv-gpt-oss-20b` |
-| Size | 30 tasks × 3 conditions × 3 seeds; roughly 580 model calls expected (sized with a simulated run) |
-| Throttle | at least 2.2 s between calls; wall time ≈ 25–40 min (Groq free tier rate limits can add waiting) |
-| Progress at time of writing | running; seed 0 baseline finished; **no results yet** |
-| Output when done | `results/real-conv-gpt-oss-20b/` (open with the dashboard) |
-
-**Results section (to be filled in when the run finishes; nothing is invented here):**
-
-- lucifer − baseline (pass@1, similar+transfer): *pending*
-- lucifer − irrelevant: *pending*
-- Gate 1 / 2 / 3: *pending*
-
-How to read it when it lands: Gate 1 passing with an interval above zero would be the first real evidence for H1 on this model and this task family. With only 3 seeds and 18 primary tasks, even a pass should be followed by a bigger run before any claim is made; a fail would mean "no effect detected at this size", **not** "no effect exists".
-
----
-
 ## 8. Safety, secrets and honesty rules
 
 - **Secrets:** the Groq key is read only from the environment (`GROQ_API_KEY`), never from a file in the repo, never printed, and redacted in error messages. A temporary env file (mode 600) lives outside the repo and is deleted when the work is done. The GitHub token is passed for a single push via an HTTP header, not stored in git config or remotes. Tokens you pasted into chat should be **revoked** after use, and a fine-grained, repo-scoped token is safer next time.
@@ -497,9 +480,9 @@ How to read it when it lands: Gate 1 passing with an interval above zero would b
 ## 9. What is NOT done, and what could fool us
 
 **Not done**
-- No finished real Lucifer-vs-baseline result yet (run in progress).
+- Only one real run so far (section 7): one model, 18 scored tasks, 5 seeds. It is a first look, not proof.
 - Task counts are below the plan's target: the plan wants ~48+ calibrated similar+transfer tasks (ideally 100+ overall); the convention set has 18.
-- No mid-strength model yet. By decision we do **not** run local models (Ollama would make the Mac heavy); the next candidates are other hosted models (for example a larger or smaller Groq model) or a cloud runner.
+- No second model yet. The first run used `qwen2.5-coder:14b` on GitHub runners. By decision we do **not** run local models on the Mac; the next candidates are another model on a runner or a hosted API.
 - Semantic (embedding) retrieval not built.
 - Container sandbox not built.
 
