@@ -66,3 +66,10 @@ class Ledger:
         if expected_length is not None and len(self.entries) != expected_length:
             return False
         return expected_head is None or parent == expected_head
+
+    def verify_prefix(self, anchor_head: str, anchor_length: int) -> bool:
+        """The whole chain verifies AND its first `anchor_length` entries end at `anchor_head`. For an anchor stored earlier: the owner may have
+        appended since, but must not have rewritten or truncated anything the anchor covers."""
+        if not self.verify() or len(self.entries) < anchor_length:
+            return False
+        return (self.entries[anchor_length - 1].hash if anchor_length else GENESIS) == anchor_head
