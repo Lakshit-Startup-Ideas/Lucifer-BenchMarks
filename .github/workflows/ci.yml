@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      seeds:
+        description: Seeds for the M2 reproduction run
+        default: "20"
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: python -m pytest -q
+
+  m2-reproduce:
+    # Re-runs the M2 experiment and fails if any pre-registered verdict differs from the committed run (results/m2/run2.json).
+    # Numbers may differ in the last digits across platforms, so verdicts are compared, not raw values.
+    if: github.event_name == 'workflow_dispatch'
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+      - run: python -m lucv11.m2 "${{ inputs.seeds }}" rerun.json > /dev/null
+      - name: Compare verdicts with the committed run
+        run: |
+          python - <<'PY'
+          import json
+          new = json.load(open("rerun.json"))["analysis"]
+          old = json.load(open("results/m2/run2.json"))["analysis"]
+          keys = sorted(k for k in old if k.endswith("_pass"))
+          diff = {k: (old[k], new[k]) for k in keys if old[k] != new[k]}
+          print("verdicts:", {k: new[k] for k in keys})
+          if diff:
+              raise SystemExit(f"verdicts differ from committed run: {diff}")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m2-rerun
+          path: rerun.json
