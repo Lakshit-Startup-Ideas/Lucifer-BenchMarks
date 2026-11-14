@@ -34,4 +34,5 @@ Peers evaluating A's and M's packages: B and C.
 A pass shows that, in this simulation, peer evaluation on private data catches poisoned packages that valid metadata cannot, without blocking agreeing knowledge, and that versioned promotion can be rolled back. It does not show resistance to adaptive attackers (who could craft packages that look good on the peers' validation data), collusion among peers, privacy of the rule vectors, or anything about LLMs.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after run 1; thresholds NOT changed).** Registered verdicts: H6a PASS, H6b FAIL (honest shared-rule packages accepted by hybrid 0.722, needed 0.80), H6c PASS, H6d PASS, H6e PASS (properties), H6f reported. "0 of 180" poison accepted is bounded only to about 1.7% (rule of three); the bootstrap interval [0, 0] understates the uncertainty. See `M6-RESULTS.md`.
