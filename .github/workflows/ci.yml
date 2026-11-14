@@ -5,10 +5,6 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
-    inputs:
-      seeds:
-        description: Seeds for the M2 reproduction run
-        default: "20"
 
 permissions:
   contents: read
@@ -29,9 +25,9 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: python -m pytest -q
 
-  m2-reproduce:
-    # Re-runs the M2 experiment and fails if any pre-registered verdict differs from the committed run (results/m2/run2.json).
-    # Numbers may differ in the last digits across platforms, so verdicts are compared, not raw values.
+  reproduce:
+    # Reruns M2-M6 and M8 from scratch and fails if any registered verdict differs from the committed results (python -m lucv11.reproduce).
+    # Numbers are compared too and reported; on another platform they may differ in the last digits, verdicts must not.
     if: github.event_name == 'workflow_dispatch'
     needs: tests
     runs-on: ubuntu-latest
@@ -42,20 +38,9 @@ jobs:
         with:
           python-version: "3.13"
       - run: pip install -e .
-      - run: python -m lucv11.m2 "${{ inputs.seeds }}" rerun.json > /dev/null
-      - name: Compare verdicts with the committed run
-        run: |
-          python - <<'PY'
-          import json
-          new = json.load(open("rerun.json"))["analysis"]
-          old = json.load(open("results/m2/run2.json"))["analysis"]
-          keys = sorted(k for k in old if k.endswith("_pass"))
-          diff = {k: (old[k], new[k]) for k in keys if old[k] != new[k]}
-          print("verdicts:", {k: new[k] for k in keys})
-          if diff:
-              raise SystemExit(f"verdicts differ from committed run: {diff}")
-          PY
+      - run: python -m lucv11.reproduce reproduction.json
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: m2-rerun
-          path: rerun.json
+          name: reproduction
+          path: reproduction.json
