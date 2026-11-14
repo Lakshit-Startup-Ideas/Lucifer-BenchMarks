@@ -30,4 +30,5 @@ Metric: mean test accuracy over tenants and contexts. Paired difference, 95% boo
 A pass of H5a+H5b shows that whether to share depends on whether tenants' rules agree, so a review step must test agreement before promoting knowledge (M6). It does not show that real users' knowledge behaves like this. The properties show the prototype enforces its own rules in-process; they do not show a deployed system is secure.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after run 1; thresholds NOT changed).** Property hypotheses P1-P9 all pass. H5a PASS (personal minus pooled +0.147 in the conflict world). H5b FAIL as registered: pooled minus personal +0.0085 [+0.0006, +0.0162], below the 0.02 threshold. Mutation check of the security tests: first run was invalid (pytest imported unmutated code through `pythonpath`), redone correctly; see `M5-RESULTS.md`.
