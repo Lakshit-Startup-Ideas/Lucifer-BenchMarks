@@ -33,4 +33,5 @@ Written BEFORE any M7 code or run (14 Nov 2026). Amendments go at the bottom. Th
 Real network, TLS, OAuth/OIDC, a real browser, CAPTCHA, resource isolation of handler code (a timed-out handler thread keeps running), side channels, the 2026-07-28 MCP revision, A2A wire protocol.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after the run).** All properties passed; thresholds were properties and did not change. M5 interop result: `auto` and `legacy` pass, pinned `2026-07-28` fails (not claimed). Three test-code mistakes were fixed along the way (an 11-character string against `maxLength` 10, a confused first assertion in the redirect test, a fixture rate limit exhausted by earlier calls); none was a product defect. Mutation check: 21 of 22 killed, the survivor is an equivalent mutant. See `M7-RESULTS.md`.
