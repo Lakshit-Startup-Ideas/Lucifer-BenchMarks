@@ -1,0 +1,76 @@
+{
+ "poison_accept_accept-all": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "poison_accept_deterministic": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "poison_accept_hybrid": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "H6a_pass": true,
+ "H6b_honest_shared_accept_hybrid": [
+  0.7222222222222221,
+  0.6333333333333333,
+  0.8111111111111111
+ ],
+ "H6b_pass": false,
+ "H6c_honest_specific_accept_hybrid": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "H6c_pass": true,
+ "H6d_reviewed_minus_local_shared": [
+  0.10855555555555554,
+  0.09218518518518518,
+  0.12466666666666668
+ ],
+ "H6d_reviewed_minus_local_specific": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "H6d_blind_minus_local_shared": [
+  -0.1032222222222222,
+  -0.15922314814814814,
+  -0.049294444444444446
+ ],
+ "H6d_blind_minus_local_specific": [
+  -0.1455925925925926,
+  -0.1677037037037037,
+  -0.12407407407407407
+ ],
+ "H6d_pass": true,
+ "acceptance_by_category": {
+  "accept-all": {
+   "honest-shared": 1.0,
+   "honest-specific": 1.0,
+   "poison-blend": 1.0,
+   "poison-flip": 1.0,
+   "poison-random": 1.0
+  },
+  "deterministic": {
+   "honest-shared": 1.0,
+   "honest-specific": 1.0,
+   "poison-blend": 1.0,
+   "poison-flip": 1.0,
+   "poison-random": 1.0
+  },
+  "hybrid": {
+   "honest-shared": 0.7222222222222221,
+   "honest-specific": 0.0,
+   "poison-blend": 0.0,
+   "poison-flip": 0.0,
+   "poison-random": 0.0
+  }
+ },
+ "H6f_messages_per_package": 4.0,
+ "H6f_peer_evaluations_per_package": 2.0
+}

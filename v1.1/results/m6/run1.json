@@ -1,0 +1,1286 @@
+{
+ "analysis": {
+  "poison_accept_accept-all": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "poison_accept_deterministic": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "poison_accept_hybrid": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H6a_pass": true,
+  "H6b_honest_shared_accept_hybrid": [
+   0.7222222222222221,
+   0.6333333333333333,
+   0.8111111111111111
+  ],
+  "H6b_pass": false,
+  "H6c_honest_specific_accept_hybrid": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H6c_pass": true,
+  "H6d_reviewed_minus_local_shared": [
+   0.10855555555555554,
+   0.09218518518518518,
+   0.12466666666666668
+  ],
+  "H6d_reviewed_minus_local_specific": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "H6d_blind_minus_local_shared": [
+   -0.1032222222222222,
+   -0.15922314814814814,
+   -0.049294444444444446
+  ],
+  "H6d_blind_minus_local_specific": [
+   -0.1455925925925926,
+   -0.1677037037037037,
+   -0.12407407407407407
+  ],
+  "H6d_pass": true,
+  "acceptance_by_category": {
+   "accept-all": {
+    "honest-shared": 1.0,
+    "honest-specific": 1.0,
+    "poison-blend": 1.0,
+    "poison-flip": 1.0,
+    "poison-random": 1.0
+   },
+   "deterministic": {
+    "honest-shared": 1.0,
+    "honest-specific": 1.0,
+    "poison-blend": 1.0,
+    "poison-flip": 1.0,
+    "poison-random": 1.0
+   },
+   "hybrid": {
+    "honest-shared": 0.7222222222222221,
+    "honest-specific": 0.0,
+    "poison-blend": 0.0,
+    "poison-flip": 0.0,
+    "poison-random": 0.0
+   }
+  },
+  "H6f_messages_per_package": 4.0,
+  "H6f_peer_evaluations_per_package": 2.0
+ },
+ "raw": [
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6788888888888889,
+     "specific": 0.6677777777777777
+    },
+    "blind": {
+     "shared": 0.4088888888888889,
+     "specific": 0.5044444444444444
+    },
+    "reviewed": {
+     "shared": 0.7688888888888888,
+     "specific": 0.6677777777777777
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-random": 0.0,
+     "honest-shared": 0.3333333333333333,
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6366666666666667,
+     "specific": 0.6244444444444445
+    },
+    "blind": {
+     "shared": 0.561111111111111,
+     "specific": 0.4822222222222223
+    },
+    "reviewed": {
+     "shared": 0.66,
+     "specific": 0.6244444444444445
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "honest-shared": 1.0,
+     "poison-random": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6488888888888888,
+     "specific": 0.65
+    },
+    "blind": {
+     "shared": 0.6288888888888889,
+     "specific": 0.48444444444444446
+    },
+    "reviewed": {
+     "shared": 0.7655555555555557,
+     "specific": 0.65
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 0.6666666666666666,
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6255555555555555,
+     "specific": 0.6577777777777778
+    },
+    "blind": {
+     "shared": 0.3877777777777778,
+     "specific": 0.5155555555555557
+    },
+    "reviewed": {
+     "shared": 0.7855555555555555,
+     "specific": 0.6577777777777778
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0,
+     "poison-random": 0.0,
+     "honest-shared": 0.3333333333333333
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7366666666666667,
+     "specific": 0.6233333333333333
+    },
+    "blind": {
+     "shared": 0.6411111111111111,
+     "specific": 0.44333333333333336
+    },
+    "reviewed": {
+     "shared": 0.748888888888889,
+     "specific": 0.6233333333333333
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-random": 0.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7322222222222221,
+     "specific": 0.6122222222222223
+    },
+    "blind": {
+     "shared": 0.45222222222222225,
+     "specific": 0.5588888888888889
+    },
+    "reviewed": {
+     "shared": 0.7844444444444444,
+     "specific": 0.6122222222222223
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 0.6666666666666666,
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6411111111111111,
+     "specific": 0.6577777777777778
+    },
+    "blind": {
+     "shared": 0.5211111111111111,
+     "specific": 0.48666666666666664
+    },
+    "reviewed": {
+     "shared": 0.7666666666666666,
+     "specific": 0.6577777777777778
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "honest-shared": 1.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6577777777777777,
+     "specific": 0.7511111111111112
+    },
+    "blind": {
+     "shared": 0.5766666666666667,
+     "specific": 0.4955555555555556
+    },
+    "reviewed": {
+     "shared": 0.8211111111111111,
+     "specific": 0.7511111111111112
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "deterministic": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "hybrid": {
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "honest-shared": 0.6666666666666666
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7233333333333333,
+     "specific": 0.62
+    },
+    "blind": {
+     "shared": 0.81,
+     "specific": 0.5388888888888889
+    },
+    "reviewed": {
+     "shared": 0.7855555555555555,
+     "specific": 0.62
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "poison-flip": 0.0,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "honest-shared": 1.0,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7166666666666667,
+     "specific": 0.66
+    },
+    "blind": {
+     "shared": 0.62,
+     "specific": 0.5666666666666667
+    },
+    "reviewed": {
+     "shared": 0.85,
+     "specific": 0.66
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.5977777777777777,
+     "specific": 0.581111111111111
+    },
+    "blind": {
+     "shared": 0.45555555555555566,
+     "specific": 0.4677777777777778
+    },
+    "reviewed": {
+     "shared": 0.7333333333333334,
+     "specific": 0.581111111111111
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "poison-flip": 0.0,
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.65,
+     "specific": 0.5733333333333333
+    },
+    "blind": {
+     "shared": 0.73,
+     "specific": 0.5255555555555556
+    },
+    "reviewed": {
+     "shared": 0.8300000000000001,
+     "specific": 0.5733333333333333
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 0.6666666666666666,
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "poison-random": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6866666666666666,
+     "specific": 0.6733333333333332
+    },
+    "blind": {
+     "shared": 0.5955555555555555,
+     "specific": 0.5166666666666667
+    },
+    "reviewed": {
+     "shared": 0.7600000000000001,
+     "specific": 0.6733333333333332
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0
+    },
+    "deterministic": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0
+    },
+    "hybrid": {
+     "poison-flip": 0.0,
+     "honest-specific": 0.0,
+     "honest-shared": 1.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7055555555555556,
+     "specific": 0.6733333333333333
+    },
+    "blind": {
+     "shared": 0.43999999999999995,
+     "specific": 0.5233333333333333
+    },
+    "reviewed": {
+     "shared": 0.8377777777777777,
+     "specific": 0.6733333333333333
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 1.0,
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.701111111111111,
+     "specific": 0.638888888888889
+    },
+    "blind": {
+     "shared": 0.19777777777777775,
+     "specific": 0.40222222222222226
+    },
+    "reviewed": {
+     "shared": 0.8022222222222223,
+     "specific": 0.638888888888889
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 0.3333333333333333,
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6411111111111111,
+     "specific": 0.6577777777777777
+    },
+    "blind": {
+     "shared": 0.4855555555555555,
+     "specific": 0.4911111111111111
+    },
+    "reviewed": {
+     "shared": 0.71,
+     "specific": 0.6577777777777777
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7022222222222222,
+     "specific": 0.6933333333333334
+    },
+    "blind": {
+     "shared": 0.44333333333333336,
+     "specific": 0.5622222222222222
+    },
+    "reviewed": {
+     "shared": 0.7744444444444444,
+     "specific": 0.6933333333333334
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "poison-flip": 0.0,
+     "honest-shared": 0.6666666666666666
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.5688888888888889,
+     "specific": 0.6077777777777778
+    },
+    "blind": {
+     "shared": 0.7811111111111111,
+     "specific": 0.5022222222222222
+    },
+    "reviewed": {
+     "shared": 0.6855555555555556,
+     "specific": 0.6077777777777778
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "honest-shared": 0.3333333333333333,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6988888888888889,
+     "specific": 0.601111111111111
+    },
+    "blind": {
+     "shared": 0.6255555555555555,
+     "specific": 0.5644444444444444
+    },
+    "reviewed": {
+     "shared": 0.7977777777777778,
+     "specific": 0.601111111111111
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-flip": 0.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7011111111111111,
+     "specific": 0.6311111111111112
+    },
+    "blind": {
+     "shared": 0.4977777777777778,
+     "specific": 0.5511111111111111
+    },
+    "reviewed": {
+     "shared": 0.7966666666666667,
+     "specific": 0.6311111111111112
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0
+    },
+    "deterministic": {
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "honest-shared": 1.0
+    },
+    "hybrid": {
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "honest-shared": 0.6666666666666666
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7055555555555556,
+     "specific": 0.6922222222222222
+    },
+    "blind": {
+     "shared": 0.8122222222222222,
+     "specific": 0.5511111111111111
+    },
+    "reviewed": {
+     "shared": 0.7922222222222222,
+     "specific": 0.6922222222222222
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 1.0,
+     "poison-flip": 0.0,
+     "honest-specific": 0.0,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7266666666666666,
+     "specific": 0.6577777777777779
+    },
+    "blind": {
+     "shared": 0.41999999999999993,
+     "specific": 0.4488888888888889
+    },
+    "reviewed": {
+     "shared": 0.8155555555555556,
+     "specific": 0.6577777777777779
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 0.3333333333333333,
+     "honest-specific": 0.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0,
+     "poison-random": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6844444444444445,
+     "specific": 0.63
+    },
+    "blind": {
+     "shared": 0.5277777777777778,
+     "specific": 0.5144444444444445
+    },
+    "reviewed": {
+     "shared": 0.7699999999999999,
+     "specific": 0.63
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-flip": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0
+    },
+    "deterministic": {
+     "poison-flip": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0
+    },
+    "hybrid": {
+     "poison-flip": 0.0,
+     "honest-shared": 1.0,
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6711111111111111,
+     "specific": 0.68
+    },
+    "blind": {
+     "shared": 0.4633333333333333,
+     "specific": 0.47222222222222227
+    },
+    "reviewed": {
+     "shared": 0.8177777777777777,
+     "specific": 0.68
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-random": 1.0,
+     "honest-shared": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-random": 0.0,
+     "honest-shared": 0.6666666666666666,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6844444444444444,
+     "specific": 0.6255555555555555
+    },
+    "blind": {
+     "shared": 0.7455555555555556,
+     "specific": 0.43777777777777777
+    },
+    "reviewed": {
+     "shared": 0.771111111111111,
+     "specific": 0.6255555555555555
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "honest-specific": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-blend": 0.0,
+     "honest-shared": 1.0,
+     "honest-specific": 0.0,
+     "poison-random": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.668888888888889,
+     "specific": 0.6611111111111111
+    },
+    "blind": {
+     "shared": 0.7066666666666667,
+     "specific": 0.4977777777777777
+    },
+    "reviewed": {
+     "shared": 0.831111111111111,
+     "specific": 0.6611111111111111
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "deterministic": {
+     "poison-flip": 1.0,
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "poison-random": 1.0,
+     "honest-shared": 1.0
+    },
+    "hybrid": {
+     "poison-flip": 0.0,
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "poison-random": 0.0,
+     "honest-shared": 1.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6488888888888888,
+     "specific": 0.7055555555555556
+    },
+    "blind": {
+     "shared": 0.8288888888888889,
+     "specific": 0.5055555555555555
+    },
+    "reviewed": {
+     "shared": 0.8288888888888889,
+     "specific": 0.7055555555555556
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "honest-specific": 1.0,
+     "poison-blend": 1.0,
+     "honest-shared": 1.0,
+     "poison-random": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "honest-specific": 0.0,
+     "poison-blend": 0.0,
+     "honest-shared": 1.0,
+     "poison-random": 0.0,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6811111111111111,
+     "specific": 0.6155555555555555
+    },
+    "blind": {
+     "shared": 0.5822222222222223,
+     "specific": 0.5155555555555557
+    },
+    "reviewed": {
+     "shared": 0.8255555555555555,
+     "specific": 0.6155555555555555
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0
+    },
+    "deterministic": {
+     "honest-shared": 1.0,
+     "poison-flip": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0
+    },
+    "hybrid": {
+     "honest-shared": 1.0,
+     "poison-flip": 0.0,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.6422222222222222,
+     "specific": 0.6
+    },
+    "blind": {
+     "shared": 0.6588888888888889,
+     "specific": 0.53
+    },
+    "reviewed": {
+     "shared": 0.8455555555555555,
+     "specific": 0.6
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  },
+  {
+   "rates": {
+    "accept-all": {
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "deterministic": {
+     "poison-random": 1.0,
+     "poison-blend": 1.0,
+     "honest-specific": 1.0,
+     "honest-shared": 1.0,
+     "poison-flip": 1.0
+    },
+    "hybrid": {
+     "poison-random": 0.0,
+     "poison-blend": 0.0,
+     "honest-specific": 0.0,
+     "honest-shared": 0.3333333333333333,
+     "poison-flip": 0.0
+    }
+   },
+   "transfer": {
+    "local-only": {
+     "shared": 0.7322222222222221,
+     "specific": 0.7622222222222222
+    },
+    "blind": {
+     "shared": 0.5944444444444444,
+     "specific": 0.4611111111111111
+    },
+    "reviewed": {
+     "shared": 0.791111111111111,
+     "specific": 0.7622222222222222
+    }
+   },
+   "messages": 48,
+   "packages": 12
+  }
+ ]
+}

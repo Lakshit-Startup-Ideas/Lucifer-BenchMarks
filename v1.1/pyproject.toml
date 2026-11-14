@@ -1,0 +1,13 @@
+[project]
+name = "lucifer-v11"
+version = "0.0.1"
+description = "Lucifer V1.1 research code (private). V1 lives in Lucifer-BenchMarks."
+requires-python = ">=3.11"
+dependencies = ["numpy==2.3.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

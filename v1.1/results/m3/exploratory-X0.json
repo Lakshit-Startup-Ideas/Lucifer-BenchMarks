@@ -1,0 +1,45 @@
+{
+ "exploratory": true,
+ "scenario": "X0-perfect (post-hoc, after H3b failed)",
+ "completion_exec-full_minus_router": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "completion_-goal_minus_router": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "completion_-monitor_minus_router": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "completion_-learning_minus_router": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "completion_-conflict_minus_router": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "control_steps_per_episode": {
+  "router": 0.0,
+  "exec-full": 4.210111111111111,
+  "-goal": 4.2155555555555555,
+  "-monitor": 0.0,
+  "-learning": 4.219333333333333,
+  "-conflict": 4.211555555555555
+ },
+ "cost_units_per_episode": {
+  "router": 3.9998888888888886,
+  "exec-full": 4.210111111111111,
+  "-goal": 4.2155555555555555,
+  "-monitor": 3.9998888888888886,
+  "-learning": 4.219333333333333,
+  "-conflict": 4.211555555555555
+ }
+}
