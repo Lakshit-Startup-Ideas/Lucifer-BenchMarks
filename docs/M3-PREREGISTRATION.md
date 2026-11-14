@@ -17,7 +17,7 @@ It also says nothing about LLMs or about the V1 retrieval result.
 - **Router (control):** static prior argmax, FIFO WM, no goal slot, no monitor (assumes every call succeeded), no learning, reliability-only choice.
 
 ## World (fixed)
-4 task types, modules 0..3 are specialists (reliability 0.9 on their own type, 0.5 on others) except in S5. Episode = plan of k in 3..6 subgoals of random types; budget = 2k module calls; an episode is **completed** only if every subgoal truly succeeded. 300 episodes per seed, 30 seeds (0..29), the same plans/interruptions per seed for every agent (paired).
+4 task types, modules 0..3 are specialists (reliability 0.9 on their own type, 0.5 on others) except in S5. Episode = plan of k in 3..5 subgoals (see amendment A1) of random types; budget = 2k module calls; an episode is **completed** only if every subgoal truly succeeded. 300 episodes per seed, 30 seeds (0..29), the same plans/interruptions per seed for every agent (paired).
 
 | Scenario | Change from the benign setup |
 |---|---|
@@ -41,4 +41,5 @@ Statistics: paired difference over 30 seeds, 95% bootstrap interval, 10,000 resa
 A pass shows the four mechanisms behave as specified, each separable and each useful only where its world needs it. It does not show planning, reasoning or generalisation. A failure of H3b would mean the executive helps for reasons unrelated to need (a bug or an unfair control). Next dependency after M3: a version where the environment is not authored by us (tool-use or planning tasks from the V1 task bank) and a language model is the worker.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, before any code or run): plan length 3..6 -> 3..5.** A plan of 6 subgoals does not fit the 5-slot working memory at the start, so the router would fail every such episode even in the benign world, which would make H3b untestable and unfair to the control. No result had been seen. Also fixed before running (not a threshold change): (i) retries may only use calls beyond one reserved call per remaining subgoal; (ii) observations (and therefore learning) exist only when the monitor is on, so `-monitor` also silences learning (a coupled ablation, reported as such).
