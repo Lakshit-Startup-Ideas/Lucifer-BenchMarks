@@ -54,7 +54,7 @@ Code: the `v1.1/` folder of the Lucifer-BenchMarks repository (imported with its
 - `python -m lucv11.reproduce` reran M2-M6 and M8 from scratch in separate processes: **all 23 verdict flags identical (the 21 hypotheses plus the M4 precondition and the composite H9), maximum numeric difference 0** (`results/m8/reproduction.json`). Not tested: another OS or CPU.
 - Pre-registrations were committed before code and results; amendments are logged with reasons (M2 A1 changed task difficulty after an uninformative run; M3 A1 changed plan length before any run).
 - Mutation checks of security tests: M5 6 of 6, M6 8 of 8, M7 21 of 22 (1 equivalent) killed; an earlier mutation run was invalid and redone.
-- Existence proof: the V1 manifest is OpenTimestamps-stamped (pending Bitcoin confirmation at the time of writing); see `proof/` and the README in this folder. A timestamp shows a file existed by a date, not who wrote it, and it is not a patent.
+- Existence proof: both manifests (V1 and V1.1) are OpenTimestamps-stamped; they were pending when this report was written and are now confirmed in Bitcoin blocks 975752, 975759 and 975761 on 14 Nov 2026 (see `proof/` and its README section) and the README in this folder. A timestamp shows a file existed by a date, not who wrote it, and it is not a patent.
 
 ## 6. Risks and known weaknesses
 1. **No language-model validation.** The largest gap. Everything in V1.1 that is about learning is a toy.

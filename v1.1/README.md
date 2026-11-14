@@ -31,8 +31,10 @@ The reproduction compares 23 verdict flags and every number with the committed r
 `proof/` holds two manifests (SHA-256 of every file at a fixed commit) and their OpenTimestamps stamps: V1 at `fe08665` and V1.1 at `ce5ed13`. Both commits are in this repository's history. To check:
 ```bash
 python3 v1.1/tools/prove.py --verify v1.1/proof/manifest-v11-ce5ed13.json --repo .   # needs a full clone, not a shallow one
-ots verify v1.1/proof/manifest-v11-ce5ed13.json.ots                                    # once the stamp has a Bitcoin confirmation
+ots verify v1.1/proof/manifest-v11-ce5ed13.json.ots                                    # needs a Bitcoin node or block explorer access
 ```
+**Status (14 Nov 2026): both stamps are confirmed in Bitcoin.** The V1 manifest is anchored in block 975752 (06:32 UTC) and the V1.1 manifest in blocks 975759 and 975761 (07:17 and 07:18 UTC). Checked independently: each stamp commits to its manifest's SHA-256 (V1 `ac3c4ffc...`, V1.1 `f85c2af4...`) and the Merkle root it attests equals the block header's Merkle root on a public block explorer.
+
 A timestamp shows a file existed by a date. It does not show who wrote it, and it is not a patent or a copyright registration.
 
 ## What this does not show
