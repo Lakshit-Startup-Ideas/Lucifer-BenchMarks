@@ -4,6 +4,8 @@ Version 1 (everything outside this folder) asks one question: does a frozen mode
 
 Read first: [`docs/TECHNICAL-REPORT.md`](docs/TECHNICAL-REPORT.md) (scoreboard, claims ledger, measured overhead, limits). The public, append-only milestone page is at <https://lucifer-update.vercel.app/milestones>.
 
+Goals and how to help: the open issues in the milestone [V1.2: validate with a language model](https://github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks/milestone/2); the closed [V1.1 milestone](https://github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks/milestone/1) holds the merged pull request. See [`../CONTRIBUTING.md`](../CONTRIBUTING.md) and the [literature review](docs/LITERATURE.md) (partial, abstract level).
+
 ## Scoreboard
 21 registered threshold hypotheses: **10 passed, 11 failed**, with no threshold ever moved. Every property check (event pipeline, parent/child protocol, review properties, tool engine, MCP handshake era, runtime, A2A model, browser policy) passed. Each milestone has a pre-registration written and committed **before** its code or run (`docs/M*-PREREGISTRATION.md`), results (`docs/M*-RESULTS.md`) and a decision record (`docs/decisions/`).
 

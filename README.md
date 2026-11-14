@@ -49,4 +49,4 @@ Model-written code is run in a separate process with CPU and file limits, but th
 
 ## Version 1.1
 
-[`v1.1/`](v1.1/) holds the Version 1.1 research log: eight pre-registered milestones on small simulated learners (no language model), with 21 registered hypotheses of which 10 passed and 11 failed, all kept. Version 1 (everything else here) is unchanged. See [`v1.1/README.md`](v1.1/README.md) and the append-only [milestones page](https://lucifer-update.vercel.app/milestones).
+[`v1.1/`](v1.1/) holds the Version 1.1 research log: eight pre-registered milestones on small simulated learners (no language model), with 21 registered hypotheses of which 10 passed and 11 failed, all kept. Version 1 (everything else here) is unchanged. See [`v1.1/README.md`](v1.1/README.md) and the append-only [milestones page](https://lucifer-update.vercel.app/milestones). Goals are tracked as [GitHub milestones](https://github.com/Lakshit-Startup-Ideas/Lucifer-BenchMarks/milestones); see [CONTRIBUTING.md](CONTRIBUTING.md).
