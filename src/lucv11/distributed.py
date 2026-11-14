@@ -58,6 +58,7 @@ class ChildRecord:
     anchor_head: str = "0" * 64
     anchor_length: int = 0
     checkpoints: dict = field(default_factory=dict)
+    checkpoint_anchors: dict = field(default_factory=dict)  # name -> (ledger head, ledger length) at the time of the checkpoint report
     evaluations: list = field(default_factory=list)
 
 
@@ -124,6 +125,7 @@ class Parent:
             rec.anchor_head, rec.anchor_length = payload["ledger_head"], payload["ledger_length"]
         if kind == "checkpoint":
             rec.checkpoints[payload["name"]] = payload["params_sha256"]
+            rec.checkpoint_anchors[payload["name"]] = (payload["ledger_head"], payload["ledger_length"])
         if kind == "evaluation" and len(rec.evaluations) < MAX_EVALUATIONS:
             rec.evaluations.append(dict(payload))
         rec.last_seq = seq
@@ -143,6 +145,7 @@ class Child:
     def __init__(self, child_id: str, tenant: str, key: bytes, seed: int) -> None:
         self.child_id, self.tenant, self._key, self._seq = child_id, tenant, key, 0
         self.learner = EventSourcedLearner(seed, run_id=child_id)
+        self._checkpoint_anchor: dict[str, tuple[str, int]] = {}
 
     def envelope(self, kind: str, payload: dict) -> dict:
         self._seq += 1
@@ -156,6 +159,7 @@ class Child:
 
     def checkpoint(self, name: str) -> dict:
         self.learner.checkpoint(name)
+        self._checkpoint_anchor[name] = (self.learner.ledger.head, len(self.learner.ledger.entries))
         return self.envelope("checkpoint", {"name": name, "params_sha256": self.learner.checkpoints[name].params_hash(), **self._anchor()})
 
     def evaluation(self, suite: str, metric: str, value: float, n: int) -> dict:
@@ -171,3 +175,14 @@ class Child:
 
     def observe_and_learn(self, ctx: int, x: np.ndarray, y: int, lr: float = 0.1) -> None:
         self.learner.learn([self.learner.observe(ctx, x, y)], lr=lr)
+
+    def export_package(self, ctx: int, checkpoint_name: str, consent: bool = True, rule: np.ndarray | None = None) -> dict:
+        """A knowledge package: the decision rule this child learned for one context, unit length, plus provenance. `rule` overrides the
+        derived rule (an attacker is free to do this; the parent cannot tell from metadata alone)."""
+        if rule is None:
+            model = self.learner.checkpoints[checkpoint_name]
+            rule = model.U @ model.head(ctx)
+            rule = rule / (np.linalg.norm(rule) or 1.0)
+        head, length = self._checkpoint_anchor[checkpoint_name]
+        return {"origin": self.child_id, "ctx": ctx, "rule": [float(v) for v in rule], "checkpoint": checkpoint_name,
+                "params_sha256": self.learner.checkpoints[checkpoint_name].params_hash(), "ledger_head": head, "ledger_length": length, "consent": consent}
