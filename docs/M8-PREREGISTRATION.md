@@ -28,4 +28,5 @@ A table of **measured** costs collected from M2-M7 results and a timed reproduct
 `scripts/reproduce.py` reruns M2-M6 and M8 with the committed seeds and compares every registered verdict flag with the committed result files. **Pass** = all flags equal, no exception. It records wall-clock time per experiment. It does not rerun the interop tests (needs the isolated venv) and cannot check anything that is not a flag.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after run 1; thresholds NOT changed).** H8 FAIL (forgetting -0.0104 as hoped, final accuracy -0.0265, tolerance was -0.01), H9a PASS (+0.0648), H9b FAIL (-0.0219, interval lower end -0.0431 vs bound -0.03), H9 overall FAIL. The `anchor` control reproduces M4's `P+anchor` exactly (test). See `M8-RESULTS.md`; note the reconciliation with M4's H4a(ii).
