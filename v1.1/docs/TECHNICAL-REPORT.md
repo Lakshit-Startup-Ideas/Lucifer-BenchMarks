@@ -1,6 +1,6 @@
 # Lucifer V1.1: technical report (14 Nov 2026)
 
-Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,293 source lines, 202 tests. V1 baseline: Lucifer-BenchMarks `fe08665` (untouched). Every claim below links to a results file; every experiment was pre-registered before it ran.
+Code: the `v1.1/` folder of the Lucifer-BenchMarks repository (imported with its full commit history; first written in a separate local repo), 2,293 source lines, 202 tests. V1 baseline: everything outside `v1.1/` (`fe08665`), untouched. Every claim below links to a results file; every experiment was pre-registered before it ran.
 
 ## 1. Bottom line
 - **Built and tested:** a fixed-topology adaptive learner with consolidation, an event-sourced learning pipeline (logging is separate from learning; unlearning needs retraining), a parent/child protocol that moves metadata only, a review mechanism for sharing knowledge, a policy-enforcing tool engine with a handshake-era MCP adapter, an A2A lifecycle model, a runtime with crash recovery, a browser policy layer, and a reproduction harness.
@@ -50,11 +50,11 @@ Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,293 source lines,
 **Reading:** the infrastructure overheads (engine, audit, protocol) are negligible next to any model or network call. The costs that matter are behavioural: the executive's control steps when nothing is wrong, the review's 28% false rejection, and replay's raw-data retention. Whether any of this pays off on a real model is **unknown**.
 
 ## 5. Reproducibility
-- Pinned: numpy 2.3.3, pytest; Python 3.15.2 (the only version run locally; CI for 3.11 and 3.13 is written but has **never run on GitHub**).
+- Pinned: numpy 2.3.3, pytest; Python 3.15.2 (the only version run locally; CI for 3.11 and 3.13 is written (`.github/workflows/v11.yml`) and was first run on GitHub when this folder was imported; see the pull request).
 - `python -m lucv11.reproduce` reran M2-M6 and M8 from scratch in separate processes: **all 23 verdict flags identical (the 21 hypotheses plus the M4 precondition and the composite H9), maximum numeric difference 0** (`results/m8/reproduction.json`). Not tested: another OS or CPU.
 - Pre-registrations were committed before code and results; amendments are logged with reasons (M2 A1 changed task difficulty after an uninformative run; M3 A1 changed plan length before any run).
 - Mutation checks of security tests: M5 6 of 6, M6 8 of 8, M7 21 of 22 (1 equivalent) killed; an earlier mutation run was invalid and redone.
-- Existence proof: the V1 manifest is OpenTimestamps-stamped (pending Bitcoin confirmation at the time of writing); see `~/Personal/lucifer-private/PROOF-OF-EXISTENCE.md`. A timestamp shows a file existed by a date, not who wrote it, and it is not a patent.
+- Existence proof: the V1 manifest is OpenTimestamps-stamped (pending Bitcoin confirmation at the time of writing); see `proof/` and the README in this folder. A timestamp shows a file existed by a date, not who wrote it, and it is not a patent.
 
 ## 6. Risks and known weaknesses
 1. **No language-model validation.** The largest gap. Everything in V1.1 that is about learning is a toy.
@@ -69,7 +69,7 @@ Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,293 source lines,
 1. Put the original documents in `~/Personal/lucifer-private/originals/`, then complete the idea-preservation matrix and record every departure.
 2. Rerun the V1 task bank with a language model in the loop for the two questions that matter: does parameter-level adaptation (a small adapter or lesson-conditioned fine-tune, on a hosted or runner GPU, not the Mac) beat V1's retrieval on unseen tasks, and does the anchor protect earlier tasks?
 3. Test an **adaptive** attacker against the review (packages optimised on the peers' validation data) and add clipping or noise to shared rule vectors.
-4. Run the CI workflow on GitHub (it has never run) and decide whether V1.1 becomes a private GitHub repository.
+4. Watch the `V1.1 tests` workflow (`.github/workflows/v11.yml`, Python 3.11 and 3.13) and run its manual `reproduce` job on GitHub; before the import, CI had never run on GitHub.
 5. A 2026-07-28 MCP variant and a real browser driver behind the policy layer, each as its own pre-registered step.
 
 ## 8. Index
