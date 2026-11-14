@@ -43,4 +43,5 @@ Statistics: paired difference over 30 seeds, 95% bootstrap interval (10,000 resa
 A pass shows that parameter updates give something retrieval does not (benefit across contexts), that forgetting is real and measurable in this setting, and that two protection mechanisms work, one at the price of storing raw experience. It does not show that an LLM behaves this way, that these numbers carry over, or anything about consciousness or general intelligence.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after run 1; thresholds NOT changed).** Registered verdicts: precondition met; H4a FAIL; H4b FAIL; H4c PASS; H4e PASS. H4b failed with the registered 100-slot buffer (replay made forgetting 0.023 worse). Post-hoc replay-size sweep (`m4_exploratory.py`) shows replay works with a larger buffer, so the code is not broken; this does not turn H4b into a pass. See `M4-RESULTS.md`.
