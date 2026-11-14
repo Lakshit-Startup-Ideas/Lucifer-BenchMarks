@@ -1,0 +1,6862 @@
+{
+ "analysis": {
+  "H3a_S4_full_minus_router": [
+   0.7938888888888889,
+   0.7857777777777777,
+   0.8018916666666667
+  ],
+  "H3a_pass": true,
+  "H3b_S0_full_minus_router": [
+   0.10444444444444444,
+   0.09788888888888889,
+   0.1108888888888889
+  ],
+  "H3b_S0_control_steps_full_vs_router": [
+   4.320444444444445,
+   0.0
+  ],
+  "H3b_pass": false,
+  "H3c_on_target_-goal_S2-interruptions": [
+   0.768111111111111,
+   0.7604444444444443,
+   0.775888888888889
+  ],
+  "H3c_on_target_-monitor_S1-failures": [
+   0.2381111111111111,
+   0.2272222222222222,
+   0.2495555555555555
+  ],
+  "H3c_on_target_-learning_S3-drift": [
+   0.2784444444444444,
+   0.2597722222222222,
+   0.2964444444444444
+  ],
+  "H3c_on_target_-conflict_S5_cost_saved": [
+   0.4049333333333335,
+   0.29386555555555577,
+   0.5173258333333333
+  ],
+  "H3c_on_target_-conflict_S5_completion_drop": [
+   -0.006222222222222214,
+   -0.012777777777777766,
+   0.000444444444444451
+  ],
+  "H3c_off_target_-goal_S0": [
+   0.002333333333333328,
+   -0.0006666666666666562,
+   0.005333333333333324
+  ],
+  "H3c_off_target_-monitor_S0": [
+   0.10422222222222222,
+   0.09866666666666664,
+   0.1096694444444444
+  ],
+  "H3c_off_target_-learning_S0": [
+   0.0012222222222222172,
+   -0.0016666666666666754,
+   0.004333333333333318
+  ],
+  "H3c_off_target_-conflict_S0": [
+   -0.0008888888888888872,
+   -0.0038888888888888823,
+   0.0022222222222222144
+  ],
+  "H3c_pass": false,
+  "table": {
+   "S0-benign": {
+    "router": {
+     "completion": 0.8842222222222224,
+     "completion_post": 0.8897777777777777,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.9886666666666666,
+     "completion_post": 0.9877777777777778,
+     "cost": 4.320444444444445,
+     "control": 4.320444444444445
+    },
+    "-goal": {
+     "completion": 0.9863333333333333,
+     "completion_post": 0.9855555555555554,
+     "cost": 4.331555555555556,
+     "control": 4.331555555555556
+    },
+    "-monitor": {
+     "completion": 0.8844444444444446,
+     "completion_post": 0.882888888888889,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "-learning": {
+     "completion": 0.9874444444444446,
+     "completion_post": 0.9871111111111108,
+     "cost": 4.337444444444444,
+     "control": 4.337444444444444
+    },
+    "-conflict": {
+     "completion": 0.9895555555555553,
+     "completion_post": 0.9897777777777778,
+     "cost": 4.331333333333333,
+     "control": 4.331333333333333
+    }
+   },
+   "S1-failures": {
+    "router": {
+     "completion": 0.6531111111111111,
+     "completion_post": 0.6557777777777779,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.8948888888888891,
+     "completion_post": 0.8939999999999999,
+     "cost": 4.913444444444443,
+     "control": 4.913444444444443
+    },
+    "-goal": {
+     "completion": 0.8877777777777779,
+     "completion_post": 0.8893333333333333,
+     "cost": 4.9191111111111105,
+     "control": 4.9191111111111105
+    },
+    "-monitor": {
+     "completion": 0.6567777777777779,
+     "completion_post": 0.6588888888888889,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "-learning": {
+     "completion": 0.8933333333333332,
+     "completion_post": 0.8993333333333333,
+     "cost": 4.911333333333332,
+     "control": 4.911333333333332
+    },
+    "-conflict": {
+     "completion": 0.8927777777777778,
+     "completion_post": 0.8904444444444445,
+     "cost": 4.9077777777777785,
+     "control": 4.9077777777777785
+    }
+   },
+   "S2-interruptions": {
+    "router": {
+     "completion": 0.19866666666666666,
+     "completion_post": 0.19977777777777778,
+     "cost": 1.5708888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.9886666666666666,
+     "completion_post": 0.9877777777777778,
+     "cost": 4.320444444444445,
+     "control": 4.485555555555555
+    },
+    "-goal": {
+     "completion": 0.2205555555555556,
+     "completion_post": 0.2226666666666667,
+     "cost": 1.7055555555555553,
+     "control": 1.7055555555555553
+    },
+    "-monitor": {
+     "completion": 0.8844444444444446,
+     "completion_post": 0.882888888888889,
+     "cost": 3.9998888888888886,
+     "control": 0.1651111111111111
+    },
+    "-learning": {
+     "completion": 0.9874444444444446,
+     "completion_post": 0.9871111111111108,
+     "cost": 4.337444444444444,
+     "control": 4.502555555555556
+    },
+    "-conflict": {
+     "completion": 0.9895555555555553,
+     "completion_post": 0.9897777777777778,
+     "cost": 4.331333333333333,
+     "control": 4.496444444444445
+    }
+   },
+   "S3-drift": {
+    "router": {
+     "completion": 0.36211111111111105,
+     "completion_post": 0.07377777777777778,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.8796666666666668,
+     "completion_post": 0.8635555555555556,
+     "cost": 5.028666666666666,
+     "control": 5.028666666666666
+    },
+    "-goal": {
+     "completion": 0.8687777777777778,
+     "completion_post": 0.8513333333333334,
+     "cost": 5.027555555555555,
+     "control": 5.027555555555555
+    },
+    "-monitor": {
+     "completion": 0.36111111111111105,
+     "completion_post": 0.06755555555555556,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "-learning": {
+     "completion": 0.7362222222222222,
+     "completion_post": 0.585111111111111,
+     "cost": 5.7684444444444445,
+     "control": 5.7684444444444445
+    },
+    "-conflict": {
+     "completion": 0.879,
+     "completion_post": 0.8628888888888889,
+     "cost": 4.997333333333333,
+     "control": 4.997333333333333
+    }
+   },
+   "S4-combined": {
+    "router": {
+     "completion": 0.08577777777777774,
+     "completion_post": 0.022,
+     "cost": 1.5708888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.8796666666666668,
+     "completion_post": 0.8635555555555556,
+     "cost": 5.028666666666666,
+     "control": 5.193777777777778
+    },
+    "-goal": {
+     "completion": 0.19088888888888889,
+     "completion_post": 0.18577777777777774,
+     "cost": 2.0423333333333336,
+     "control": 2.0423333333333336
+    },
+    "-monitor": {
+     "completion": 0.36111111111111105,
+     "completion_post": 0.06755555555555556,
+     "cost": 3.9998888888888886,
+     "control": 0.1651111111111111
+    },
+    "-learning": {
+     "completion": 0.7362222222222222,
+     "completion_post": 0.585111111111111,
+     "cost": 5.7684444444444445,
+     "control": 5.933555555555555
+    },
+    "-conflict": {
+     "completion": 0.879,
+     "completion_post": 0.8628888888888889,
+     "cost": 4.997333333333333,
+     "control": 5.162444444444445
+    }
+   },
+   "S5-cost": {
+    "router": {
+     "completion": 0.6531111111111111,
+     "completion_post": 0.6557777777777779,
+     "cost": 3.9998888888888886,
+     "control": 0.0
+    },
+    "exec-full": {
+     "completion": 0.9322222222222224,
+     "completion_post": 0.9311111111111111,
+     "cost": 3.1314555555555557,
+     "control": 4.7746666666666675
+    },
+    "-goal": {
+     "completion": 0.9288888888888889,
+     "completion_post": 0.9262222222222223,
+     "cost": 3.169755555555555,
+     "control": 4.790333333333334
+    },
+    "-monitor": {
+     "completion": 0.5210000000000001,
+     "completion_post": 0.524888888888889,
+     "cost": 1.199966666666667,
+     "control": 0.0
+    },
+    "-learning": {
+     "completion": 0.9214444444444444,
+     "completion_post": 0.9264444444444445,
+     "cost": 2.0620777777777777,
+     "control": 4.861999999999999
+    },
+    "-conflict": {
+     "completion": 0.9384444444444444,
+     "completion_post": 0.9364444444444444,
+     "cost": 3.536388888888889,
+     "control": 4.758666666666667
+    }
+   }
+  }
+ },
+ "raw": {
+  "S0-benign": {
+   "router": [
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.86,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8466666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.85,
+     "completion_post": 0.8333333333333334,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.88,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.9,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.88,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.92,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.96,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8733333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.92,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.86,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.98,
+     "cost": 4.36,
+     "control": 4.36
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.3133333333333335,
+     "control": 4.3133333333333335
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.266666666666667,
+     "control": 4.266666666666667
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.343333333333334,
+     "control": 4.343333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.166666666666667,
+     "control": 4.166666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.343333333333334,
+     "control": 4.343333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.383333333333334,
+     "control": 4.383333333333334
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.28,
+     "control": 4.28
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.383333333333334,
+     "control": 4.383333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.333333333333333,
+     "control": 4.333333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.336666666666667,
+     "control": 4.336666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.4366666666666665,
+     "control": 4.4366666666666665
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.17,
+     "control": 4.17
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.296666666666667,
+     "control": 4.296666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.3133333333333335,
+     "control": 4.3133333333333335
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.503333333333333,
+     "control": 4.503333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.28
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.3566666666666665,
+     "control": 4.3566666666666665
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.306666666666667,
+     "control": 4.306666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.273333333333333,
+     "control": 4.273333333333333
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9533333333333334,
+     "cost": 4.333333333333333,
+     "control": 4.333333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.3533333333333335,
+     "control": 4.3533333333333335
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.41,
+     "control": 4.41
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.246666666666667,
+     "control": 4.246666666666667
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.33,
+     "control": 4.33
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.283333333333333,
+     "control": 4.283333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.263333333333334,
+     "control": 4.263333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.153333333333333,
+     "control": 4.153333333333333
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.96,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    },
+    {
+     "completion": 0.97,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.36,
+     "control": 4.36
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.98,
+     "cost": 4.433333333333334,
+     "control": 4.433333333333334
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.253333333333333,
+     "control": 4.253333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.416666666666667,
+     "control": 4.416666666666667
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.306666666666667,
+     "control": 4.306666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.373333333333333,
+     "control": 4.373333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.303333333333334,
+     "control": 4.303333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.376666666666667,
+     "control": 4.376666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.23,
+     "control": 4.23
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.366666666666666,
+     "control": 4.366666666666666
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.98,
+     "cost": 4.37,
+     "control": 4.37
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.493333333333333,
+     "control": 4.493333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.3,
+     "control": 4.3
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.38,
+     "control": 4.38
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.406666666666666,
+     "control": 4.406666666666666
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.2,
+     "control": 4.2
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.37,
+     "control": 4.37
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.316666666666666,
+     "control": 4.316666666666666
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.98,
+     "cost": 4.376666666666667,
+     "control": 4.376666666666667
+    },
+    {
+     "completion": 0.9733333333333334,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.376666666666667,
+     "control": 4.376666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.403333333333333,
+     "control": 4.403333333333333
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.256666666666667,
+     "control": 4.256666666666667
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.82,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.86,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.9,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.9,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8733333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.86,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.84,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.88,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.9,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.92,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.84,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8666666666666667,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.373333333333333,
+     "control": 4.373333333333333
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.286666666666667,
+     "control": 4.286666666666667
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.98,
+     "cost": 4.21,
+     "control": 4.21
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3133333333333335,
+     "control": 4.3133333333333335
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.246666666666667,
+     "control": 4.246666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.366666666666666,
+     "control": 4.366666666666666
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.473333333333334,
+     "control": 4.473333333333334
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.296666666666667,
+     "control": 4.296666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3933333333333335,
+     "control": 4.3933333333333335
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.98,
+     "cost": 4.3566666666666665,
+     "control": 4.3566666666666665
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.306666666666667,
+     "control": 4.306666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.35,
+     "control": 4.35
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.433333333333334,
+     "control": 4.433333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.193333333333333,
+     "control": 4.193333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.3933333333333335,
+     "control": 4.3933333333333335
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3,
+     "control": 4.3
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.543333333333333,
+     "control": 4.543333333333333
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.266666666666667,
+     "control": 4.266666666666667
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.333333333333333,
+     "control": 4.333333333333333
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.98,
+     "cost": 4.36,
+     "control": 4.36
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.28
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.363333333333333,
+     "control": 4.363333333333333
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.98,
+     "cost": 4.343333333333334,
+     "control": 4.343333333333334
+    },
+    {
+     "completion": 0.9633333333333334,
+     "completion_post": 0.9466666666666667,
+     "cost": 4.326666666666667,
+     "control": 4.326666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.28
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.416666666666667,
+     "control": 4.416666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.416666666666667,
+     "control": 4.416666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.31,
+     "control": 4.31
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.316666666666666,
+     "control": 4.316666666666666
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.29,
+     "control": 4.29
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.31,
+     "control": 4.31
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.323333333333333,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.333333333333333,
+     "control": 4.333333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.286666666666667,
+     "control": 4.286666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.37,
+     "control": 4.37
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.266666666666667,
+     "control": 4.266666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3533333333333335,
+     "control": 4.3533333333333335
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.326666666666667,
+     "control": 4.326666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.296666666666667,
+     "control": 4.296666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.36,
+     "control": 4.36
+    },
+    {
+     "completion": 0.9733333333333334,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.44,
+     "control": 4.44
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.2,
+     "control": 4.2
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.4,
+     "control": 4.4
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.366666666666666,
+     "control": 4.366666666666666
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.46,
+     "control": 4.46
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.286666666666667,
+     "control": 4.286666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.293333333333333,
+     "control": 4.293333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.256666666666667,
+     "control": 4.256666666666667
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.34,
+     "control": 4.34
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.346666666666667
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.34,
+     "control": 4.34
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.376666666666667,
+     "control": 4.376666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.373333333333333,
+     "control": 4.373333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.276666666666666
+    }
+   ]
+  },
+  "S1-failures": {
+   "router": [
+    {
+     "completion": 0.66,
+     "completion_post": 0.6666666666666666,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.65,
+     "completion_post": 0.64,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6666666666666666,
+     "completion_post": 0.66,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.7266666666666667,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6466666666666666,
+     "completion_post": 0.6533333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6833333333333333,
+     "completion_post": 0.6666666666666666,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6133333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.6733333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.6266666666666667,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.64,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6433333333333333,
+     "completion_post": 0.6733333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.66,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5866666666666667,
+     "completion_post": 0.62,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.62,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6,
+     "completion_post": 0.5866666666666667,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.69,
+     "completion_post": 0.72,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6166666666666667,
+     "completion_post": 0.64,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6633333333333333,
+     "completion_post": 0.6533333333333333,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.64,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6666666666666666,
+     "completion_post": 0.68,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6833333333333333,
+     "completion_post": 0.7133333333333334,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6766666666666666,
+     "completion_post": 0.7266666666666667,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.67,
+     "completion_post": 0.6866666666666666,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6266666666666667,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.67,
+     "completion_post": 0.66,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.84,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.983333333333333,
+     "control": 4.983333333333333
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9,
+     "cost": 4.84,
+     "control": 4.84
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.806666666666667,
+     "control": 4.806666666666667
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.886666666666667,
+     "control": 4.886666666666667
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.86,
+     "cost": 4.9366666666666665,
+     "control": 4.9366666666666665
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.94,
+     "control": 4.94
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.873333333333333,
+     "control": 4.873333333333333
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.04,
+     "control": 5.04
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.78,
+     "control": 4.78
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.9,
+     "cost": 4.97,
+     "control": 4.97
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8533333333333334,
+     "cost": 4.966666666666667,
+     "control": 4.966666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8266666666666667,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.92,
+     "cost": 4.883333333333334,
+     "control": 4.883333333333334
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.78,
+     "control": 4.78
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.96,
+     "control": 4.96
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9,
+     "cost": 4.8933333333333335,
+     "control": 4.8933333333333335
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.86,
+     "cost": 4.906666666666666,
+     "control": 4.906666666666666
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.17,
+     "control": 5.17
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 4.863333333333333,
+     "control": 4.863333333333333
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.94,
+     "cost": 4.843333333333334,
+     "control": 4.843333333333334
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.97,
+     "control": 4.97
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.88,
+     "cost": 4.88,
+     "control": 4.88
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.88,
+     "cost": 4.873333333333333,
+     "control": 4.873333333333333
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9,
+     "cost": 4.94,
+     "control": 4.94
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9466666666666667,
+     "cost": 4.946666666666666,
+     "control": 4.946666666666666
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.8566666666666665,
+     "control": 4.8566666666666665
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.9333333333333333,
+     "cost": 5.006666666666667,
+     "control": 5.006666666666667
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.866666666666666,
+     "control": 4.866666666666666
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 4.92,
+     "control": 4.92
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.836666666666667,
+     "control": 4.836666666666667
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.84,
+     "control": 4.84
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.683333333333334,
+     "control": 4.683333333333334
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.823333333333333,
+     "control": 4.823333333333333
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.743333333333333,
+     "control": 4.743333333333333
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.003333333333333,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.86,
+     "cost": 5.1033333333333335,
+     "control": 5.1033333333333335
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.88,
+     "cost": 4.756666666666667,
+     "control": 4.756666666666667
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.84,
+     "cost": 5.036666666666667,
+     "control": 5.036666666666667
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9333333333333333,
+     "cost": 4.88,
+     "control": 4.88
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.083333333333333,
+     "control": 5.083333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.933333333333334,
+     "control": 4.933333333333334
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.956666666666667,
+     "control": 4.956666666666667
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.8966666666666665,
+     "control": 4.8966666666666665
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.003333333333333,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 5.023333333333333,
+     "control": 5.023333333333333
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.943333333333333,
+     "control": 4.943333333333333
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8533333333333334,
+     "cost": 5.163333333333333,
+     "control": 5.163333333333333
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.92,
+     "cost": 4.846666666666667,
+     "control": 4.846666666666667
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.88,
+     "cost": 4.96,
+     "control": 4.96
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.983333333333333,
+     "control": 4.983333333333333
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.693333333333333,
+     "control": 4.693333333333333
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8533333333333334,
+     "cost": 5.046666666666667,
+     "control": 5.046666666666667
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.8966666666666665,
+     "control": 4.8966666666666665
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.88,
+     "cost": 4.8966666666666665,
+     "control": 4.8966666666666665
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.92,
+     "control": 4.92
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.923333333333333,
+     "control": 4.923333333333333
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.016666666666667,
+     "control": 5.016666666666667
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9,
+     "cost": 4.76,
+     "control": 4.76
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.6266666666666667,
+     "completion_post": 0.62,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.65,
+     "completion_post": 0.6666666666666666,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6366666666666667,
+     "completion_post": 0.62,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.68,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6366666666666667,
+     "completion_post": 0.6733333333333333,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6233333333333333,
+     "completion_post": 0.6533333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6466666666666666,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.69,
+     "completion_post": 0.6533333333333333,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6466666666666666,
+     "completion_post": 0.64,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6133333333333333,
+     "completion_post": 0.64,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.7,
+     "completion_post": 0.7,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6433333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.64,
+     "completion_post": 0.6666666666666666,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.65,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6866666666666666,
+     "completion_post": 0.6666666666666666,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.6266666666666667,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6866666666666666,
+     "completion_post": 0.72,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6766666666666666,
+     "completion_post": 0.66,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.7,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.7033333333333334,
+     "completion_post": 0.7,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.64,
+     "completion_post": 0.64,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.7333333333333333,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6766666666666666,
+     "completion_post": 0.66,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.7133333333333334,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6466666666666666,
+     "completion_post": 0.6066666666666667,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6666666666666666,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.6533333333333333,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.66,
+     "completion_post": 0.66,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5766666666666667,
+     "completion_post": 0.5933333333333334,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.066666666666666,
+     "control": 5.066666666666666
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 4.93,
+     "control": 4.93
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.783333333333333,
+     "control": 4.783333333333333
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.75,
+     "control": 4.75
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.94,
+     "cost": 4.76,
+     "control": 4.76
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.836666666666667,
+     "control": 4.836666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.963333333333333,
+     "control": 4.963333333333333
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.88,
+     "cost": 5.073333333333333,
+     "control": 5.073333333333333
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.92,
+     "cost": 4.793333333333333,
+     "control": 4.793333333333333
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.92,
+     "cost": 4.81,
+     "control": 4.81
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.87,
+     "control": 4.87
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.92,
+     "cost": 4.836666666666667,
+     "control": 4.836666666666667
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.973333333333334,
+     "control": 4.973333333333334
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 5.12,
+     "control": 5.12
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.746666666666667,
+     "control": 4.746666666666667
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.946666666666666,
+     "control": 4.946666666666666
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.826666666666667,
+     "control": 4.826666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.8566666666666665,
+     "control": 4.8566666666666665
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9133333333333333,
+     "cost": 5.093333333333334,
+     "control": 5.093333333333334
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.89,
+     "control": 4.89
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.003333333333333,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.983333333333333,
+     "control": 4.983333333333333
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9,
+     "cost": 4.8566666666666665,
+     "control": 4.8566666666666665
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.04,
+     "control": 5.04
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.8566666666666665,
+     "control": 4.8566666666666665
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.88,
+     "cost": 4.836666666666667,
+     "control": 4.836666666666667
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.046666666666667,
+     "control": 5.046666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 4.97,
+     "control": 4.97
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.906666666666666,
+     "control": 4.906666666666666
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.88,
+     "control": 4.88
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.84,
+     "cost": 4.8533333333333335,
+     "control": 4.8533333333333335
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9333333333333333,
+     "cost": 4.973333333333334,
+     "control": 4.973333333333334
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.85,
+     "control": 4.85
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.88,
+     "cost": 4.983333333333333,
+     "control": 4.983333333333333
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.003333333333333,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.773333333333333,
+     "control": 4.773333333333333
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.026666666666666,
+     "control": 5.026666666666666
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.876666666666667,
+     "control": 4.876666666666667
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.023333333333333,
+     "control": 5.023333333333333
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.8533333333333335,
+     "control": 4.8533333333333335
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.846666666666667,
+     "control": 4.846666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.86,
+     "cost": 4.946666666666666,
+     "control": 4.946666666666666
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.88,
+     "cost": 4.993333333333333,
+     "control": 4.993333333333333
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.88,
+     "cost": 4.786666666666667,
+     "control": 4.786666666666667
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.8566666666666665,
+     "control": 4.8566666666666665
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.9,
+     "control": 4.9
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.026666666666666,
+     "control": 5.026666666666666
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.92,
+     "cost": 5.0,
+     "control": 5.0
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.86,
+     "cost": 4.85,
+     "control": 4.85
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.92,
+     "cost": 4.86,
+     "control": 4.86
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.923333333333333,
+     "control": 4.923333333333333
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.796666666666667,
+     "control": 4.796666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.91,
+     "control": 4.91
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.97,
+     "control": 4.97
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.82,
+     "control": 4.82
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.863333333333333,
+     "control": 4.863333333333333
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.966666666666667,
+     "control": 4.966666666666667
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.906666666666666,
+     "control": 4.906666666666666
+    }
+   ]
+  },
+  "S2-interruptions": {
+   "router": [
+    {
+     "completion": 0.19666666666666666,
+     "completion_post": 0.17333333333333334,
+     "cost": 1.54,
+     "control": 0.0
+    },
+    {
+     "completion": 0.18333333333333332,
+     "completion_post": 0.14666666666666667,
+     "cost": 1.57,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.22,
+     "cost": 1.5333333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.61,
+     "control": 0.0
+    },
+    {
+     "completion": 0.17333333333333334,
+     "completion_post": 0.14,
+     "cost": 1.5266666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.18,
+     "cost": 1.49,
+     "control": 0.0
+    },
+    {
+     "completion": 0.20333333333333334,
+     "completion_post": 0.21333333333333335,
+     "cost": 1.6233333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.6166666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.20666666666666667,
+     "completion_post": 0.21333333333333335,
+     "cost": 1.59,
+     "control": 0.0
+    },
+    {
+     "completion": 0.18666666666666668,
+     "completion_post": 0.18666666666666668,
+     "cost": 1.4966666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.6133333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.23666666666666666,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.53,
+     "control": 0.0
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.5433333333333332,
+     "control": 0.0
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.16,
+     "cost": 1.5733333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.25,
+     "completion_post": 0.28,
+     "cost": 1.71,
+     "control": 0.0
+    },
+    {
+     "completion": 0.22,
+     "completion_post": 0.21333333333333335,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.20666666666666667,
+     "completion_post": 0.2,
+     "cost": 1.6533333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.18,
+     "completion_post": 0.16,
+     "cost": 1.4566666666666668,
+     "control": 0.0
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.23333333333333334,
+     "cost": 1.5366666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.17333333333333334,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.5733333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21333333333333335,
+     "completion_post": 0.18,
+     "cost": 1.5633333333333332,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.24,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.15333333333333332,
+     "completion_post": 0.15333333333333332,
+     "cost": 1.5566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.18666666666666668,
+     "completion_post": 0.20666666666666667,
+     "cost": 1.58,
+     "control": 0.0
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.24,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.17333333333333334,
+     "completion_post": 0.14666666666666667,
+     "cost": 1.4466666666666668,
+     "control": 0.0
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.21333333333333335,
+     "cost": 1.5333333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.2,
+     "cost": 1.68,
+     "control": 0.0
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.6266666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.22,
+     "completion_post": 0.22,
+     "cost": 1.5633333333333332,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.98,
+     "cost": 4.36,
+     "control": 4.53
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.3133333333333335,
+     "control": 4.453333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.45
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.266666666666667,
+     "control": 4.38
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.343333333333334,
+     "control": 4.526666666666666
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.166666666666667,
+     "control": 4.326666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.343333333333334,
+     "control": 4.533333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.383333333333334,
+     "control": 4.553333333333334
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.28,
+     "control": 4.426666666666667
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.383333333333334,
+     "control": 4.57
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.333333333333333,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.336666666666667,
+     "control": 4.5
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.323333333333333,
+     "control": 4.5
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.4366666666666665,
+     "control": 4.64
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.17,
+     "control": 4.3133333333333335
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.346666666666667,
+     "control": 4.543333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.296666666666667,
+     "control": 4.4366666666666665
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.3133333333333335,
+     "control": 4.473333333333334
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.503333333333333,
+     "control": 4.6866666666666665
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.43
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.276666666666666,
+     "control": 4.44
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.3566666666666665,
+     "control": 4.51
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.306666666666667,
+     "control": 4.443333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.276666666666666,
+     "control": 4.446666666666666
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.273333333333333,
+     "control": 4.426666666666667
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9533333333333334,
+     "cost": 4.333333333333333,
+     "control": 4.503333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.323333333333333,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.3533333333333335,
+     "control": 4.533333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.41,
+     "control": 4.59
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.246666666666667,
+     "control": 4.406666666666666
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.20333333333333334,
+     "completion_post": 0.17333333333333334,
+     "cost": 1.6633333333333333,
+     "control": 1.6633333333333333
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.16666666666666666,
+     "cost": 1.6966666666666668,
+     "control": 1.6966666666666668
+    },
+    {
+     "completion": 0.22333333333333333,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.6433333333333333,
+     "control": 1.6433333333333333
+    },
+    {
+     "completion": 0.24666666666666667,
+     "completion_post": 0.26666666666666666,
+     "cost": 1.7266666666666666,
+     "control": 1.7266666666666666
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.16666666666666666,
+     "cost": 1.6533333333333333,
+     "control": 1.6533333333333333
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.18,
+     "cost": 1.6233333333333333,
+     "control": 1.6233333333333333
+    },
+    {
+     "completion": 0.22,
+     "completion_post": 0.23333333333333334,
+     "cost": 1.77,
+     "control": 1.77
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.20666666666666667,
+     "cost": 1.7733333333333334,
+     "control": 1.7733333333333334
+    },
+    {
+     "completion": 0.24,
+     "completion_post": 0.26,
+     "cost": 1.6966666666666668,
+     "control": 1.6966666666666668
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.2,
+     "cost": 1.6166666666666667,
+     "control": 1.6166666666666667
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.22,
+     "cost": 1.7433333333333334,
+     "control": 1.7433333333333334
+    },
+    {
+     "completion": 0.26,
+     "completion_post": 0.28,
+     "cost": 1.6666666666666667,
+     "control": 1.6666666666666667
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.2733333333333333,
+     "cost": 1.6633333333333333,
+     "control": 1.6633333333333333
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.2,
+     "cost": 1.6766666666666667,
+     "control": 1.6766666666666667
+    },
+    {
+     "completion": 0.2733333333333333,
+     "completion_post": 0.30666666666666664,
+     "cost": 1.8666666666666667,
+     "control": 1.8666666666666667
+    },
+    {
+     "completion": 0.24333333333333335,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.7366666666666666,
+     "control": 1.7366666666666666
+    },
+    {
+     "completion": 0.23333333333333334,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.78,
+     "control": 1.78
+    },
+    {
+     "completion": 0.18666666666666668,
+     "completion_post": 0.16,
+     "cost": 1.6166666666666667,
+     "control": 1.6166666666666667
+    },
+    {
+     "completion": 0.22,
+     "completion_post": 0.25333333333333335,
+     "cost": 1.66,
+     "control": 1.66
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.7166666666666666,
+     "control": 1.7166666666666666
+    },
+    {
+     "completion": 0.23333333333333334,
+     "completion_post": 0.20666666666666667,
+     "cost": 1.73,
+     "control": 1.73
+    },
+    {
+     "completion": 0.24,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.78,
+     "control": 1.78
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.6533333333333333,
+     "control": 1.6533333333333333
+    },
+    {
+     "completion": 0.22333333333333333,
+     "completion_post": 0.26,
+     "cost": 1.7566666666666666,
+     "control": 1.7566666666666666
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.7433333333333334,
+     "control": 1.7433333333333334
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.15333333333333332,
+     "cost": 1.5533333333333332,
+     "control": 1.5533333333333332
+    },
+    {
+     "completion": 0.20666666666666667,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.6666666666666667,
+     "control": 1.6666666666666667
+    },
+    {
+     "completion": 0.24666666666666667,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.8233333333333333,
+     "control": 1.8233333333333333
+    },
+    {
+     "completion": 0.23666666666666666,
+     "completion_post": 0.21333333333333335,
+     "cost": 1.7866666666666666,
+     "control": 1.7866666666666666
+    },
+    {
+     "completion": 0.25333333333333335,
+     "completion_post": 0.24666666666666667,
+     "cost": 1.6833333333333333,
+     "control": 1.6833333333333333
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.82,
+     "cost": 4.0,
+     "control": 0.17
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.14
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.9566666666666666,
+     "control": 0.17333333333333334
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.86,
+     "cost": 3.9033333333333333,
+     "control": 0.11333333333333333
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.18333333333333332
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 3.95,
+     "control": 0.16
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.9,
+     "cost": 4.026666666666666,
+     "control": 0.19
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.036666666666667,
+     "control": 0.17
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 3.9833333333333334,
+     "control": 0.14666666666666667
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.07,
+     "control": 0.18666666666666668
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.006666666666667,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.9,
+     "cost": 3.993333333333333,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8733333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.17666666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.86,
+     "cost": 4.1,
+     "control": 0.20333333333333334
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.8933333333333335,
+     "control": 0.14333333333333334
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9266666666666666,
+     "cost": 4.026666666666666,
+     "control": 0.19666666666666666
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.84,
+     "cost": 4.016666666666667,
+     "control": 0.14
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.88,
+     "cost": 3.9566666666666666,
+     "control": 0.16
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.15,
+     "control": 0.18333333333333332
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.97,
+     "control": 0.15
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9,
+     "cost": 3.993333333333333,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.9,
+     "cost": 4.013333333333334,
+     "control": 0.15333333333333332
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.94,
+     "control": 0.13666666666666666
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 3.993333333333333,
+     "control": 0.17
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.9766666666666666,
+     "control": 0.15333333333333332
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 3.99,
+     "control": 0.17
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.92,
+     "cost": 3.99,
+     "control": 0.17333333333333334
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.84,
+     "cost": 4.04,
+     "control": 0.18
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.053333333333334,
+     "control": 0.18
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8666666666666667,
+     "cost": 3.953333333333333,
+     "control": 0.16
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.373333333333333,
+     "control": 4.543333333333333
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.486666666666666
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.286666666666667,
+     "control": 4.46
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.98,
+     "cost": 4.21,
+     "control": 4.323333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3133333333333335,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.246666666666667,
+     "control": 4.406666666666666
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.366666666666666,
+     "control": 4.556666666666667
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.473333333333334,
+     "control": 4.6433333333333335
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.296666666666667,
+     "control": 4.443333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3933333333333335,
+     "control": 4.58
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.98,
+     "cost": 4.3566666666666665,
+     "control": 4.52
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.306666666666667,
+     "control": 4.47
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 1.0,
+     "cost": 4.35,
+     "control": 4.526666666666666
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.433333333333334,
+     "control": 4.636666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.193333333333333,
+     "control": 4.336666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.3933333333333335,
+     "control": 4.59
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3,
+     "control": 4.44
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.276666666666666,
+     "control": 4.4366666666666665
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.543333333333333,
+     "control": 4.726666666666667
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.266666666666667,
+     "control": 4.416666666666667
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.98,
+     "cost": 4.333333333333333,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.98,
+     "cost": 4.36,
+     "control": 4.513333333333334
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.416666666666667
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.363333333333333,
+     "control": 4.533333333333333
+    },
+    {
+     "completion": 0.9766666666666667,
+     "completion_post": 0.98,
+     "cost": 4.343333333333334,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.9633333333333334,
+     "completion_post": 0.9466666666666667,
+     "cost": 4.326666666666667,
+     "control": 4.496666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.28,
+     "control": 4.453333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.416666666666667,
+     "control": 4.596666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.416666666666667,
+     "control": 4.596666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.4366666666666665
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.31,
+     "control": 4.48
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.316666666666666,
+     "control": 4.456666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.29,
+     "control": 4.463333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.31,
+     "control": 4.423333333333333
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.323333333333333,
+     "control": 4.506666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.333333333333333,
+     "control": 4.493333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.286666666666667,
+     "control": 4.476666666666667
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.37,
+     "control": 4.54
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.266666666666667,
+     "control": 4.413333333333333
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.3533333333333335,
+     "control": 4.54
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.326666666666667,
+     "control": 4.49
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.296666666666667,
+     "control": 4.46
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.36,
+     "control": 4.536666666666667
+    },
+    {
+     "completion": 0.9733333333333334,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.44,
+     "control": 4.6433333333333335
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.2,
+     "control": 4.343333333333334
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.543333333333333
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.4,
+     "control": 4.54
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.98,
+     "cost": 4.366666666666666,
+     "control": 4.526666666666666
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.46,
+     "control": 4.6433333333333335
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9666666666666667,
+     "cost": 4.286666666666667,
+     "control": 4.4366666666666665
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 1.0,
+     "cost": 4.293333333333333,
+     "control": 4.456666666666667
+    },
+    {
+     "completion": 0.9866666666666667,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.346666666666667,
+     "control": 4.5
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.256666666666667,
+     "control": 4.3933333333333335
+    },
+    {
+     "completion": 0.9833333333333333,
+     "completion_post": 0.9733333333333334,
+     "cost": 4.34,
+     "control": 4.51
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.5
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.346666666666667,
+     "control": 4.516666666666667
+    },
+    {
+     "completion": 0.9966666666666667,
+     "completion_post": 1.0,
+     "cost": 4.34,
+     "control": 4.513333333333334
+    },
+    {
+     "completion": 0.98,
+     "completion_post": 0.9866666666666667,
+     "cost": 4.376666666666667,
+     "control": 4.556666666666667
+    },
+    {
+     "completion": 0.9933333333333333,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.373333333333333,
+     "control": 4.553333333333334
+    },
+    {
+     "completion": 0.99,
+     "completion_post": 0.9933333333333333,
+     "cost": 4.276666666666666,
+     "control": 4.4366666666666665
+    }
+   ]
+  },
+  "S3-drift": {
+   "router": [
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.06,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37333333333333335,
+     "completion_post": 0.08666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39666666666666667,
+     "completion_post": 0.12,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.34,
+     "completion_post": 0.06,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3466666666666667,
+     "completion_post": 0.05333333333333334,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.08,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.1,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.07333333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.08,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3233333333333333,
+     "completion_post": 0.02,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.4033333333333333,
+     "completion_post": 0.09333333333333334,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.35,
+     "completion_post": 0.08666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3933333333333333,
+     "completion_post": 0.08666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.31,
+     "completion_post": 0.06666666666666667,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3433333333333333,
+     "completion_post": 0.05333333333333334,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.35,
+     "completion_post": 0.09333333333333334,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3333333333333333,
+     "completion_post": 0.03333333333333333,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38,
+     "completion_post": 0.04666666666666667,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.33,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.09333333333333334,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.32,
+     "completion_post": 0.04666666666666667,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.05333333333333334,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3933333333333333,
+     "completion_post": 0.11333333333333333,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3466666666666667,
+     "completion_post": 0.06,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.11333333333333333,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36666666666666664,
+     "completion_post": 0.08,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36,
+     "completion_post": 0.09333333333333334,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36,
+     "completion_post": 0.06666666666666667,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.08666666666666667,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37333333333333335,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.85,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.093333333333334,
+     "control": 5.093333333333334
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.94,
+     "control": 4.94
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.91,
+     "control": 4.91
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.86,
+     "cost": 4.946666666666666,
+     "control": 4.946666666666666
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.0,
+     "control": 5.0
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.07,
+     "control": 5.07
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.05,
+     "control": 5.05
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.15,
+     "control": 5.15
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.93,
+     "control": 4.93
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.076666666666667,
+     "control": 5.076666666666667
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.07,
+     "control": 5.07
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.82,
+     "cost": 5.006666666666667,
+     "control": 5.006666666666667
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.09,
+     "control": 5.09
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.92,
+     "cost": 4.966666666666667,
+     "control": 4.966666666666667
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.913333333333333,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.036666666666667,
+     "control": 5.036666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.976666666666667,
+     "control": 4.976666666666667
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.84,
+     "cost": 5.086666666666667,
+     "control": 5.086666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.19,
+     "control": 5.19
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.046666666666667,
+     "control": 5.046666666666667
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.023333333333333,
+     "control": 5.023333333333333
+    },
+    {
+     "completion": 0.8466666666666667,
+     "completion_post": 0.8,
+     "cost": 5.083333333333333,
+     "control": 5.083333333333333
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.116666666666666,
+     "control": 5.116666666666666
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.84,
+     "cost": 4.95,
+     "control": 4.95
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.013333333333334,
+     "control": 5.013333333333334
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.073333333333333,
+     "control": 5.073333333333333
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 5.036666666666667,
+     "control": 5.036666666666667
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.86,
+     "cost": 4.976666666666667,
+     "control": 4.976666666666667
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.13,
+     "control": 5.13
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.906666666666666,
+     "control": 4.906666666666666
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.85,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.04,
+     "control": 5.04
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.86,
+     "cost": 4.903333333333333,
+     "control": 4.903333333333333
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.88,
+     "cost": 4.92,
+     "control": 4.92
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.826666666666667,
+     "control": 4.826666666666667
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.88,
+     "cost": 4.956666666666667,
+     "control": 4.956666666666667
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.8133333333333335,
+     "control": 4.8133333333333335
+    },
+    {
+     "completion": 0.8433333333333334,
+     "completion_post": 0.7933333333333333,
+     "cost": 5.18,
+     "control": 5.18
+    },
+    {
+     "completion": 0.8433333333333334,
+     "completion_post": 0.8266666666666667,
+     "cost": 5.19,
+     "control": 5.19
+    },
+    {
+     "completion": 0.84,
+     "completion_post": 0.8066666666666666,
+     "cost": 4.9366666666666665,
+     "control": 4.9366666666666665
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.8133333333333334,
+     "cost": 5.12,
+     "control": 5.12
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.9133333333333333,
+     "cost": 5.02,
+     "control": 5.02
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.11,
+     "control": 5.11
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.84,
+     "cost": 5.126666666666667,
+     "control": 5.126666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.04,
+     "control": 5.04
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.84,
+     "cost": 4.97,
+     "control": 4.97
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 5.056666666666667,
+     "control": 5.056666666666667
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.84,
+     "cost": 5.17,
+     "control": 5.17
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.86,
+     "cost": 5.046666666666667,
+     "control": 5.046666666666667
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.21,
+     "control": 5.21
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8066666666666666,
+     "cost": 5.046666666666667,
+     "control": 5.046666666666667
+    },
+    {
+     "completion": 0.8433333333333334,
+     "completion_post": 0.8266666666666667,
+     "cost": 5.1066666666666665,
+     "control": 5.1066666666666665
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.88,
+     "cost": 5.09,
+     "control": 5.09
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.88,
+     "cost": 4.816666666666666,
+     "control": 4.816666666666666
+    },
+    {
+     "completion": 0.85,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.113333333333333,
+     "control": 5.113333333333333
+    },
+    {
+     "completion": 0.8366666666666667,
+     "completion_post": 0.82,
+     "cost": 5.033333333333333,
+     "control": 5.033333333333333
+    },
+    {
+     "completion": 0.85,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.993333333333333,
+     "control": 4.993333333333333
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.8533333333333334,
+     "cost": 5.013333333333334,
+     "control": 5.013333333333334
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.98,
+     "control": 4.98
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.1866666666666665,
+     "control": 5.1866666666666665
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.81,
+     "control": 4.81
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.08,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.04,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37,
+     "completion_post": 0.08,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.34,
+     "completion_post": 0.02666666666666667,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.32666666666666666,
+     "completion_post": 0.06,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3466666666666667,
+     "completion_post": 0.03333333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.4,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.35,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3233333333333333,
+     "completion_post": 0.06,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.08,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.06,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.06,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.07333333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39666666666666667,
+     "completion_post": 0.10666666666666667,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37333333333333335,
+     "completion_post": 0.09333333333333334,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.06,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36,
+     "completion_post": 0.08,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.32,
+     "completion_post": 0.06,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.08,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.08,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.37,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.10666666666666667,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.31333333333333335,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.7166666666666667,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.913333333333333,
+     "control": 5.913333333333333
+    },
+    {
+     "completion": 0.7066666666666667,
+     "completion_post": 0.5733333333333334,
+     "cost": 5.8,
+     "control": 5.8
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.726666666666667,
+     "control": 5.726666666666667
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.533333333333333,
+     "control": 5.533333333333333
+    },
+    {
+     "completion": 0.7666666666666667,
+     "completion_post": 0.64,
+     "cost": 5.573333333333333,
+     "control": 5.573333333333333
+    },
+    {
+     "completion": 0.7633333333333333,
+     "completion_post": 0.6,
+     "cost": 5.586666666666667,
+     "control": 5.586666666666667
+    },
+    {
+     "completion": 0.6966666666666667,
+     "completion_post": 0.5333333333333333,
+     "cost": 5.883333333333334,
+     "control": 5.883333333333334
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.5466666666666666,
+     "cost": 5.8533333333333335,
+     "control": 5.8533333333333335
+    },
+    {
+     "completion": 0.7833333333333333,
+     "completion_post": 0.66,
+     "cost": 5.706666666666667,
+     "control": 5.706666666666667
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.5533333333333333,
+     "cost": 5.783333333333333,
+     "control": 5.783333333333333
+    },
+    {
+     "completion": 0.7666666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.7,
+     "control": 5.7
+    },
+    {
+     "completion": 0.7833333333333333,
+     "completion_post": 0.6466666666666666,
+     "cost": 5.736666666666666,
+     "control": 5.736666666666666
+    },
+    {
+     "completion": 0.72,
+     "completion_post": 0.5533333333333333,
+     "cost": 5.69,
+     "control": 5.69
+    },
+    {
+     "completion": 0.75,
+     "completion_post": 0.62,
+     "cost": 6.043333333333333,
+     "control": 6.043333333333333
+    },
+    {
+     "completion": 0.71,
+     "completion_post": 0.5333333333333333,
+     "cost": 5.56,
+     "control": 5.56
+    },
+    {
+     "completion": 0.7366666666666667,
+     "completion_post": 0.5666666666666667,
+     "cost": 5.763333333333334,
+     "control": 5.763333333333334
+    },
+    {
+     "completion": 0.7433333333333333,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.766666666666667,
+     "control": 5.766666666666667
+    },
+    {
+     "completion": 0.77,
+     "completion_post": 0.6533333333333333,
+     "cost": 5.68,
+     "control": 5.68
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.97,
+     "control": 5.97
+    },
+    {
+     "completion": 0.7533333333333333,
+     "completion_post": 0.62,
+     "cost": 5.763333333333334,
+     "control": 5.763333333333334
+    },
+    {
+     "completion": 0.69,
+     "completion_post": 0.5266666666666666,
+     "cost": 5.943333333333333,
+     "control": 5.943333333333333
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.56,
+     "cost": 5.8566666666666665,
+     "control": 5.8566666666666665
+    },
+    {
+     "completion": 0.7533333333333333,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.676666666666667,
+     "control": 5.676666666666667
+    },
+    {
+     "completion": 0.7133333333333334,
+     "completion_post": 0.54,
+     "cost": 5.933333333333334,
+     "control": 5.933333333333334
+    },
+    {
+     "completion": 0.72,
+     "completion_post": 0.6,
+     "cost": 5.816666666666666,
+     "control": 5.816666666666666
+    },
+    {
+     "completion": 0.7,
+     "completion_post": 0.56,
+     "cost": 5.743333333333333,
+     "control": 5.743333333333333
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.5733333333333334,
+     "cost": 5.716666666666667,
+     "control": 5.716666666666667
+    },
+    {
+     "completion": 0.7333333333333333,
+     "completion_post": 0.56,
+     "cost": 5.883333333333334,
+     "control": 5.883333333333334
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.54,
+     "cost": 5.74,
+     "control": 5.74
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.71,
+     "control": 5.71
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.89,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.9366666666666665,
+     "control": 4.9366666666666665
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8066666666666666,
+     "cost": 4.956666666666667,
+     "control": 4.956666666666667
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.06,
+     "control": 5.06
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.88,
+     "cost": 4.91,
+     "control": 4.91
+    },
+    {
+     "completion": 0.8333333333333334,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.07,
+     "control": 5.07
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.88,
+     "cost": 5.086666666666667,
+     "control": 5.086666666666667
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.86,
+     "control": 4.86
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.86,
+     "cost": 5.086666666666667,
+     "control": 5.086666666666667
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.953333333333333,
+     "control": 4.953333333333333
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 5.08,
+     "control": 5.08
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.88,
+     "cost": 4.996666666666667,
+     "control": 4.996666666666667
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.916666666666667,
+     "control": 4.916666666666667
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.84,
+     "cost": 4.993333333333333,
+     "control": 4.993333333333333
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8066666666666666,
+     "cost": 5.116666666666666,
+     "control": 5.116666666666666
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8533333333333334,
+     "cost": 4.86,
+     "control": 4.86
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.933333333333334,
+     "control": 4.933333333333334
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.05,
+     "control": 5.05
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.1433333333333335,
+     "control": 5.1433333333333335
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.9133333333333333,
+     "cost": 5.053333333333334,
+     "control": 5.053333333333334
+    },
+    {
+     "completion": 0.8433333333333334,
+     "completion_post": 0.7866666666666666,
+     "cost": 5.043333333333333,
+     "control": 5.043333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9,
+     "cost": 4.9366666666666665,
+     "control": 4.9366666666666665
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.01,
+     "control": 5.01
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.86,
+     "control": 4.86
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.84,
+     "cost": 5.01,
+     "control": 5.01
+    },
+    {
+     "completion": 0.84,
+     "completion_post": 0.8133333333333334,
+     "cost": 5.066666666666666,
+     "control": 5.066666666666666
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.923333333333333,
+     "control": 4.923333333333333
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.84,
+     "cost": 4.953333333333333,
+     "control": 4.953333333333333
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 4.976666666666667,
+     "control": 4.976666666666667
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.036666666666667,
+     "control": 5.036666666666667
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.04,
+     "control": 5.04
+    }
+   ]
+  },
+  "S4-combined": {
+   "router": [
+    {
+     "completion": 0.11,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.54,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08666666666666667,
+     "completion_post": 0.02,
+     "cost": 1.57,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07666666666666666,
+     "completion_post": 0.006666666666666667,
+     "cost": 1.5333333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08333333333333333,
+     "completion_post": 0.006666666666666667,
+     "cost": 1.61,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08666666666666667,
+     "completion_post": 0.013333333333333334,
+     "cost": 1.5266666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08666666666666667,
+     "completion_post": 0.02,
+     "cost": 1.49,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07666666666666666,
+     "completion_post": 0.0,
+     "cost": 1.6233333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09,
+     "completion_post": 0.013333333333333334,
+     "cost": 1.6166666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09666666666666666,
+     "completion_post": 0.02,
+     "cost": 1.59,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.4966666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09333333333333334,
+     "completion_post": 0.03333333333333333,
+     "cost": 1.6133333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07333333333333333,
+     "completion_post": 0.006666666666666667,
+     "cost": 1.53,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07666666666666666,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.5433333333333332,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08333333333333333,
+     "completion_post": 0.02,
+     "cost": 1.5733333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.10333333333333333,
+     "completion_post": 0.04,
+     "cost": 1.71,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08333333333333333,
+     "completion_post": 0.02,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08666666666666667,
+     "completion_post": 0.02,
+     "cost": 1.6533333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09333333333333334,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.4566666666666668,
+     "control": 0.0
+    },
+    {
+     "completion": 0.06333333333333334,
+     "completion_post": 0.013333333333333334,
+     "cost": 1.5366666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08333333333333333,
+     "completion_post": 0.03333333333333333,
+     "cost": 1.5733333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09333333333333334,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.5633333333333332,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09,
+     "completion_post": 0.03333333333333333,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.056666666666666664,
+     "completion_post": 0.013333333333333334,
+     "cost": 1.5566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08333333333333333,
+     "completion_post": 0.03333333333333333,
+     "cost": 1.58,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07,
+     "completion_post": 0.03333333333333333,
+     "cost": 1.5966666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.08,
+     "completion_post": 0.013333333333333334,
+     "cost": 1.4466666666666668,
+     "control": 0.0
+    },
+    {
+     "completion": 0.07666666666666666,
+     "completion_post": 0.04,
+     "cost": 1.5333333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.11,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.68,
+     "control": 0.0
+    },
+    {
+     "completion": 0.10666666666666667,
+     "completion_post": 0.02666666666666667,
+     "cost": 1.6266666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.09333333333333334,
+     "completion_post": 0.02,
+     "cost": 1.5633333333333332,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.85,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.093333333333334,
+     "control": 5.263333333333334
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.94,
+     "control": 5.08
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.91,
+     "control": 5.083333333333333
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.86,
+     "cost": 4.946666666666666,
+     "control": 5.06
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.0,
+     "control": 5.183333333333334
+    },
+    {
+     "completion": 0.8533333333333334,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.07,
+     "control": 5.23
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.05,
+     "control": 5.24
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.15,
+     "control": 5.32
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.93,
+     "control": 5.076666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 5.076666666666667,
+     "control": 5.263333333333334
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.07,
+     "control": 5.233333333333333
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.82,
+     "cost": 5.006666666666667,
+     "control": 5.17
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.09,
+     "control": 5.266666666666667
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.92,
+     "cost": 4.966666666666667,
+     "control": 5.17
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 4.913333333333333,
+     "control": 5.056666666666667
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.036666666666667,
+     "control": 5.233333333333333
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8466666666666667,
+     "cost": 4.976666666666667,
+     "control": 5.116666666666666
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.84,
+     "cost": 5.086666666666667,
+     "control": 5.246666666666667
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.19,
+     "control": 5.373333333333333
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.046666666666667,
+     "control": 5.196666666666666
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.023333333333333,
+     "control": 5.1866666666666665
+    },
+    {
+     "completion": 0.8466666666666667,
+     "completion_post": 0.8,
+     "cost": 5.083333333333333,
+     "control": 5.236666666666666
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.116666666666666,
+     "control": 5.253333333333333
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.84,
+     "cost": 4.95,
+     "control": 5.12
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.013333333333334,
+     "control": 5.166666666666667
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.8466666666666667,
+     "cost": 5.073333333333333,
+     "control": 5.243333333333333
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.9,
+     "cost": 5.036666666666667,
+     "control": 5.21
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.86,
+     "cost": 4.976666666666667,
+     "control": 5.156666666666666
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8866666666666667,
+     "cost": 5.13,
+     "control": 5.31
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.906666666666666,
+     "control": 5.066666666666666
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.17333333333333334,
+     "completion_post": 0.14,
+     "cost": 2.0433333333333334,
+     "control": 2.0433333333333334
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.14,
+     "cost": 2.02,
+     "control": 2.02
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.18,
+     "cost": 1.9733333333333334,
+     "control": 1.9733333333333334
+    },
+    {
+     "completion": 0.21666666666666667,
+     "completion_post": 0.22,
+     "cost": 2.06,
+     "control": 2.06
+    },
+    {
+     "completion": 0.18333333333333332,
+     "completion_post": 0.14,
+     "cost": 1.96,
+     "control": 1.96
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.14,
+     "cost": 1.9033333333333333,
+     "control": 1.9033333333333333
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.19333333333333333,
+     "cost": 2.2533333333333334,
+     "control": 2.2533333333333334
+    },
+    {
+     "completion": 0.18333333333333332,
+     "completion_post": 0.16,
+     "cost": 2.1166666666666667,
+     "control": 2.1166666666666667
+    },
+    {
+     "completion": 0.21333333333333335,
+     "completion_post": 0.22666666666666666,
+     "cost": 1.9866666666666666,
+     "control": 1.9866666666666666
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.18,
+     "cost": 1.9433333333333334,
+     "control": 1.9433333333333334
+    },
+    {
+     "completion": 0.18333333333333332,
+     "completion_post": 0.18,
+     "cost": 2.1066666666666665,
+     "control": 2.1066666666666665
+    },
+    {
+     "completion": 0.20666666666666667,
+     "completion_post": 0.2,
+     "cost": 2.1433333333333335,
+     "control": 2.1433333333333335
+    },
+    {
+     "completion": 0.20666666666666667,
+     "completion_post": 0.26,
+     "cost": 1.95,
+     "control": 1.95
+    },
+    {
+     "completion": 0.19333333333333333,
+     "completion_post": 0.18,
+     "cost": 1.95,
+     "control": 1.95
+    },
+    {
+     "completion": 0.25,
+     "completion_post": 0.2866666666666667,
+     "cost": 2.22,
+     "control": 2.22
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.22666666666666666,
+     "cost": 2.0733333333333333,
+     "control": 2.0733333333333333
+    },
+    {
+     "completion": 0.19,
+     "completion_post": 0.16,
+     "cost": 2.1166666666666667,
+     "control": 2.1166666666666667
+    },
+    {
+     "completion": 0.16333333333333333,
+     "completion_post": 0.13333333333333333,
+     "cost": 1.9033333333333333,
+     "control": 1.9033333333333333
+    },
+    {
+     "completion": 0.19666666666666666,
+     "completion_post": 0.22,
+     "cost": 1.9866666666666666,
+     "control": 1.9866666666666666
+    },
+    {
+     "completion": 0.17333333333333334,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.99,
+     "control": 1.99
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.13333333333333333,
+     "cost": 2.0866666666666664,
+     "control": 2.0866666666666664
+    },
+    {
+     "completion": 0.22666666666666666,
+     "completion_post": 0.24,
+     "cost": 2.0833333333333335,
+     "control": 2.0833333333333335
+    },
+    {
+     "completion": 0.15333333333333332,
+     "completion_post": 0.16,
+     "cost": 2.0366666666666666,
+     "control": 2.0366666666666666
+    },
+    {
+     "completion": 0.18666666666666668,
+     "completion_post": 0.21333333333333335,
+     "cost": 2.0366666666666666,
+     "control": 2.0366666666666666
+    },
+    {
+     "completion": 0.17666666666666667,
+     "completion_post": 0.18,
+     "cost": 2.183333333333333,
+     "control": 2.183333333333333
+    },
+    {
+     "completion": 0.14666666666666667,
+     "completion_post": 0.12,
+     "cost": 1.84,
+     "control": 1.84
+    },
+    {
+     "completion": 0.17,
+     "completion_post": 0.19333333333333333,
+     "cost": 1.9866666666666666,
+     "control": 1.9866666666666666
+    },
+    {
+     "completion": 0.2,
+     "completion_post": 0.2,
+     "cost": 2.1533333333333333,
+     "control": 2.1533333333333333
+    },
+    {
+     "completion": 0.21,
+     "completion_post": 0.18666666666666668,
+     "cost": 2.1566666666666667,
+     "control": 2.1566666666666667
+    },
+    {
+     "completion": 0.22,
+     "completion_post": 0.18666666666666668,
+     "cost": 2.006666666666667,
+     "control": 2.006666666666667
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.08,
+     "cost": 4.0,
+     "control": 0.17
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.04,
+     "cost": 3.993333333333333,
+     "control": 0.14
+    },
+    {
+     "completion": 0.37,
+     "completion_post": 0.08,
+     "cost": 3.9566666666666666,
+     "control": 0.17333333333333334
+    },
+    {
+     "completion": 0.34,
+     "completion_post": 0.02666666666666667,
+     "cost": 3.9033333333333333,
+     "control": 0.11333333333333333
+    },
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.026666666666666,
+     "control": 0.18333333333333332
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.95,
+     "control": 0.16
+    },
+    {
+     "completion": 0.32666666666666666,
+     "completion_post": 0.06,
+     "cost": 4.026666666666666,
+     "control": 0.19
+    },
+    {
+     "completion": 0.3466666666666667,
+     "completion_post": 0.03333333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.17
+    },
+    {
+     "completion": 0.4,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.9833333333333334,
+     "control": 0.14666666666666667
+    },
+    {
+     "completion": 0.35,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.07,
+     "control": 0.18666666666666668
+    },
+    {
+     "completion": 0.3233333333333333,
+     "completion_post": 0.06,
+     "cost": 4.006666666666667,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.08,
+     "cost": 3.993333333333333,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.17666666666666667
+    },
+    {
+     "completion": 0.33666666666666667,
+     "completion_post": 0.06,
+     "cost": 4.1,
+     "control": 0.20333333333333334
+    },
+    {
+     "completion": 0.3566666666666667,
+     "completion_post": 0.06,
+     "cost": 3.8933333333333335,
+     "control": 0.14333333333333334
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.07333333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.19666666666666666
+    },
+    {
+     "completion": 0.39666666666666667,
+     "completion_post": 0.10666666666666667,
+     "cost": 4.016666666666667,
+     "control": 0.14
+    },
+    {
+     "completion": 0.37333333333333335,
+     "completion_post": 0.09333333333333334,
+     "cost": 3.9566666666666666,
+     "control": 0.16
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.06,
+     "cost": 4.15,
+     "control": 0.18333333333333332
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.97,
+     "control": 0.15
+    },
+    {
+     "completion": 0.39,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.16333333333333333
+    },
+    {
+     "completion": 0.36,
+     "completion_post": 0.08,
+     "cost": 4.013333333333334,
+     "control": 0.15333333333333332
+    },
+    {
+     "completion": 0.32,
+     "completion_post": 0.06,
+     "cost": 3.94,
+     "control": 0.13666666666666666
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.07333333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.17
+    },
+    {
+     "completion": 0.36333333333333334,
+     "completion_post": 0.08,
+     "cost": 3.9766666666666666,
+     "control": 0.15333333333333332
+    },
+    {
+     "completion": 0.37666666666666665,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.99,
+     "control": 0.17
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.08,
+     "cost": 3.99,
+     "control": 0.17333333333333334
+    },
+    {
+     "completion": 0.37,
+     "completion_post": 0.04666666666666667,
+     "cost": 4.04,
+     "control": 0.18
+    },
+    {
+     "completion": 0.38333333333333336,
+     "completion_post": 0.10666666666666667,
+     "cost": 4.053333333333334,
+     "control": 0.18
+    },
+    {
+     "completion": 0.31333333333333335,
+     "completion_post": 0.06666666666666667,
+     "cost": 3.953333333333333,
+     "control": 0.16
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.7166666666666667,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.913333333333333,
+     "control": 6.083333333333333
+    },
+    {
+     "completion": 0.7066666666666667,
+     "completion_post": 0.5733333333333334,
+     "cost": 5.8,
+     "control": 5.94
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.726666666666667,
+     "control": 5.9
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.533333333333333,
+     "control": 5.6466666666666665
+    },
+    {
+     "completion": 0.7666666666666667,
+     "completion_post": 0.64,
+     "cost": 5.573333333333333,
+     "control": 5.756666666666667
+    },
+    {
+     "completion": 0.7633333333333333,
+     "completion_post": 0.6,
+     "cost": 5.586666666666667,
+     "control": 5.746666666666667
+    },
+    {
+     "completion": 0.6966666666666667,
+     "completion_post": 0.5333333333333333,
+     "cost": 5.883333333333334,
+     "control": 6.073333333333333
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.5466666666666666,
+     "cost": 5.8533333333333335,
+     "control": 6.023333333333333
+    },
+    {
+     "completion": 0.7833333333333333,
+     "completion_post": 0.66,
+     "cost": 5.706666666666667,
+     "control": 5.8533333333333335
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.5533333333333333,
+     "cost": 5.783333333333333,
+     "control": 5.97
+    },
+    {
+     "completion": 0.7666666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.7,
+     "control": 5.863333333333333
+    },
+    {
+     "completion": 0.7833333333333333,
+     "completion_post": 0.6466666666666666,
+     "cost": 5.736666666666666,
+     "control": 5.9
+    },
+    {
+     "completion": 0.72,
+     "completion_post": 0.5533333333333333,
+     "cost": 5.69,
+     "control": 5.866666666666666
+    },
+    {
+     "completion": 0.75,
+     "completion_post": 0.62,
+     "cost": 6.043333333333333,
+     "control": 6.246666666666667
+    },
+    {
+     "completion": 0.71,
+     "completion_post": 0.5333333333333333,
+     "cost": 5.56,
+     "control": 5.703333333333333
+    },
+    {
+     "completion": 0.7366666666666667,
+     "completion_post": 0.5666666666666667,
+     "cost": 5.763333333333334,
+     "control": 5.96
+    },
+    {
+     "completion": 0.7433333333333333,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.766666666666667,
+     "control": 5.906666666666666
+    },
+    {
+     "completion": 0.77,
+     "completion_post": 0.6533333333333333,
+     "cost": 5.68,
+     "control": 5.84
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.5866666666666667,
+     "cost": 5.97,
+     "control": 6.153333333333333
+    },
+    {
+     "completion": 0.7533333333333333,
+     "completion_post": 0.62,
+     "cost": 5.763333333333334,
+     "control": 5.913333333333333
+    },
+    {
+     "completion": 0.69,
+     "completion_post": 0.5266666666666666,
+     "cost": 5.943333333333333,
+     "control": 6.1066666666666665
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.56,
+     "cost": 5.8566666666666665,
+     "control": 6.01
+    },
+    {
+     "completion": 0.7533333333333333,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.676666666666667,
+     "control": 5.8133333333333335
+    },
+    {
+     "completion": 0.7133333333333334,
+     "completion_post": 0.54,
+     "cost": 5.933333333333334,
+     "control": 6.1033333333333335
+    },
+    {
+     "completion": 0.72,
+     "completion_post": 0.6,
+     "cost": 5.816666666666666,
+     "control": 5.97
+    },
+    {
+     "completion": 0.7,
+     "completion_post": 0.56,
+     "cost": 5.743333333333333,
+     "control": 5.913333333333333
+    },
+    {
+     "completion": 0.73,
+     "completion_post": 0.5733333333333334,
+     "cost": 5.716666666666667,
+     "control": 5.89
+    },
+    {
+     "completion": 0.7333333333333333,
+     "completion_post": 0.56,
+     "cost": 5.883333333333334,
+     "control": 6.0633333333333335
+    },
+    {
+     "completion": 0.7266666666666667,
+     "completion_post": 0.54,
+     "cost": 5.74,
+     "control": 5.92
+    },
+    {
+     "completion": 0.7466666666666667,
+     "completion_post": 0.6066666666666667,
+     "cost": 5.71,
+     "control": 5.87
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.89,
+     "completion_post": 0.8733333333333333,
+     "cost": 4.9366666666666665,
+     "control": 5.1066666666666665
+    },
+    {
+     "completion": 0.8766666666666667,
+     "completion_post": 0.8066666666666666,
+     "cost": 4.956666666666667,
+     "control": 5.096666666666667
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.06,
+     "control": 5.233333333333333
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.88,
+     "cost": 4.91,
+     "control": 5.023333333333333
+    },
+    {
+     "completion": 0.8333333333333334,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.07,
+     "control": 5.253333333333333
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.88,
+     "cost": 5.086666666666667,
+     "control": 5.246666666666667
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 4.86,
+     "control": 5.05
+    },
+    {
+     "completion": 0.87,
+     "completion_post": 0.86,
+     "cost": 5.086666666666667,
+     "control": 5.256666666666667
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.953333333333333,
+     "control": 5.1
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 5.08,
+     "control": 5.266666666666667
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.88,
+     "cost": 4.996666666666667,
+     "control": 5.16
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 4.916666666666667,
+     "control": 5.08
+    },
+    {
+     "completion": 0.8733333333333333,
+     "completion_post": 0.84,
+     "cost": 4.993333333333333,
+     "control": 5.17
+    },
+    {
+     "completion": 0.8566666666666667,
+     "completion_post": 0.8066666666666666,
+     "cost": 5.116666666666666,
+     "control": 5.32
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8533333333333334,
+     "cost": 4.86,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.8666666666666667,
+     "cost": 4.933333333333334,
+     "control": 5.13
+    },
+    {
+     "completion": 0.8933333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 5.05,
+     "control": 5.19
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8666666666666667,
+     "cost": 5.1433333333333335,
+     "control": 5.303333333333334
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.9133333333333333,
+     "cost": 5.053333333333334,
+     "control": 5.236666666666666
+    },
+    {
+     "completion": 0.8433333333333334,
+     "completion_post": 0.7866666666666666,
+     "cost": 5.043333333333333,
+     "control": 5.193333333333333
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.9,
+     "cost": 4.9366666666666665,
+     "control": 5.1
+    },
+    {
+     "completion": 0.8666666666666667,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.01,
+     "control": 5.163333333333333
+    },
+    {
+     "completion": 0.89,
+     "completion_post": 0.88,
+     "cost": 4.86,
+     "control": 4.996666666666667
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.84,
+     "cost": 5.01,
+     "control": 5.18
+    },
+    {
+     "completion": 0.84,
+     "completion_post": 0.8133333333333334,
+     "cost": 5.066666666666666,
+     "control": 5.22
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8866666666666667,
+     "cost": 4.923333333333333,
+     "control": 5.093333333333334
+    },
+    {
+     "completion": 0.88,
+     "completion_post": 0.84,
+     "cost": 4.953333333333333,
+     "control": 5.126666666666667
+    },
+    {
+     "completion": 0.8633333333333333,
+     "completion_post": 0.86,
+     "cost": 4.976666666666667,
+     "control": 5.156666666666666
+    },
+    {
+     "completion": 0.8866666666666667,
+     "completion_post": 0.8733333333333333,
+     "cost": 5.036666666666667,
+     "control": 5.216666666666667
+    },
+    {
+     "completion": 0.86,
+     "completion_post": 0.8333333333333334,
+     "cost": 5.04,
+     "control": 5.2
+    }
+   ]
+  },
+  "S5-cost": {
+   "router": [
+    {
+     "completion": 0.66,
+     "completion_post": 0.6666666666666666,
+     "cost": 4.0,
+     "control": 0.0
+    },
+    {
+     "completion": 0.65,
+     "completion_post": 0.64,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6666666666666666,
+     "completion_post": 0.66,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.7266666666666667,
+     "cost": 3.9033333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6466666666666666,
+     "completion_post": 0.6533333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6833333333333333,
+     "completion_post": 0.6666666666666666,
+     "cost": 3.95,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6133333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.6733333333333333,
+     "cost": 4.036666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6566666666666666,
+     "completion_post": 0.6266666666666667,
+     "cost": 3.9833333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.64,
+     "cost": 4.07,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6733333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.006666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6433333333333333,
+     "completion_post": 0.6733333333333333,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.66,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5866666666666667,
+     "completion_post": 0.62,
+     "cost": 4.1,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 3.8933333333333335,
+     "control": 0.0
+    },
+    {
+     "completion": 0.62,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.026666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6333333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.016666666666667,
+     "control": 0.0
+    },
+    {
+     "completion": 0.68,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.9566666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6,
+     "completion_post": 0.5866666666666667,
+     "cost": 4.15,
+     "control": 0.0
+    },
+    {
+     "completion": 0.69,
+     "completion_post": 0.72,
+     "cost": 3.97,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6166666666666667,
+     "completion_post": 0.64,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6333333333333333,
+     "cost": 4.013333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6633333333333333,
+     "completion_post": 0.6533333333333333,
+     "cost": 3.94,
+     "control": 0.0
+    },
+    {
+     "completion": 0.64,
+     "completion_post": 0.6466666666666666,
+     "cost": 3.993333333333333,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6666666666666666,
+     "completion_post": 0.68,
+     "cost": 3.9766666666666666,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6833333333333333,
+     "completion_post": 0.7133333333333334,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6766666666666666,
+     "completion_post": 0.7266666666666667,
+     "cost": 3.99,
+     "control": 0.0
+    },
+    {
+     "completion": 0.67,
+     "completion_post": 0.6866666666666666,
+     "cost": 4.04,
+     "control": 0.0
+    },
+    {
+     "completion": 0.6533333333333333,
+     "completion_post": 0.6266666666666667,
+     "cost": 4.053333333333334,
+     "control": 0.0
+    },
+    {
+     "completion": 0.67,
+     "completion_post": 0.66,
+     "cost": 3.953333333333333,
+     "control": 0.0
+    }
+   ],
+   "exec-full": [
+    {
+     "completion": 0.91,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.3896666666666664,
+     "control": 4.796666666666667
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.92,
+     "cost": 2.862333333333333,
+     "control": 4.75
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9666666666666667,
+     "cost": 3.055,
+     "control": 4.746666666666667
+    },
+    {
+     "completion": 0.96,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.177,
+     "control": 4.733333333333333
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.2886666666666664,
+     "control": 4.74
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9466666666666667,
+     "cost": 2.996,
+     "control": 4.736666666666666
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.021333333333333,
+     "control": 4.72
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.8866666666666667,
+     "cost": 3.095666666666666,
+     "control": 4.866666666666666
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.94,
+     "cost": 3.145,
+     "control": 4.72
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.201333333333334,
+     "control": 4.9
+    },
+    {
+     "completion": 0.9566666666666667,
+     "completion_post": 0.94,
+     "cost": 3.161,
+     "control": 4.773333333333333
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.8933333333333333,
+     "cost": 2.939,
+     "control": 4.803333333333334
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.9466666666666667,
+     "cost": 2.8669999999999995,
+     "control": 4.726666666666667
+    },
+    {
+     "completion": 0.9633333333333334,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.198,
+     "control": 4.826666666666667
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.127,
+     "control": 4.636666666666667
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.0706666666666664,
+     "control": 4.806666666666667
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.117666666666666,
+     "control": 4.8
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.8556666666666666,
+     "control": 4.79
+    },
+    {
+     "completion": 0.9,
+     "completion_post": 0.88,
+     "cost": 2.930333333333333,
+     "control": 4.976666666666667
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.94,
+     "cost": 3.4756666666666667,
+     "control": 4.663333333333333
+    },
+    {
+     "completion": 0.9433333333333334,
+     "completion_post": 0.9533333333333334,
+     "cost": 2.854666666666667,
+     "control": 4.716666666666667
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9,
+     "cost": 2.889333333333333,
+     "control": 4.84
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.2626666666666666,
+     "control": 4.723333333333334
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.92,
+     "cost": 3.2056666666666667,
+     "control": 4.766666666666667
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.9926666666666666,
+     "control": 4.78
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9,
+     "cost": 3.4766666666666666,
+     "control": 4.713333333333333
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.94,
+     "cost": 3.4530000000000003,
+     "control": 4.743333333333333
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.7393333333333323,
+     "control": 4.803333333333334
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.139333333333333,
+     "control": 4.903333333333333
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.9563333333333333,
+     "control": 4.736666666666666
+    }
+   ],
+   "-goal": [
+    {
+     "completion": 0.94,
+     "completion_post": 0.96,
+     "cost": 3.1633333333333336,
+     "control": 4.796666666666667
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.359,
+     "control": 4.71
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 2.8606666666666665,
+     "control": 4.736666666666666
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.94,
+     "cost": 3.096333333333333,
+     "control": 4.526666666666666
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.3863333333333334,
+     "control": 4.77
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.92,
+     "cost": 2.97,
+     "control": 4.65
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.4719999999999995,
+     "control": 4.83
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9066666666666666,
+     "cost": 3.201333333333333,
+     "control": 4.923333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.3666666666666667,
+     "control": 4.673333333333333
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9066666666666666,
+     "cost": 3.2566666666666664,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.96,
+     "completion_post": 0.96,
+     "cost": 2.8786666666666663,
+     "control": 4.726666666666667
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.434,
+     "control": 4.89
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.96,
+     "cost": 3.378,
+     "control": 4.796666666666667
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.308,
+     "control": 4.82
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.3276666666666666,
+     "control": 4.73
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9266666666666666,
+     "cost": 2.8506666666666662,
+     "control": 4.843333333333334
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.88,
+     "cost": 3.055333333333333,
+     "control": 4.903333333333333
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.040333333333333,
+     "control": 4.76
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 2.9833333333333334,
+     "control": 4.99
+    },
+    {
+     "completion": 0.9566666666666667,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.270333333333333,
+     "control": 4.733333333333333
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.41,
+     "control": 4.786666666666667
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.92,
+     "cost": 3.2096666666666667,
+     "control": 4.85
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.1123333333333334,
+     "control": 4.65
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9,
+     "cost": 3.158333333333333,
+     "control": 4.92
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.96,
+     "cost": 3.353666666666667,
+     "control": 4.793333333333333
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.824,
+     "control": 4.793333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.94,
+     "cost": 2.995333333333333,
+     "control": 4.843333333333334
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.8933333333333333,
+     "cost": 2.912666666666667,
+     "control": 4.723333333333334
+    },
+    {
+     "completion": 0.9433333333333334,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.2319999999999998,
+     "control": 4.8933333333333335
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.226,
+     "control": 4.733333333333333
+    }
+   ],
+   "-monitor": [
+    {
+     "completion": 0.5,
+     "completion_post": 0.48,
+     "cost": 1.2,
+     "control": 0.0
+    },
+    {
+     "completion": 0.49333333333333335,
+     "completion_post": 0.5133333333333333,
+     "cost": 1.198,
+     "control": 0.0
+    },
+    {
+     "completion": 0.49333333333333335,
+     "completion_post": 0.5066666666666667,
+     "cost": 1.1869999999999998,
+     "control": 0.0
+    },
+    {
+     "completion": 0.48333333333333334,
+     "completion_post": 0.5,
+     "cost": 1.171,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5233333333333333,
+     "completion_post": 0.5,
+     "cost": 1.208,
+     "control": 0.0
+    },
+    {
+     "completion": 0.52,
+     "completion_post": 0.5533333333333333,
+     "cost": 1.185,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5333333333333333,
+     "completion_post": 0.5533333333333333,
+     "cost": 1.208,
+     "control": 0.0
+    },
+    {
+     "completion": 0.48,
+     "completion_post": 0.5133333333333333,
+     "cost": 1.211,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5833333333333334,
+     "completion_post": 0.5266666666666666,
+     "cost": 1.195,
+     "control": 0.0
+    },
+    {
+     "completion": 0.52,
+     "completion_post": 0.5333333333333333,
+     "cost": 1.221,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5,
+     "completion_post": 0.54,
+     "cost": 1.2020000000000002,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5566666666666666,
+     "completion_post": 0.6,
+     "cost": 1.1980000000000002,
+     "control": 0.0
+    },
+    {
+     "completion": 0.4866666666666667,
+     "completion_post": 0.49333333333333335,
+     "cost": 1.198,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5066666666666667,
+     "completion_post": 0.5466666666666666,
+     "cost": 1.23,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5466666666666666,
+     "completion_post": 0.54,
+     "cost": 1.168,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5466666666666666,
+     "completion_post": 0.5133333333333333,
+     "cost": 1.208,
+     "control": 0.0
+    },
+    {
+     "completion": 0.51,
+     "completion_post": 0.49333333333333335,
+     "cost": 1.205,
+     "control": 0.0
+    },
+    {
+     "completion": 0.54,
+     "completion_post": 0.56,
+     "cost": 1.187,
+     "control": 0.0
+    },
+    {
+     "completion": 0.56,
+     "completion_post": 0.54,
+     "cost": 1.245,
+     "control": 0.0
+    },
+    {
+     "completion": 0.53,
+     "completion_post": 0.5666666666666667,
+     "cost": 1.191,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5766666666666667,
+     "completion_post": 0.56,
+     "cost": 1.198,
+     "control": 0.0
+    },
+    {
+     "completion": 0.49666666666666665,
+     "completion_post": 0.48,
+     "cost": 1.2040000000000002,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5033333333333333,
+     "completion_post": 0.58,
+     "cost": 1.1820000000000002,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5433333333333333,
+     "completion_post": 0.5266666666666666,
+     "cost": 1.198,
+     "control": 0.0
+    },
+    {
+     "completion": 0.56,
+     "completion_post": 0.5666666666666667,
+     "cost": 1.1929999999999998,
+     "control": 0.0
+    },
+    {
+     "completion": 0.49333333333333335,
+     "completion_post": 0.43333333333333335,
+     "cost": 1.197,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5166666666666667,
+     "completion_post": 0.48,
+     "cost": 1.197,
+     "control": 0.0
+    },
+    {
+     "completion": 0.5266666666666666,
+     "completion_post": 0.52,
+     "cost": 1.212,
+     "control": 0.0
+    },
+    {
+     "completion": 0.52,
+     "completion_post": 0.5266666666666666,
+     "cost": 1.216,
+     "control": 0.0
+    },
+    {
+     "completion": 0.48,
+     "completion_post": 0.5,
+     "cost": 1.186,
+     "control": 0.0
+    }
+   ],
+   "-learning": [
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.92,
+     "cost": 2.12,
+     "control": 4.92
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.94,
+     "cost": 2.0513333333333335,
+     "control": 4.846666666666667
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9266666666666666,
+     "cost": 1.990333333333333,
+     "control": 4.76
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.92,
+     "cost": 1.9476666666666664,
+     "control": 4.68
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.98,
+     "cost": 1.9646666666666661,
+     "control": 4.783333333333333
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.035,
+     "control": 4.8
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9266666666666666,
+     "cost": 2.0746666666666664,
+     "control": 4.8933333333333335
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.9066666666666666,
+     "cost": 2.1676666666666664,
+     "control": 4.993333333333333
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.94,
+     "cost": 1.9616666666666667,
+     "control": 4.75
+    },
+    {
+     "completion": 0.9166666666666666,
+     "completion_post": 0.9266666666666666,
+     "cost": 1.9843333333333333,
+     "control": 4.833333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 2.102,
+     "control": 4.906666666666666
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9466666666666667,
+     "cost": 2.0046666666666666,
+     "control": 4.8
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9266666666666666,
+     "cost": 2.1846666666666663,
+     "control": 4.98
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9066666666666666,
+     "cost": 2.1466666666666665,
+     "control": 5.016666666666667
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 1.9213333333333336,
+     "control": 4.6466666666666665
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9666666666666667,
+     "cost": 2.0513333333333335,
+     "control": 4.87
+    },
+    {
+     "completion": 0.8966666666666666,
+     "completion_post": 0.8933333333333333,
+     "cost": 2.0116666666666667,
+     "control": 4.823333333333333
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9,
+     "cost": 2.020333333333333,
+     "control": 4.79
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9666666666666667,
+     "cost": 2.091666666666667,
+     "control": 4.996666666666667
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.014333333333333,
+     "control": 4.793333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.92,
+     "cost": 2.2079999999999997,
+     "control": 5.003333333333333
+    },
+    {
+     "completion": 0.92,
+     "completion_post": 0.9333333333333333,
+     "cost": 2.1439999999999997,
+     "control": 4.953333333333333
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9133333333333333,
+     "cost": 2.035333333333333,
+     "control": 4.793333333333333
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 2.1346666666666665,
+     "control": 4.93
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9533333333333334,
+     "cost": 2.1129999999999995,
+     "control": 4.8966666666666665
+    },
+    {
+     "completion": 0.8833333333333333,
+     "completion_post": 0.9,
+     "cost": 2.030333333333333,
+     "control": 4.823333333333333
+    },
+    {
+     "completion": 0.9033333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 2.090333333333333,
+     "control": 4.883333333333334
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.9133333333333333,
+     "cost": 2.125333333333333,
+     "control": 4.953333333333333
+    },
+    {
+     "completion": 0.9233333333333333,
+     "completion_post": 0.92,
+     "cost": 2.076,
+     "control": 4.913333333333333
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 2.059333333333333,
+     "control": 4.826666666666667
+    }
+   ],
+   "-conflict": [
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.3133333333333335,
+     "control": 4.736666666666666
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.9,
+     "cost": 3.874666666666667,
+     "control": 4.78
+    },
+    {
+     "completion": 0.9566666666666667,
+     "completion_post": 0.96,
+     "cost": 3.3276666666666666,
+     "control": 4.73
+    },
+    {
+     "completion": 0.9533333333333334,
+     "completion_post": 0.9533333333333334,
+     "cost": 3.5416666666666665,
+     "control": 4.673333333333333
+    },
+    {
+     "completion": 0.9066666666666666,
+     "completion_post": 0.94,
+     "cost": 3.6359999999999997,
+     "control": 4.816666666666666
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.6266666666666665,
+     "control": 4.863333333333333
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.94,
+     "cost": 3.4613333333333327,
+     "control": 4.6466666666666665
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.9666666666666667,
+     "cost": 3.4483333333333333,
+     "control": 4.836666666666667
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.96,
+     "cost": 3.4283333333333332,
+     "control": 4.653333333333333
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.92,
+     "cost": 3.844666666666667,
+     "control": 4.89
+    },
+    {
+     "completion": 0.97,
+     "completion_post": 0.9866666666666667,
+     "cost": 3.878666666666667,
+     "control": 4.723333333333334
+    },
+    {
+     "completion": 0.9433333333333334,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.594333333333333,
+     "control": 4.67
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.6773333333333333,
+     "control": 4.783333333333333
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.4626666666666663,
+     "control": 4.9
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.388,
+     "control": 4.596666666666667
+    },
+    {
+     "completion": 0.9566666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.5043333333333333,
+     "control": 4.72
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.2543333333333333,
+     "control": 4.773333333333333
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.5433333333333334,
+     "control": 4.803333333333334
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.1639999999999993,
+     "control": 4.946666666666666
+    },
+    {
+     "completion": 0.9333333333333333,
+     "completion_post": 0.9133333333333333,
+     "cost": 3.329,
+     "control": 4.726666666666667
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.7993333333333332,
+     "control": 4.7
+    },
+    {
+     "completion": 0.95,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.6380000000000003,
+     "control": 4.73
+    },
+    {
+     "completion": 0.9533333333333334,
+     "completion_post": 0.96,
+     "cost": 3.5069999999999997,
+     "control": 4.6433333333333335
+    },
+    {
+     "completion": 0.91,
+     "completion_post": 0.8933333333333333,
+     "cost": 3.3193333333333332,
+     "control": 4.756666666666667
+    },
+    {
+     "completion": 0.93,
+     "completion_post": 0.94,
+     "cost": 3.3803333333333336,
+     "control": 4.75
+    },
+    {
+     "completion": 0.9366666666666666,
+     "completion_post": 0.9466666666666667,
+     "cost": 3.5319999999999996,
+     "control": 4.75
+    },
+    {
+     "completion": 0.94,
+     "completion_post": 0.9266666666666666,
+     "cost": 3.497,
+     "control": 4.726666666666667
+    },
+    {
+     "completion": 0.9133333333333333,
+     "completion_post": 0.9066666666666666,
+     "cost": 3.529333333333334,
+     "control": 4.826666666666667
+    },
+    {
+     "completion": 0.9466666666666667,
+     "completion_post": 0.9333333333333333,
+     "cost": 3.8163333333333336,
+     "control": 4.873333333333333
+    },
+    {
+     "completion": 0.9266666666666666,
+     "completion_post": 0.92,
+     "cost": 3.7743333333333333,
+     "control": 4.733333333333333
+    }
+   ]
+  }
+ }
+}
