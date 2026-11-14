@@ -1,6 +1,6 @@
 # Lucifer V1.1: technical report (14 Nov 2026)
 
-Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,245 source lines, 202 tests. V1 baseline: Lucifer-BenchMarks `fe08665` (untouched). Every claim below links to a results file; every experiment was pre-registered before it ran.
+Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,293 source lines, 202 tests. V1 baseline: Lucifer-BenchMarks `fe08665` (untouched). Every claim below links to a results file; every experiment was pre-registered before it ran.
 
 ## 1. Bottom line
 - **Built and tested:** a fixed-topology adaptive learner with consolidation, an event-sourced learning pipeline (logging is separate from learning; unlearning needs retraining), a parent/child protocol that moves metadata only, a review mechanism for sharing knowledge, a policy-enforcing tool engine with a handshake-era MCP adapter, an A2A lifecycle model, a runtime with crash recovery, a browser policy layer, and a reproduction harness.
@@ -51,7 +51,7 @@ Code: `~/Personal/lucifer-v11` (local git repo, not pushed), 2,245 source lines,
 
 ## 5. Reproducibility
 - Pinned: numpy 2.3.3, pytest; Python 3.15.2 (the only version run locally; CI for 3.11 and 3.13 is written but has **never run on GitHub**).
-- `python -m lucv11.reproduce` reran M2-M6 and M8 from scratch in separate processes: **all 21 verdict flags identical, maximum numeric difference 0** (`results/m8/reproduction.json`). Not tested: another OS or CPU.
+- `python -m lucv11.reproduce` reran M2-M6 and M8 from scratch in separate processes: **all 23 verdict flags identical (the 21 hypotheses plus the M4 precondition and the composite H9), maximum numeric difference 0** (`results/m8/reproduction.json`). Not tested: another OS or CPU.
 - Pre-registrations were committed before code and results; amendments are logged with reasons (M2 A1 changed task difficulty after an uninformative run; M3 A1 changed plan length before any run).
 - Mutation checks of security tests: M5 6 of 6, M6 8 of 8, M7 21 of 22 (1 equivalent) killed; an earlier mutation run was invalid and redone.
 - Existence proof: the V1 manifest is OpenTimestamps-stamped (pending Bitcoin confirmation at the time of writing); see `~/Personal/lucifer-private/PROOF-OF-EXISTENCE.md`. A timestamp shows a file existed by a date, not who wrote it, and it is not a patent.
