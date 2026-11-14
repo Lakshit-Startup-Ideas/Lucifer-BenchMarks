@@ -31,4 +31,10 @@ Scope warning: this is a **simulation of small recurrent networks**. It says not
 A pass on H2c+H2d says growth saved compute in this toy setting at no accuracy loss. It does not show a computational advantage that carries over to language models, nor "experience-driven" adaptation. A failure of H2c or H2d means dynamic topology is **not** justified by this evidence, and it stays out of the architecture until a better test says otherwise.
 
 ## Amendments
-(none)
+
+**A1 (14 Nov 2026, after run 1, before run 2): task difficulty was mis-specified. Hypothesis thresholds are unchanged.**
+- Run 1 (`results/m2/run1*`, kept) used leak 0.3 and delays 5/15/30. Result: every condition scored NMSE 0.66 to 1.08, including `fixed-large` on delay 5, and growth fired on every task during task 1, so growth after earlier tasks never happened. H2b's "0.0 forgetting" was therefore untested, not a result. Run 1 is **uninformative**, not a pass or a failure of the hypotheses.
+- Diagnosis (fixed networks only, white-noise input): with leak 0.3 the reservoir low-pass filters its input and cannot recall a lagged sample (NMSE 0.67 at delay 5, 160 units); with leak 1.0 the same net gets 0.005. At leak 1.0 recall capacity of fixed nets: 160 units solve up to about delay 12 (NMSE 0.095), 40 units only up to about delay 5-8.
+- Changes: leak 0.3 -> 1.0; delays (5, 15, 30) -> (5, 8, 11); prune-experiment task delay 15 -> 8. Chosen from the fixed-network table above, never from the growing conditions' results. Everything else (seeds, thresholds, conditions, metrics, statistics) is unchanged.
+- Calibration table (5 seeds, leak 1.0, NMSE): n=40: d5 0.033, d8 0.235, d12 0.840 | n=80: 0.013, 0.052, 0.347 | n=120: 0.011, 0.033, 0.154 | n=160: 0.008, 0.025, 0.095.
+- Consequence for wording: H2c and H2e refer to the "last task", now delay 11, not delay 30; H2f's task is delay 8.

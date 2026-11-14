@@ -9,7 +9,8 @@ import numpy as np
 
 from .dynnet import Head, Reservoir, nmse
 
-DELAYS = (5, 15, 30)
+DELAYS = (5, 8, 11)
+LEAK = 1.0  # amendment A1: leak 0.3 made every condition fail (docs/M2-PREREGISTRATION.md)
 TRAIN, TEST, WASHOUT = 2000, 1000, 100
 HOLDOUT = 0.25
 GROW_THRESHOLD, GROW_STEP, N_START, N_MAX = 0.10, 40, 40, 160
@@ -43,7 +44,7 @@ class Result:
 
 def run_condition(condition: str, seed: int) -> Result:
     n0 = {"fixed-small": N_START, "fixed-large": N_MAX}.get(condition, N_START)
-    net = Reservoir(n0, seed=1000 + seed)
+    net = Reservoir(n0, leak=LEAK, seed=1000 + seed)
     tasks = [make_task(d, seed * 10 + i) for i, d in enumerate(DELAYS)]
     heads: list[Head] = []
     steps = [0]
@@ -71,9 +72,9 @@ def run_condition(condition: str, seed: int) -> Result:
 
 
 def prune_experiment(seed: int) -> dict:
-    """Single task (delay 15), 160 units. Prune to 80 by importance or at random, refit the head, compare test NMSE."""
-    task = make_task(15, seed * 10 + 1)
-    base = Reservoir(N_MAX, seed=2000 + seed)
+    """Single task (delay 8), 160 units. Prune to 80 by importance or at random, refit the head, compare test NMSE."""
+    task = make_task(8, seed * 10 + 1)
+    base = Reservoir(N_MAX, leak=LEAK, seed=2000 + seed)
     u, y = task["train"]
     ut, yt = task["test"]
     s = base.run(u)
@@ -83,7 +84,7 @@ def prune_experiment(seed: int) -> dict:
     rng = np.random.default_rng(3000 + seed)
     out = {"full": full}
     for name, idx in (("importance", np.argsort(importance)[-N_MAX // 2:]), ("random", rng.choice(N_MAX, N_MAX // 2, replace=False))):
-        net = Reservoir(N_MAX, seed=2000 + seed)
+        net = Reservoir(N_MAX, leak=LEAK, seed=2000 + seed)
         net.keep(idx)
         h2 = Head.fit(net.run(u)[WASHOUT:], y[WASHOUT:])
         out[name] = nmse(h2.predict(net.run(ut)[WASHOUT:]), yt[WASHOUT:])
