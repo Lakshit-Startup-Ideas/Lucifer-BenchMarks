@@ -1,0 +1,10 @@
+{
+ "note": "median microseconds per operation on the machine that ran this; not a guarantee",
+ "calls": 3000,
+ "ledger_entries": 10000,
+ "direct_handler_call_us": 0.06,
+ "engine_call_us": 175.72,
+ "engine_overhead_us": 175.66,
+ "ledger_append_us": 2.65,
+ "ledger_verify_us_per_entry": 1.58
+}

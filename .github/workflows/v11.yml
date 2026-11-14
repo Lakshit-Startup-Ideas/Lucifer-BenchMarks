@@ -1,0 +1,57 @@
+name: V1.1 tests
+
+# Version 1.1 lives in v1.1/. GitHub only runs workflows from the repository root, so this one tests that folder.
+# Version 1's own workflow (ci.yml) is unchanged and only tests the root package.
+on:
+  push:
+    branches: [main]
+    paths: ["v1.1/**", ".github/workflows/v11.yml"]
+  pull_request:
+    paths: ["v1.1/**", ".github/workflows/v11.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: v1.1
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: python -m pytest -q
+
+  reproduce:
+    # Reruns M2-M6 and M8 from scratch and fails if any registered verdict differs from the committed results.
+    if: github.event_name == 'workflow_dispatch'
+    needs: tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: v1.1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e .
+      - run: python -m lucv11.reproduce reproduction.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproduction
+          path: v1.1/reproduction.json

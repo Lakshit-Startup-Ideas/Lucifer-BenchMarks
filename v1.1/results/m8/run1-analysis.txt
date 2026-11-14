@@ -1,0 +1,46 @@
+{
+ "H8_forgetting_anchor_minus_mature": [
+  0.01039393939393939,
+  0.007626262626262622,
+  0.013555555555555548
+ ],
+ "H8_final_acc_mature_minus_anchor": [
+  -0.026509259259259236,
+  -0.0331944444444444,
+  -0.020157407407407395
+ ],
+ "H8_means": {
+  "anchor": {
+   "final_acc": 0.7382592592592591,
+   "forgetting": 0.021313131313131308
+  },
+  "mature": {
+   "final_acc": 0.71175,
+   "forgetting": 0.010919191919191924
+  }
+ },
+ "H8_pass": false,
+ "H9a_same_family_experienced_minus_fresh": [
+  0.06479166666666668,
+  0.047708333333333346,
+  0.08229166666666665
+ ],
+ "H9b_unseen_family_experienced_minus_fresh": [
+  -0.021874999999999995,
+  -0.04312499999999999,
+  0.0010416666666666797
+ ],
+ "H9a_pass": true,
+ "H9b_pass": false,
+ "H9_pass": false,
+ "H9_means": {
+  "same": {
+   "experienced": 0.6897916666666668,
+   "fresh": 0.6250000000000001
+  },
+  "unseen": {
+   "experienced": 0.5983333333333335,
+   "fresh": 0.6202083333333334
+  }
+ }
+}
